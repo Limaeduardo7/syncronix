@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run optimize-glb:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "Bash(true)",
+      "Bash(ls:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(for file in ConfrontationSection.tsx ContentGallery.tsx ContentSummary.tsx EbookPresentation.tsx FeedbackSection.tsx Footer.tsx GuaranteeSection.tsx HeroSection.tsx LiquidLogo.tsx ManifestoSection.tsx NavLink.tsx OfferSection.tsx parseLogoImage.ts PhilosophicalBlock.tsx SEO.tsx shader.ts SummaryCarousel.tsx ThemeToggle.tsx WhatsAppButton.tsx)",
+      "Bash(do cp \"C:\\\\Users\\\\Eduar\\\\Desktop\\\\SITES\\\\ChavedoPoder\\\\quantum-key\\\\src\\\\components$file\" src/components/quantum-key/)",
+      "Bash(done)"
+    ],
+    "deny": []
+  }
+}
