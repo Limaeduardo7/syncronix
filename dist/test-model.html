@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Model Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            background-color: #111;
+            border: 2px solid #333;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Viewer Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Original GLB File</h2>
+        <model-viewer 
+            src="/_1019221926_texture.glb"
+            alt="Original Model"
+            auto-rotate
+            camera-controls
+            loading="eager"
+            reveal="auto"
+            style="background-color: #222;">
+        </model-viewer>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Optimized GLB File</h2>
+        <model-viewer 
+            src="/model_optimized.glb"
+            alt="Optimized Model"
+            auto-rotate
+            camera-controls
+            loading="eager"
+            reveal="auto"
+            style="background-color: #222;">
+        </model-viewer>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: External Model (for reference)</h2>
+        <model-viewer 
+            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            alt="External Model"
+            auto-rotate
+            camera-controls
+            loading="eager"
+            reveal="auto"
+            style="background-color: #222;">
+        </model-viewer>
+    </div>
+    
+    <script>
+        console.log('Testing model-viewer...');
+        
+        // Check if model-viewer is loaded
+        if (customElements.get('model-viewer')) {
+            console.log('✅ model-viewer custom element is registered');
+        } else {
+            console.log('❌ model-viewer custom element is NOT registered');
+        }
+        
+        // Listen for model load events
+        document.querySelectorAll('model-viewer').forEach((mv, index) => {
+            mv.addEventListener('load', () => {
+                console.log(`✅ Model ${index + 1} loaded successfully`);
+            });
+            
+            mv.addEventListener('error', (e) => {
+                console.log(`❌ Model ${index + 1} failed to load:`, e);
+            });
+        });
+    </script>
+</body>
+</html>
