@@ -66,7 +66,7 @@ const OfferSection = () => {
                 <span className="neon-text">¡No pierdas tiempo!</span>
               </h2>
               <p className="text-xl md:text-2xl font-semibold mb-8">
-                La <span className="neon-text font-bold">Llave</span> está en <span className="neon-text font-bold">tus manos</span>.
+                La <span className="neon-text font-bold">Clave</span> está en <span className="neon-text font-bold">tus manos</span>.
               </p>
             </div>
 

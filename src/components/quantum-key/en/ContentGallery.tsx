@@ -67,9 +67,7 @@ const ContentGallery = () => {
         {/* CTA Button */}
         <div className="text-center pt-12 animate-fade-up delay-200">
           <a
-            href="https://pay.hotmart.com/H98004318H?off=dxizckv8&checkoutMode=10&bid=1766356727625"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#oferta"
             className="inline-block px-12 py-5 bg-primary text-primary-foreground font-bold text-xl rounded-lg border-2 border-primary animate-pulse-glow transition-all duration-300 transform hover:scale-105 cta-button"
           >
             SECURE MY COPY NOW

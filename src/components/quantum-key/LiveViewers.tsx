@@ -25,13 +25,13 @@ const LiveViewers = ({ text }: LiveViewersProps) => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-2 py-4 px-6 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-lg border border-purple-500/20 shadow-lg animate-fade-in">
+    <div className="flex items-center justify-center gap-2 py-4 px-6 bg-gradient-to-r from-yellow-500/10 to-amber-500/10 backdrop-blur-sm rounded-lg border border-yellow-500/30 shadow-lg animate-fade-in">
       <div className="relative">
-        <Eye className="w-5 h-5 text-purple-400 animate-pulse" />
+        <Eye className="w-5 h-5 text-yellow-400 animate-pulse" />
         <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
       </div>
       <p className="text-sm font-semibold text-white">
-        <span className="text-purple-400 font-bold text-lg">{viewers}</span> {text}
+        <span className="text-yellow-400 font-bold text-lg">{viewers}</span> {text}
       </p>
     </div>
   );

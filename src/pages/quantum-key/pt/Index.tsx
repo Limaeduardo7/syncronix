@@ -14,19 +14,7 @@ import WhatsAppButton from "@/components/quantum-key/pt/WhatsAppButton";
 import SEO from "@/components/quantum-key/SEO";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
-
-const purchaseNotificationsPT = [
-  { name: "Maria Silva", location: "São Paulo, SP" },
-  { name: "João Santos", location: "Rio de Janeiro, RJ" },
-  { name: "Ana Costa", location: "Belo Horizonte, MG" },
-  { name: "Pedro Oliveira", location: "Curitiba, PR" },
-  { name: "Carla Souza", location: "Porto Alegre, RS" },
-  { name: "Lucas Ferreira", location: "Brasília, DF" },
-  { name: "Juliana Lima", location: "Salvador, BA" },
-  { name: "Roberto Alves", location: "Fortaleza, CE" },
-  { name: "Patricia Ribeiro", location: "Recife, PE" },
-  { name: "Fernando Martins", location: "Manaus, AM" },
-];
+import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 
 const Index = () => {
   return (
@@ -41,9 +29,8 @@ const Index = () => {
       <WhatsAppButton />
       <PurchaseNotifications
         purchaseText="acabou de adquirir o eBook!"
-        justNowText="agora mesmo"
-        minutesAgoText="minutos atrás"
-        notifications={purchaseNotificationsPT}
+        justNowText="comprou agora"
+        notifications={brazilianPurchaseNotifications}
       />
 
       <HeroSection />

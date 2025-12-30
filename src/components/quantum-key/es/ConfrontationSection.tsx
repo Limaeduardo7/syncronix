@@ -23,7 +23,7 @@ const ConfrontationSection = () => {
         {/* Abyss Message */}
         <div className="text-center mb-12 animate-fade-up delay-200">
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-            Quizás te has sorprendido a ti mismo mirando al abismo de una vida que se repite en círculos, sintiendo el peso aplastante de la rutina que aprisiona. Pero lo que quizás aún no has comprendido es que la llave para romper estas cadenas está en tus manos.
+            Quizás te has sorprendido a ti mismo mirando al abismo de una vida que se repite en círculos, sintiendo el peso aplastante de la rutina que aprisiona. Pero lo que quizás aún no has comprendido es que la clave para romper estas cadenas está en tus manos.
           </p>
         </div>
 
@@ -48,9 +48,7 @@ const ConfrontationSection = () => {
         {/* CTA Button */}
         <div className="text-center animate-fade-up delay-600">
           <a
-            href="https://pay.hotmart.com/Q97114057B?checkoutMode=10&bid=1766356135373"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#oferta"
             className="inline-block px-12 py-5 bg-primary text-primary-foreground font-bold text-xl rounded-lg border-2 border-primary animate-pulse-glow transition-all duration-300 transform hover:scale-105 cta-button"
           >
             DESPERTAR MI PODER

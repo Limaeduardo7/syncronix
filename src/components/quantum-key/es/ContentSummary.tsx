@@ -64,9 +64,7 @@ const ContentSummary = () => {
         {/* CTA Button */}
         <div className="text-center pt-16 animate-fade-up delay-600">
           <a
-            href="https://pay.hotmart.com/Q97114057B?checkoutMode=10&bid=1766356135373"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#oferta"
             className="inline-block px-12 py-5 bg-primary text-primary-foreground font-bold text-xl rounded-lg border-2 border-primary animate-pulse-glow transition-all duration-300 transform hover:scale-105 cta-button"
           >
             ACCEDER A TODO ESTE CONOCIMIENTO
