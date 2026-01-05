@@ -89,12 +89,23 @@ export default {
           "50%": { backgroundColor: "var(--highlight)" },
           "100%": { backgroundColor: "hsl(var(--card))" },
         },
+        pulseGlowBlue: {
+          "0%, 100%": {
+            boxShadow: "0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.15)",
+            transform: "scale(1)",
+          },
+          "50%": {
+            boxShadow: "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4), 0 0 90px rgba(59, 130, 246, 0.3), 0 0 120px rgba(59, 130, 246, 0.2)",
+            transform: "scale(1.02)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         highlight: "highlight 0.6s ease forwards",
         flash: "flash 0.6s ease forwards",
+        "pulse-glow-blue": "pulseGlowBlue 2s ease-in-out infinite",
       },
     },
   },

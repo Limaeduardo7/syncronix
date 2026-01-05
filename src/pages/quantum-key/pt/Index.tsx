@@ -23,6 +23,7 @@ const Index = () => {
         title="A Chave do Poder | eBook - Transforme sua Realidade"
         description="Descubra os conhecimentos ancestrais e modernos em 351 páginas. Física Quântica, Kabbalah, Metafísica e muito mais. A verdade que jamais te contaram."
         keywords="ebook, poder, conhecimento, kabbalah, metafísica, física quântica, transformação, consciência, alquimia, taoísmo, magnetismo pessoal"
+        ogImage="https://achavdopoder.com/mockup-3-ebook-black.webp"
         canonical="https://achavdopoder.com"
         lang="pt-BR"
       />

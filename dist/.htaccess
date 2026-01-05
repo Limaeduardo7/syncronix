@@ -2,10 +2,48 @@
   RewriteEngine On
   RewriteBase /
 
+  # Handle Authorization Header
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
   # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # Don't rewrite asset files
+  RewriteCond %{REQUEST_URI} !^/assets/
+  RewriteCond %{REQUEST_URI} !\.(?:css|js|jpg|jpeg|gif|png|ico|webp|svg|woff|woff2|ttf|eot|json|xml|txt|pdf)$ [NC]
 
   # Rewrite everything else to index.html to allow HTML5 state links
-  RewriteRule ^ index.html [L]
+  RewriteRule ^ /index.html [L,QSA]
 </IfModule>
+
+# Additional security and performance settings for Hostinger
+<IfModule mod_headers.c>
+  # Cache static assets
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|webp|js|css|swf|eot|ttf|otf|woff|woff2)$">
+    Header set Cache-Control "max-age=604800, public"
+  </FilesMatch>
+
+  # Don't cache HTML
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+</IfModule>
+
+# Compress files for faster loading
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect .htaccess file
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>

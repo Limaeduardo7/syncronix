@@ -14,7 +14,7 @@ import WhatsAppButton from "@/components/quantum-key/fisico/WhatsAppButton";
 import SEO from "@/components/quantum-key/SEO";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
-import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
+import { brazilOnlyPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 
 const Index = () => {
   return (
@@ -30,7 +30,7 @@ const Index = () => {
       <PurchaseNotifications
         purchaseText="acabou de adquirir o Livro Físico!"
         justNowText="comprou agora"
-        notifications={brazilianPurchaseNotifications}
+        notifications={brazilOnlyPurchaseNotifications}
       />
 
       <HeroSection />

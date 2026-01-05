@@ -780,6 +780,24 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes pulseGlowBlue {
+    0%, 100% {
+      box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.3),
+        0 0 60px rgba(59, 130, 246, 0.15);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow:
+        0 0 30px rgba(59, 130, 246, 0.6),
+        0 0 60px rgba(59, 130, 246, 0.4),
+        0 0 90px rgba(59, 130, 246, 0.3),
+        0 0 120px rgba(59, 130, 246, 0.2);
+      transform: scale(1.02);
+    }
+  }
+
   @keyframes pulseGlowWhatsApp {
     0%, 100% {
       box-shadow:

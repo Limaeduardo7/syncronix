@@ -49,7 +49,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 px-4 bg-secondary/50 border-t border-border/50">
+    <footer className="py-12 px-4 bg-black border-t border-border/50">
       <div className="max-w-6xl mx-auto">
         {/* Brand logo */}
         <div className="flex justify-center mb-8 animate-fade-up">

@@ -20,6 +20,11 @@ const QuantumKeyEN = lazy(() => import("./pages/quantum-key/en/Index"));
 const QuantumKeyES = lazy(() => import("./pages/quantum-key/es/Index"));
 const QuantumKeyFisico = lazy(() => import("./pages/quantum-key/fisico/Index"));
 
+// Regra da Vida pages
+const RegraDaVidaPT = lazy(() => import("./pages/regra-da-vida/pt/Index"));
+const RegraDaVidaEN = lazy(() => import("./pages/regra-da-vida/en/Index"));
+const RegraDaVidaES = lazy(() => import("./pages/regra-da-vida/es/Index"));
+
 // Optimize QueryClient with better defaults
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -65,6 +70,11 @@ const App = () => (
             <Route path="/ebook-the-key-to-power" element={<QuantumKeyEN />} />
             <Route path="/ebook-la-clave-del-poder" element={<QuantumKeyES />} />
             <Route path="/livro-fisico" element={<QuantumKeyFisico />} />
+
+            {/* Regra da Vida Routes */}
+            <Route path="/ebook-a-regra-da-vida" element={<RegraDaVidaPT />} />
+            <Route path="/ebook-the-rule-of-life" element={<RegraDaVidaEN />} />
+            <Route path="/ebook-la-regla-de-la-vida" element={<RegraDaVidaES />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
