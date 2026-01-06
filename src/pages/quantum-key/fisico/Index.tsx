@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <main className="min-h-screen overflow-x-hidden quantum-key-page">
       <SEO
-        title="A Chave do Poder | Livro Físico - Transforme sua Realidade"
+        title="A Chave do Poder | Livro Físico Transforme sua Realidade"
         description="Adquira o livro físico com 351 páginas de conhecimento ancestral e moderno. Física Quântica, Kabbalah, Metafísica e muito mais. Edição física premium."
         keywords="livro físico, poder, conhecimento, kabbalah, metafísica, física quântica, transformação, consciência, alquimia, taoísmo, edição física"
         canonical="https://achavdopoder.com/fisico"

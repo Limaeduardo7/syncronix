@@ -724,6 +724,10 @@ All colors MUST be HSL.
     animation: pulseGlowRed 0.8s ease-in-out infinite;
   }
 
+  .animate-pulse-glow-whatsapp {
+    animation: pulseGlowWhatsApp 0.8s ease-in-out infinite;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -802,16 +806,14 @@ All colors MUST be HSL.
     0%, 100% {
       box-shadow:
         0 0 20px rgba(3, 250, 37, 0.5),
-        0 0 40px rgba(3, 250, 37, 0.3),
-        inset 0 0 20px rgba(3, 250, 37, 0.15);
+        0 0 40px rgba(3, 250, 37, 0.3);
       transform: scale(1);
     }
     50% {
       box-shadow:
         0 0 40px rgba(3, 250, 37, 0.8),
         0 0 80px rgba(3, 250, 37, 0.6),
-        0 0 120px rgba(3, 250, 37, 0.4),
-        inset 0 0 30px rgba(3, 250, 37, 0.3);
+        0 0 120px rgba(3, 250, 37, 0.4);
       transform: scale(1.025);
     }
   }
@@ -831,6 +833,15 @@ All colors MUST be HSL.
         0 0 90px rgba(220, 38, 38, 0.3),
         0 0 120px rgba(220, 38, 38, 0.2);
       transform: scale(1.02);
+    }
+  }
+
+  @keyframes pulseScale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
     }
   }
 

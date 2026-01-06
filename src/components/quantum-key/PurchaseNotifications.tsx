@@ -58,21 +58,21 @@ const PurchaseNotifications = ({
 
   return (
     <div
-      className={`fixed bottom-6 left-6 z-50 transition-all duration-700 ease-out ${
+      className={`fixed bottom-2 left-2 md:bottom-6 md:left-6 z-50 transition-all duration-700 ease-out ${
         showNotification
           ? "translate-y-0 opacity-100 scale-100"
           : "translate-y-8 opacity-0 scale-95 pointer-events-none"
       }`}
     >
-      <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-start gap-4 max-w-sm border-2 border-green-400/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-        <div className="flex-shrink-0 mt-1">
-          <CheckCircle2 className="w-7 h-7 animate-pulse drop-shadow-lg" />
+      <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 py-2 md:px-6 md:py-4 rounded-lg md:rounded-xl shadow-2xl flex items-start gap-2 md:gap-4 max-w-[200px] md:max-w-sm border md:border-2 border-green-400/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+        <div className="flex-shrink-0 mt-0.5">
+          <CheckCircle2 className="w-4 h-4 md:w-7 md:h-7 animate-pulse drop-shadow-lg" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-bold text-base mb-1">{activeNotification.name}</p>
-          <p className="text-xs text-green-100 mb-2">{activeNotification.location}</p>
-          <p className="text-sm font-semibold">{purchaseText}</p>
-          <p className="text-xs text-green-200 mt-1 font-medium">{activeNotification.time}</p>
+          <p className="font-bold text-[10px] md:text-base mb-0.5 md:mb-1 truncate">{activeNotification.name}</p>
+          <p className="text-[8px] md:text-xs text-green-100 mb-1 md:mb-2 truncate">{activeNotification.location}</p>
+          <p className="text-[9px] md:text-sm font-semibold">{purchaseText}</p>
+          <p className="text-[8px] md:text-xs text-green-200 mt-0.5 md:mt-1 font-medium">{activeNotification.time}</p>
         </div>
       </div>
     </div>

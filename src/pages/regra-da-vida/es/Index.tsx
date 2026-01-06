@@ -2,25 +2,144 @@ import SEO from "@/components/quantum-key/SEO";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
 import { spanishPurchaseNotifications } from "@/components/quantum-key/notificationsData";
-import { Check, Brain, Target, Zap } from "lucide-react";
+import { Check, Brain, Target, Zap, ChevronLeft, ChevronRight, ShieldCheck, CreditCard, Download, Clock } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import CountdownTimer from "@/components/regra-da-vida/CountdownTimer";
+import GuaranteeSection from "@/components/regra-da-vida/GuaranteeSection";
+import Footer from "@/components/regra-da-vida/Footer";
+import WhatsAppButton from "@/components/regra-da-vida/WhatsAppButton";
+
+const BookPreviewCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "center",
+      slidesToScroll: 1
+    },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const previews = [
+    {
+      image: "/regra-da-vida/espanhol/CAPA_.png",
+      alt: "Portada - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/pt1 (1).jpeg",
+      alt: "Parte 1 - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/pt2 (1).jpeg",
+      alt: "Parte 2 - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/pt2.jpeg",
+      alt: "Parte 2 Continuación - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/pt3 (1).jpeg",
+      alt: "Parte 3 - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/pt3.jpeg",
+      alt: "Parte 3 Continuación - La Regla de la Vida"
+    },
+    {
+      image: "/regra-da-vida/espanhol/PT1.jpeg",
+      alt: "Parte 1 Adicional - La Regla de la Vida"
+    }
+  ];
+
+  return (
+    <section className="relative py-20 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          Vista Previa del Contenido
+        </h2>
+        <p className="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
+          Mira algunas páginas del libro y descubre el enfoque visual y directo que hace que conceptos complejos sean claros y aplicables
+        </p>
+
+        <div className="relative">
+          {/* Carousel */}
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {previews.map((preview, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_40%] min-w-0"
+                >
+                  <div className="group relative rounded-2xl overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-200/50">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-cyan-50/0 group-hover:from-blue-50/30 group-hover:to-cyan-50/30 transition-all duration-300"></div>
+                    <img
+                      src={preview.image}
+                      alt={preview.alt}
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 z-10"
+            aria-label="Diapositiva anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 z-10"
+            aria-label="Siguiente diapositiva"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-gray-600 italic">
+            Contenido visual, directo y basado en cómo funciona realmente la mente
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Index = () => {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-slate-950 text-white relative">
+    <main className="min-h-screen overflow-x-hidden bg-white text-gray-900 relative">
       {/* Animated Background Grid */}
-      <div className="fixed inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
       {/* Gradient Orbs */}
-      <div className="fixed top-0 -left-40 w-80 h-80 bg-cyan-500/30 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="fixed bottom-0 -right-40 w-80 h-80 bg-blue-500/30 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+      <div className="fixed top-0 -left-40 w-96 h-96 bg-gradient-to-r from-cyan-200/40 to-blue-200/40 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="fixed bottom-0 -right-40 w-96 h-96 bg-gradient-to-r from-blue-200/40 to-indigo-200/40 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-100/30 to-blue-100/30 rounded-full blur-[150px]"></div>
 
       <SEO
         title="La Regla de la Vida | eBook - Claridad Mental Aplicada"
-        description="Manual directo y visual que muestra cómo opera la mente humana detrás de las decisiones, hábitos y resultados. Descubre cómo ocurre el cambio real."
-        keywords="ebook, cambio de hábitos, identidad, comportamiento, mente humana, transformación, claridad mental, desarrollo personal"
-        canonical="https://achavdopoder.com/ebook-la-regla-de-la-vida"
-        lang="es-ES"
+        description="Manual visual de ingeniería mental que revela lo que realmente controla tus decisiones, hábitos y resultados. Deja de esforzarte más y entiende el sistema."
+        keywords="ebook, cambio de hábitos, identidad, comportamiento, mente humana, transformación, claridad mental, desarrollo personal, ingeniería mental"
+        ogImage="https://achavdopoder.com/regra-da-vida/espanhol/MOCKUP%20PRESENTS%20ESPANOL.png"
+        canonical="https://achavdopoder.com/es/ebook-la-regla-de-la-vida"
+        lang="es"
       />
+
+      <WhatsAppButton />
 
       <PurchaseNotifications
         purchaseText="acaba de adquirir el eBook!"
@@ -30,113 +149,273 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/80 via-white to-white"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
-          {/* Tech Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-cyan-500/30 rounded-full bg-cyan-500/10 backdrop-blur-sm">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-            <span className="text-sm text-cyan-400 font-medium">SISTEMA DE TRANSFORMACIÓN MENTAL</span>
+          {/* Countdown Timer */}
+          <CountdownTimer />
+
+          {/* Offer Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-blue-300 rounded-full bg-blue-50">
+            <span className="text-blue-500 font-bold text-sm tracking-wide">OFERTA ESPECIAL</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 text-gray-900 leading-tight">
             LA REGLA DE LA VIDA
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            El manual directo y visual que muestra cómo opera la mente humana detrás de las decisiones, hábitos y resultados
+          <p className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-medium">
+            Tu mente tiene reglas. Entiéndelas o sé esclavo de ellas.
           </p>
 
+          <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+            La Regla de la Vida es un manual visual de ingeniería mental que revela lo que realmente controla tus decisiones, hábitos y resultados.
+          </p>
+
+          {/* Mockup do eBook */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/regra-da-vida/espanhol/mockup espanol 1x1.png"
+              alt="Mockup del eBook La Regla de la Vida"
+              className="w-full max-w-md md:max-w-lg lg:max-w-xl object-contain drop-shadow-2xl rounded-3xl animate-float"
+            />
+          </div>
+
           <div className="mb-12">
-            <LiveViewers text="personas están viendo esta página ahora" />
+            <LiveViewers text="personas están viendo esta página ahora" color="blue" />
           </div>
 
           <a
             href="#oferta"
-            className="group relative inline-block px-12 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xl rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] overflow-hidden"
+            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative flex items-center gap-2">
-              QUIERO CLARIDAD MENTAL AHORA
-              <span className="text-2xl">→</span>
-            </span>
+            <span>QUIERO ACCEDER AHORA</span>
+            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </div>
       </section>
 
-      {/* El Problema Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-blue-50/30 to-white backdrop-blur-sm">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-100/20 to-transparent"></div>
+      {/* Book Preview Section */}
+      <BookPreviewCarousel />
 
-        <div className="relative max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            ¿Por qué intentar cambiar solo con esfuerzo casi siempre falla?
+      {/* Por que "Tentar Mais" Falha */}
+      <section className="relative py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* GIF */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/regra-da-vida/c32d93b8fd84f270d94b838d5e6ebbe4.gif"
+              alt="Animación"
+              className="w-full max-w-2xl object-contain rounded-2xl"
+            />
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+            Por qué esforzarse más no funciona
           </h2>
+          <p className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+            La fuerza de voluntad funciona como una <span className="text-red-600 font-bold">batería</span>, se agota. La <span className="text-blue-500 font-bold">identidad</span> funciona como un <span className="text-blue-500 font-bold">piloto automático</span>, siempre encendido, guiando decisiones y comportamientos sin pedir esfuerzo.
+          </p>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+            Cuando intentas cambiar solo con fuerza, el <span className="text-blue-500 font-bold">piloto automático</span> corrige el camino y te lleva de vuelta al patrón antiguo. No es debilidad ni falta de disciplina. Es simplemente el cerebro manteniendo lo que considera normal.
+          </p>
 
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p className="border-l-4 border-blue-400 pl-6 py-4 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-lg shadow-blue-100/50">
-              ¿Alguna vez intentaste cambiar con fuerza de voluntad y viste cómo el resultado desaparecía en días o semanas? No es falta de disciplina. Es que estabas luchando contra el sistema equivocado.
-            </p>
-            <p className="border-l-4 border-blue-400 pl-6 py-4 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-lg shadow-blue-100/50">
-              La verdad es que <span className="text-blue-600 font-bold">la identidad controla el comportamiento en automático</span>. Mientras sigas creyendo que eres "ese tipo de persona", repetirás los mismos patrones.
-            </p>
-            <p className="border-l-4 border-blue-400 pl-6 py-4 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-lg shadow-blue-100/50">
-              Este libro no es motivación. No es una promesa mágica. Es <span className="text-blue-600 font-bold">claridad mental aplicada</span> para que los resultados surjan como consecuencia natural.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
+                <Zap className="w-8 h-8 text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">El Hábito</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Patrones repetitivos que tu mente creó para ahorrar energía y mantenerte donde estás.
+              </p>
+            </div>
+
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
+                <Brain className="w-8 h-8 text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">El Piloto Automático</h3>
+              <p className="text-gray-600 leading-relaxed">
+                El 95% de tus acciones son automáticas. Si no entiendes su lógica, eres solo un pasajero.
+              </p>
+            </div>
+
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
+                <svg className="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">La Repetición</h3>
+              <p className="text-gray-600 leading-relaxed">
+                El bucle invisible que te hace cometer los mismos errores incluso sabiendo lo que deberías hacer.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>QUIERO ENTENDER LA REGLA</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Lo que descubrirás */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent"></div>
+      {/* O jogo muda quando você entende a regra */}
+      <section className="relative py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+            El juego cambia cuando entiendes la regla
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            Sal del ensayo y error y entra en el campo de la estrategia pura.
+          </p>
 
-        <div className="relative max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Lo que descubrirás
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* O JEITO COMUM */}
+            <div className="relative p-8 rounded-2xl bg-white border border-gray-200">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                  <span className="text-red-500 font-bold text-xl">✗</span>
+                </div>
+                <h3 className="text-xl font-bold text-red-600">EL MODO COMÚN</h3>
+              </div>
+
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">Intentar cambiar a la fuerza bruta</h4>
+
+              <ul className="space-y-4">
+                {[
+                  "Depende de motivación pasajera",
+                  "Genera ansiedad y estrés constante",
+                  "Termina en frustración y culpa",
+                  "Resultados que desaparecen en semanas"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-gray-600">
+                    <span className="text-gray-400 mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* A REGRA DA VIDA */}
+            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 shadow-xl">
+              <div className="absolute top-4 right-4 px-4 py-1 bg-green-600 text-white text-xs font-bold rounded-full">
+                RECOMENDADO
+              </div>
+
+              <div className="flex items-center gap-3 mb-6 mt-4">
+                <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
+                  <Check className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-green-600">LA REGLA DE LA VIDA</h3>
+              </div>
+
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">Entender el Sistema Interno</h4>
+
+              <ul className="space-y-4">
+                {[
+                  "Usa la lógica biológica de la mente",
+                  "Proceso ligero y sostenible",
+                  "Autocontrol que se vuelve natural",
+                  "Cambio basado en estructura, no fuerza"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-gray-700">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                    <span className="font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>QUIERO CAMBIAR DE VERDAD</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* O que torna este manual diferente */}
+      <section className="relative py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <img
+              src="/regra-da-vida/espanhol/MOCKUP PRESENTS ESPANOL.png"
+              alt="La Regla de la Vida - eBook"
+              className="w-full max-w-sm object-contain drop-shadow-2xl rounded-3xl animate-float"
+            />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-gray-900">
+            Lo que hace diferente a este manual
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                icon: <Brain className="w-12 h-12 text-blue-600" />,
-                title: "Cómo funciona realmente la mente",
-                description: "Entiende por qué repites los mismos patrones incluso queriendo avanzar"
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                ),
+                title: "Manual Visual",
+                description: "Olvida bloques infinitos de texto. Diagramas claros y mapas mentales que tu cerebro entiende al instante."
               },
               {
-                icon: <Target className="w-12 h-12 text-blue-600" />,
-                title: "El papel de la identidad",
-                description: "Descubre cómo quien crees que eres determina tus resultados"
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                ),
+                title: "Lenguaje Directo",
+                description: "Sin rodeos académicos. Hechos, lógica y aplicación estratégica para adultos que valoran el tiempo."
               },
               {
-                icon: <Zap className="w-12 h-12 text-blue-600" />,
-                title: "Cambio real y duradero",
-                description: "Aprende cómo corregir la instrucción interna para resultados automáticos"
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                title: "Consumo Eficiente",
+                description: "Diseñado para ser leído y aplicado rápidamente. El conocimiento que necesitas, sin el exceso."
               },
               {
-                icon: <Check className="w-12 h-12 text-blue-600" />,
-                title: "Sistema de coherencia mental",
-                description: "Entiende cómo el cerebro busca coherencia con tus creencias internas"
+                icon: <Target className="w-10 h-10" />,
+                title: "Herramientas Reales",
+                description: "Viene con modelos mentales que puedes empezar a usar inmediatamente después de la primera página."
               }
             ].map((item, index) => (
-              <div key={index} className="group relative p-8 rounded-2xl bg-white border border-blue-200/60 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-300 backdrop-blur-sm">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50/0 via-cyan-50/0 to-blue-50/0 group-hover:from-blue-50 group-hover:via-cyan-50/30 group-hover:to-transparent transition-all duration-300"></div>
-
-                <div className="relative">
-                  <div className="mb-4 p-3 w-fit rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 border border-blue-200">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+              <div key={index} className="relative p-6 rounded-xl bg-blue-50/50 border border-blue-100 hover:border-blue-400 hover:bg-blue-50/30 transition-all duration-300 text-center">
+                <div className="w-14 h-14 mb-4 rounded-xl bg-blue-100 flex items-center justify-center text-blue-500 mx-auto">
+                  {item.icon}
                 </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Transformation Section */}
+      {/* Transformação Section */}
       <section className="relative py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -166,7 +445,7 @@ const Index = () => {
               </ul>
             </div>
 
-            {/* Después */}
+            {/* Depois */}
             <div className="relative p-8 rounded-2xl bg-gradient-to-br from-green-50 to-cyan-50 border-2 border-green-300 shadow-xl">
               <div className="absolute top-4 right-4 px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-full">
                 DESPUÉS
@@ -174,8 +453,8 @@ const Index = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6 mt-4">Con claridad mental</h3>
               <ul className="space-y-4">
                 {[
-                  "Comprendes los patrones y sabes cómo cambiarlos",
-                  "Alineas identidad con los resultados deseados",
+                  "Comprende los patrones y sabe cómo cambiarlos",
+                  "Alinea identidad con los resultados deseados",
                   "Cambios profundos y permanentes",
                   "Sistema mental que trabaja a tu favor",
                   "Libertad para crear la vida que quieres vivir"
@@ -188,87 +467,292 @@ const Index = () => {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Target Audience Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Este libro es para ti si...
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              "Quieres cambios reales, no solo motivación temporal",
-              "Estás cansado de repetir los mismos patrones",
-              "Buscas entender cómo funciona realmente la mente",
-              "Quieres resultados basados en claridad, no en esfuerzo",
-              "Deseas transformación profunda y duradera",
-              "Estás listo para tomar el control de tu vida"
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                  <Check className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-gray-700 font-medium">{item}</p>
-              </div>
-            ))}
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>SÍ, QUIERO TENER CLARIDAD MENTAL</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Lo que dicen quienes ya lo leyeron
+      {/* Citação Impactante */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="w-16 h-16 mb-8 mx-auto rounded-full bg-blue-100 flex items-center justify-center">
+            <Zap className="w-8 h-8 text-blue-500" />
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
+            Este material no es motivacional. No te prometerá millones ni felicidad eterna. Explica cómo funciona el engranaje.
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Carlos Rodríguez",
-                location: "Madrid, España",
-                text: "Finalmente entendí por qué siempre volvía a los mismos hábitos. Este libro cambió completamente mi perspectiva sobre la transformación personal.",
-                rating: 5
-              },
-              {
-                name: "María González",
-                location: "Barcelona, España",
-                text: "No es un libro más de autoayuda. Es un manual práctico que muestra exactamente cómo opera la mente. Claridad total.",
-                rating: 5
-              },
-              {
-                name: "Javier López",
-                location: "Buenos Aires, Argentina",
-                text: "Leí decenas de libros sobre cambio de hábitos, pero este fue el único que realmente me hizo entender el funcionamiento detrás. ¡Lo recomiendo mucho!",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="relative p-8 bg-white rounded-2xl border border-blue-200 shadow-lg hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-300">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
+          <p className="text-xl text-gray-500 font-medium tracking-wider">
+            LA REGLA DE LA VIDA ES SOBRE ESTRUCTURA, NO INSPIRACIÓN.
+          </p>
+        </div>
+      </section>
+
+      {/* Para quem é / não é este livro */}
+      <section className="relative py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Este manual é para você se */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="text-4xl font-black text-green-600">01</span>
+                <h3 className="text-2xl font-bold text-gray-900">Este manual es para ti si:</h3>
+              </div>
+
+              <ul className="space-y-4">
+                {[
+                  "Buscas claridad lógica y estás cansado de métodos subjetivos o místicos.",
+                  "Sientes que siempre estás en el 'casi' y quieres entender qué bloquea tus avances.",
+                  "Valoras la objetividad y quieres herramientas que funcionan en la práctica."
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4 text-gray-700">
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Não perca seu tempo se */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="text-4xl font-black text-red-600">02</span>
+                <h3 className="text-2xl font-bold text-gray-400">No pierdas tu tiempo si:</h3>
+              </div>
+
+              <ul className="space-y-4">
+                {[
+                  "Estás buscando un 'atajo mágico' o píldora para el éxito rápido.",
+                  "Solo quieres una dosis de motivación ruidosa para sentirte bien durante 10 minutos.",
+                  "No estás dispuesto a leer hechos racionales sobre tu propia mente."
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4 text-gray-400">
+                    <span className="w-6 h-6 flex-shrink-0 mt-1 text-xl text-red-500">✗</span>
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Onde a mudança real acontece */}
+      <section className="relative py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          {/* GIF */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/regra-da-vida/cb6f7c3462fe3af6071f4715b45dd818.gif"
+              alt="Animación"
+              className="w-full max-w-2xl object-contain rounded-2xl"
+            />
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+            Donde ocurre el cambio real
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            Los pilares que componen el manual y cómo van a reorganizar tu forma de pensar.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-white border border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">El Algoritmo de la Decisión Automática</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Descubre cómo tu cerebro elige el camino de menor resistencia en milésimas de segundo y aprende a 'insertar' nuevas variables en ese cálculo para cambiar tus elecciones sin esfuerzo.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">El Fin de la Fuerza de Voluntad</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Entiende por qué la disciplina falla y cómo crear un entorno (mental y físico) donde el comportamiento correcto es la elección más fácil.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Identidad Reactiva</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Cómo desvincular quién eres de lo que haces, permitiendo que los fracasos sean datos de ajuste en lugar de heridas en el ego.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Arquitectura de Nuevos Hábitos</h3>
+              <p className="text-gray-600 leading-relaxed">
+                El protocolo exacto para 'instalar' rutinas productivas. Menos fricción, más constancia. Aprende a usar la neuroplasticidad a tu favor, no en tu contra.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>QUIERO ACCEDER AHORA</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Offer Section */}
+      <section id="oferta" className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-100/30 via-transparent to-transparent"></div>
+
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-12 items-center max-w-3xl mx-auto">
+            {/* Pricing Card */}
+            <div className="relative p-8 md:p-12 rounded-2xl bg-white border-2 border-blue-300 shadow-2xl shadow-blue-200/50 text-center overflow-hidden">
+              {/* Animated Border Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-cyan-100/30 to-blue-100/30 opacity-50 blur-xl"></div>
+
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-blue-300 rounded-full bg-blue-50">
+                  <span className="text-blue-500 font-bold text-sm tracking-wide">OFERTA ESPECIAL</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
+                  La Regla de la Vida
+                </h3>
+
+                {/* Mockup do eBook */}
+                <div className="mb-8 flex justify-center">
+                  <img
+                    src="/regra-da-vida/espanhol/mockup espanol 1x1.png"
+                    alt="Mockup del eBook La Regla de la Vida"
+                    className="w-full max-w-sm object-contain drop-shadow-2xl rounded-3xl animate-float"
+                  />
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className="w-5 h-5 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-sm font-semibold text-gray-700">5.0</span>
+                  <span className="text-sm text-gray-500">(2.847 valoraciones)</span>
+                </div>
+
+                {/* Subtitle */}
+                <h4 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+                  Conviértete en el dueño del juego.
+                </h4>
+                <p className="text-xl md:text-2xl font-semibold mb-8 text-gray-800">
+                  Sé quien <span className="text-blue-500 font-black">dicta la regla</span>.
+                </p>
+
+                {/* Benefits */}
+                <div className="text-left mb-8 space-y-3 bg-blue-50/50 p-6 rounded-xl">
+                  {[
+                    "Manual Estratégico en PDF",
+                    "Diagramas de Flujo Mental",
+                    "Acceso Vitalicio + Actualizaciones"
+                  ].map((benefit, index) => (
+                    <p key={index} className="text-gray-700 flex items-center gap-3 text-base">
+                      <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                      <span className="font-medium">{benefit}</span>
+                    </p>
                   ))}
                 </div>
 
-                {/* Testimonial Text */}
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
+                {/* Pricing */}
+                <div className="mb-8 space-y-3">
+                  <p className="text-red-500 line-through text-2xl md:text-3xl font-black">
+                    USD 19.99
+                  </p>
+                  <p className="text-lg font-semibold text-gray-600">por solo</p>
+                  <p className="text-5xl md:text-6xl font-black text-blue-500">
+                    USD 8.99
+                  </p>
+                  <p className="text-lg font-semibold text-gray-600">al contado</p>
+                </div>
 
-                {/* Author */}
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.location}</p>
+                {/* CTA */}
+                <a
+                  href="https://pay.hotmart.com/B103487787R?checkoutMode=10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full px-12 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl animate-pulse-glow-blue mb-8"
+                >
+                  COMPRAR AHORA
+                </a>
+
+                {/* Trust badges */}
+                <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div className="flex items-center gap-2 justify-center">
+                    <ShieldCheck className="w-5 h-5 text-blue-500" />
+                    <span>Compra segura</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <CreditCard className="w-5 h-5 text-blue-500" />
+                    <span>Pago fácil</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <Download className="w-5 h-5 text-blue-500" />
+                    <span>Acceso inmediato</span>
+                  </div>
+                  <div className="flex items-center gap-2 justify-center">
+                    <Clock className="w-5 h-5 text-blue-500" />
+                    <span>Garantía de 7 días</span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Final CTA Section */}
+      <section className="relative py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">
+            Tu mente tiene reglas. Entiéndelas o sé esclavo de ellas.
+          </h2>
+
+          <a
+            href="https://pay.hotmart.com/B103487787R?checkoutMode=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
+          >
+            <span>COMENZAR AHORA</span>
+            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <GuaranteeSection />
 
       {/* FAQ Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-blue-50/30 to-white">
@@ -280,24 +764,20 @@ const Index = () => {
           <div className="space-y-6">
             {[
               {
-                question: "¿Cómo recibo el eBook después de la compra?",
-                answer: "Recibirás acceso inmediato después de la confirmación del pago. El eBook se enviará a tu correo electrónico y estará disponible en la plataforma Hotmart para descarga en cualquier dispositivo."
+                question: "¿Cómo y cuándo recibo el libro?",
+                answer: "El acceso es inmediato vía correo electrónico. Tan pronto como se confirme el pago, recibes un enlace exclusivo de Hotmart para descargar el manual completo y todos los extras."
               },
               {
-                question: "¿Puedo leer en cualquier dispositivo?",
-                answer: "¡Sí! El eBook está disponible en formato PDF, permitiendo lectura en smartphones, tablets, computadoras y e-readers. Puedes descargar y leer sin conexión cuando quieras."
+                question: "¿El contenido está enfocado en teoría o práctica?",
+                answer: "El manual es 80% práctico. Usamos la teoría solo para fundamentar la lógica de las herramientas que aplicarás en tu día a día."
               },
               {
-                question: "¿Cómo funciona la garantía de 7 días?",
-                answer: "Simple: si dentro de 7 días no estás satisfecho por cualquier motivo, solo solicita el reembolso y devolveremos el 100% de tu inversión. Sin preguntas, sin burocracia."
+                question: "¿Puedo leer en Kindle o celular?",
+                answer: "Sí. El PDF fue optimizado para lectura en dispositivos móviles, tablets y computadoras, manteniendo la claridad visual de los diagramas."
               },
               {
-                question: "¿Este libro es diferente de otros sobre hábitos?",
-                answer: "Completamente. No es motivación temporal ni técnicas superficiales. Es un manual visual y directo que muestra cómo opera la mente detrás de los comportamientos, enfocándose en la identidad como base del cambio real."
-              },
-              {
-                question: "¿Necesito conocimientos previos?",
-                answer: "No. El contenido se presenta de forma clara y visual, accesible para cualquiera que busque entender cómo funciona la mente humana y quiera resultados prácticos."
+                question: "¿Por qué el valor es tan accesible?",
+                answer: "Nuestro objetivo es que la 'Regla de la Vida' sea la base para el mayor número de personas posible. El valor bajo elimina la barrera de entrada para quien quiere comenzar el cambio hoy."
               }
             ].map((faq, index) => (
               <div key={index} className="p-6 bg-white rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
@@ -314,157 +794,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Offer Section */}
-      <section id="oferta" className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-100/30 via-transparent to-transparent"></div>
-
-        <div className="relative max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* eBook Mockup */}
-            <div className="flex justify-center">
-              <div className="relative">
-                {/* Glow behind mockup */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-3xl blur-3xl"></div>
-                <img
-                  src="/regra-da-vida/mockup-ebook.png"
-                  alt="La Regla de la Vida - eBook"
-                  className="relative w-full max-w-md rounded-3xl shadow-2xl shadow-cyan-500/20 border border-cyan-500/20"
-                />
-              </div>
-            </div>
-
-            {/* Pricing Card */}
-            <div className="relative p-8 md:p-12 rounded-2xl bg-white border-2 border-blue-300 shadow-2xl shadow-blue-200/50 text-center overflow-hidden">
-              {/* Animated Border Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-cyan-100/30 to-blue-100/30 opacity-50 blur-xl"></div>
-
-              <div className="relative">
-                <h3 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-                  La Regla de la Vida
-                </h3>
-
-                <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-orange-300 rounded-full bg-gradient-to-r from-orange-50 to-yellow-50 shadow-lg">
-                  <span className="text-orange-600 font-bold text-lg">🔥 OFERTA DE LANZAMIENTO 🔥</span>
-                </div>
-
-                {/* Pricing */}
-                <div className="mb-8 space-y-3">
-                  <p className="text-red-500 line-through text-2xl md:text-3xl font-black">
-                    U$ 49.90
-                  </p>
-                  <p className="text-lg font-semibold text-gray-600">por solo</p>
-                  <p className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                    U$ 29.90
-                  </p>
-                  <p className="text-lg font-semibold text-gray-600">al contado</p>
-                </div>
-
-                {/* Benefits */}
-                <div className="text-left mb-8 space-y-3">
-                  {[
-                    "✅ Acceso inmediato al eBook completo",
-                    "✅ Lectura en cualquier dispositivo",
-                    "✅ Contenido directo y visual",
-                    "✅ Garantía de 7 días"
-                  ].map((benefit, index) => (
-                    <p key={index} className="text-gray-700 flex items-center gap-2 font-medium">
-                      <span className="text-blue-600 text-xl">→</span>
-                      {benefit}
-                    </p>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <a
-                  href="https://pay.hotmart.com/E103440064H?checkoutMode=10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-block w-full px-12 py-5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.5)] overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative">ASEGURAR MI PLAZA</span>
-                </a>
-
-                <p className="text-sm text-gray-600 mt-4 flex items-center justify-center gap-2">
-                  <span className="text-green-500">🔒</span>
-                  Pago 100% seguro vía Hotmart
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-black mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Comienza tu transformación hoy
-          </h2>
-
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto">
-            La claridad mental que buscas está a un clic de distancia. Inversión mínima, impacto máximo en cómo entiendes y transformas tu vida.
-          </p>
-
-          <div className="inline-flex flex-col items-center gap-6 p-8 bg-white rounded-2xl border-2 border-blue-300 shadow-2xl shadow-blue-200/40">
-            <div className="space-y-2">
-              <p className="text-gray-600 line-through text-xl">U$ 49.90</p>
-              <p className="text-5xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                U$ 29.90
-              </p>
-              <p className="text-sm text-gray-600">Oferta de lanzamiento por tiempo limitado</p>
-            </div>
-
-            <a
-              href="https://pay.hotmart.com/E103440064H?checkoutMode=10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-block px-16 py-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative">COMENZAR AHORA</span>
-            </a>
-
-            <p className="text-sm text-gray-600 flex items-center gap-2">
-              <span className="text-green-500">🔒</span>
-              Pago seguro • Acceso inmediato • Garantía de 7 días
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Guarantee Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-green-50/30">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-100/20 to-transparent"></div>
-
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-green-300 rounded-full bg-white shadow-lg shadow-green-200/50">
-            <span className="text-2xl">🛡️</span>
-            <span className="text-green-600 font-bold">GARANTÍA TOTAL</span>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-black mb-8 bg-gradient-to-r from-green-600 to-cyan-600 bg-clip-text text-transparent">
-            Garantía Incondicional de 7 Días
-          </h2>
-
-          <div className="p-8 rounded-2xl bg-white border-2 border-green-200 shadow-xl shadow-green-200/30">
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-              Si por cualquier motivo no quedas satisfecho, devolvemos <span className="text-green-600 font-bold">el 100% de tu inversión</span>. Sin preguntas, sin burocracia.
-            </p>
-            <p className="text-lg text-gray-600">
-              No tienes nada que perder. <span className="text-blue-600 font-bold">Todo el riesgo es nuestro.</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="relative py-12 px-4 bg-gray-50 border-t border-gray-200">
-        <div className="relative max-w-4xl mx-auto text-center text-gray-600">
-          <p className="mb-4">© 2026 La Regla de la Vida. Todos los derechos reservados.</p>
-          <p className="text-sm">Este sitio no forma parte de Facebook o Meta. No estamos afiliados a Facebook de ninguna manera.</p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 };

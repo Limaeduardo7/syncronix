@@ -8,8 +8,8 @@ import { useCallback } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import CountdownTimer from "@/components/regra-da-vida/CountdownTimer";
 import GuaranteeSection from "@/components/regra-da-vida/GuaranteeSection";
-import Footer from "@/components/quantum-key/pt/Footer";
-import WhatsAppButton from "@/components/quantum-key/pt/WhatsAppButton";
+import Footer from "@/components/regra-da-vida/Footer";
+import WhatsAppButton from "@/components/regra-da-vida/WhatsAppButton";
 
 const BookPreviewCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -128,9 +128,9 @@ const Index = () => {
 
       <SEO
         title="A Regra da Vida | eBook - Clareza Mental Aplicada"
-        description="Manual direto e visual que mostra como a mente humana opera por trás das decisões, hábitos e resultados. Descubra como a mudança real acontece."
-        keywords="ebook, mudança de hábitos, identidade, comportamento, mente humana, transformação, clareza mental, desenvolvimento pessoal"
-        ogImage="https://achavdopoder.com/regra-da-vida/mockup-ebook.png"
+        description="Manual visual de engenharia mental que revela o que realmente controla suas decisões, hábitos e resultados. Deixe de tentar mais e entenda o sistema."
+        keywords="ebook, mudança de hábitos, identidade, comportamento, mente humana, transformação, clareza mental, desenvolvimento pessoal, engenharia mental"
+        ogImage="https://achavdopoder.com/regra-da-vida/MOCKUP%20PRESENTS%20PORTUGUES.png"
         canonical="https://achavdopoder.com/ebook-a-regra-da-vida"
         lang="pt-BR"
       />
@@ -165,25 +165,25 @@ const Index = () => {
           </p>
 
           <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-            O manual visual que explica como o comportamento humano funciona na prática — sem motivação, sem promessas vazias, só estrutura.
+            A Regra da Vida é um manual visual de engenharia mental que revela o que realmente controla suas decisões, hábitos e resultados.
           </p>
 
           {/* Mockup do eBook */}
           <div className="mb-12 flex justify-center">
             <img
-              src="/regra-da-vida/mockup 4-min.png"
+              src="/regra-da-vida/mockup 3(2) resize.png"
               alt="Mockup do eBook A Regra da Vida"
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl object-contain drop-shadow-2xl rounded-2xl"
+              className="w-full max-w-md md:max-w-lg lg:max-w-xl object-contain drop-shadow-2xl rounded-3xl animate-float"
             />
           </div>
 
           <div className="mb-12">
-            <LiveViewers text="pessoas estão visualizando esta página agora" />
+            <LiveViewers text="pessoas estão visualizando esta página agora" color="blue" />
           </div>
 
           <a
             href="#oferta"
-            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
+            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
           >
             <span>QUERO ACESSAR AGORA</span>
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -196,19 +196,31 @@ const Index = () => {
       {/* Book Preview Section */}
       <BookPreviewCarousel />
 
-      {/* Por que mudar parece difícil */}
+      {/* Por que "Tentar Mais" Falha */}
       <section className="relative py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
+          {/* GIF */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/regra-da-vida/c32d93b8fd84f270d94b838d5e6ebbe4.gif"
+              alt="Animação"
+              className="w-full max-w-2xl object-contain rounded-2xl"
+            />
+          </div>
+
           <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
-            Por que mudar parece tão difícil?
+            Por que se esforçar mais não resolve
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-            Você já tentou mudar na força de vontade e falhou. Isso acontece porque você está lutando contra o <span className="text-blue-500 font-bold">sistema operacional</span> do seu cérebro, e o sistema sempre vence a força bruta.
+          <p className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+            Força de vontade funciona como uma <span className="text-red-600 font-bold">bateria</span>, ela acaba. Já a <span className="text-blue-500 font-bold">identidade</span> funciona como um <span className="text-blue-500 font-bold">piloto automático</span>, sempre ligado, guiando decisões e comportamentos sem pedir esforço.
+          </p>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+            Quando você tenta mudar só na força, o <span className="text-blue-500 font-bold">piloto automático</span> corrige o caminho e te leva de volta ao padrão antigo. Não é fraqueza nem falta de disciplina. É apenas o cérebro mantendo o que ele considera normal.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100">
-              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center">
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
                 <Zap className="w-8 h-8 text-blue-500" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">O Hábito</h3>
@@ -217,8 +229,8 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100">
-              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center">
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
                 <Brain className="w-8 h-8 text-blue-500" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">O Piloto Automático</h3>
@@ -227,8 +239,8 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100">
-              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center">
+            <div className="relative p-8 rounded-2xl bg-blue-50/50 border border-blue-100 text-center">
+              <div className="w-16 h-16 mb-6 rounded-xl bg-blue-100 flex items-center justify-center mx-auto">
                 <svg className="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
@@ -239,33 +251,14 @@ const Index = () => {
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Por que "Tentar Mais" Falha */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-gray-900">
-            Por que "Tentar Mais" Falha
-          </h2>
-
-          <div className="space-y-8 mb-12">
-            <div className="p-8 rounded-2xl bg-white border-2 border-blue-200 shadow-lg">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
-                Sua força de vontade é como uma <span className="font-bold text-red-600">bateria</span>: ela acaba no fim do dia. Já a sua identidade é como um <span className="font-bold text-blue-500">processador</span>: ela nunca para de rodar em segundo plano.
-              </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Se você se vê como alguém que "tenta", o seu cérebro vai garantir que você continue apenas tentando, e nunca conseguindo. Mudar o comportamento sem mudar a identidade é como tentar trocar a cor do oceano jogando tinta em cima.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
+          {/* CTA Button */}
+          <div className="text-center mt-12">
             <a
               href="#oferta"
               className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
             >
-              <span>PRECISO AJUSTAR MEU SISTEMA</span>
+              <span>QUERO ENTENDER A REGRA</span>
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -312,16 +305,16 @@ const Index = () => {
             </div>
 
             {/* A REGRA DA VIDA */}
-            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-green-50 border-2 border-blue-400 shadow-xl">
-              <div className="absolute top-4 right-4 px-4 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
+            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 shadow-xl">
+              <div className="absolute top-4 right-4 px-4 py-1 bg-green-600 text-white text-xs font-bold rounded-full">
                 RECOMENDADO
               </div>
 
               <div className="flex items-center gap-3 mb-6 mt-4">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
                   <Check className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-blue-500">A REGRA DA VIDA</h3>
+                <h3 className="text-xl font-bold text-green-600">A REGRA DA VIDA</h3>
               </div>
 
               <h4 className="text-2xl font-bold text-gray-900 mb-6">Entender o Sistema Interno</h4>
@@ -334,12 +327,25 @@ const Index = () => {
                   "Mudança baseada em estrutura, não força"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-gray-700">
-                    <Check className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
                     <span className="font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>QUERO MUDAR DE VERDADE</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -347,6 +353,13 @@ const Index = () => {
       {/* O que torna este manual diferente */}
       <section className="relative py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <img
+              src="/regra-da-vida/MOCKUP PRESENTS PORTUGUES.png"
+              alt="A Regra da Vida - eBook"
+              className="w-full max-w-sm object-contain drop-shadow-2xl rounded-3xl animate-float"
+            />
+          </div>
           <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-gray-900">
             O que torna este manual diferente
           </h2>
@@ -386,11 +399,11 @@ const Index = () => {
                 description: "Vem com modelos mentais que você pode começar a usar imediatamente após a primeira página."
               }
             ].map((item, index) => (
-              <div key={index} className="relative p-6 rounded-xl bg-blue-50/50 border border-blue-100 hover:border-blue-400 hover:bg-blue-50/30 transition-all duration-300">
-                <div className="w-14 h-14 mb-4 rounded-xl bg-blue-100 flex items-center justify-center text-blue-500">
+              <div key={index} className="relative p-6 rounded-xl bg-blue-50/50 border border-blue-100 hover:border-blue-400 hover:bg-blue-50/30 transition-all duration-300 text-center shadow-sm hover:shadow-md">
+                <div className="w-14 h-14 mb-6 rounded-xl bg-blue-100 flex items-center justify-center text-blue-500 mx-auto transform transition-transform group-hover:scale-110">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -450,6 +463,19 @@ const Index = () => {
               </ul>
             </div>
           </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>SIM, QUERO TER CLAREZA MENTAL</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -461,7 +487,7 @@ const Index = () => {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
-            "Este material não é motivacional. Ele não vai te prometer milhões nem a felicidade eterna. Ele explica como a engrenagem funciona."
+            Este material não é motivacional. Ele não vai te prometer milhões nem a felicidade eterna. Ele explica como a engrenagem funciona.
           </h2>
 
           <p className="text-xl text-gray-500 font-medium tracking-wider">
@@ -477,7 +503,7 @@ const Index = () => {
             {/* Este manual é para você se */}
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <span className="text-4xl font-black text-red-500">01</span>
+                <span className="text-4xl font-black text-green-600">01</span>
                 <h3 className="text-2xl font-bold text-gray-900">Este manual é para você se:</h3>
               </div>
 
@@ -488,7 +514,7 @@ const Index = () => {
                   "Valoriza objetividade e quer ferramentas que funcionam na prática."
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-4 text-gray-700">
-                    <Check className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                     <span className="text-lg">{item}</span>
                   </li>
                 ))}
@@ -498,7 +524,7 @@ const Index = () => {
             {/* Não perca seu tempo se */}
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <span className="text-4xl font-black text-gray-400">02</span>
+                <span className="text-4xl font-black text-red-600">02</span>
                 <h3 className="text-2xl font-bold text-gray-400">Não perca seu tempo se:</h3>
               </div>
 
@@ -522,6 +548,15 @@ const Index = () => {
       {/* Onde a mudança real acontece */}
       <section className="relative py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
+          {/* GIF */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/regra-da-vida/cb6f7c3462fe3af6071f4715b45dd818.gif"
+              alt="Animação"
+              className="w-full max-w-2xl object-contain rounded-2xl"
+            />
+          </div>
+
           <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
             Onde a mudança real acontece
           </h2>
@@ -558,57 +593,18 @@ const Index = () => {
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            O que quem já leu está dizendo
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Carlos Silva",
-                location: "São Paulo, SP",
-                text: "Finalmente entendi por que sempre voltava aos mesmos hábitos. Este livro mudou completamente minha perspectiva sobre transformação pessoal.",
-                rating: 5
-              },
-              {
-                name: "Marina Oliveira",
-                location: "Rio de Janeiro, RJ",
-                text: "Não é mais um livro de autoajuda. É um manual prático que mostra exatamente como a mente opera. Clareza total.",
-                rating: 5
-              },
-              {
-                name: "Ricardo Santos",
-                location: "Belo Horizonte, MG",
-                text: "Li dezenas de livros sobre mudança de hábitos, mas este foi o único que realmente me fez entender o funcionamento por trás. Recomendo muito!",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="relative p-8 bg-white rounded-2xl border border-blue-200 shadow-lg hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-300">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
-
-                {/* Author */}
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.location}</p>
-                </div>
-              </div>
-            ))}
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse-glow-blue"
+            >
+              <span>QUERO ACESSAR AGORA</span>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -637,9 +633,9 @@ const Index = () => {
                 {/* Mockup do eBook */}
                 <div className="mb-8 flex justify-center">
                   <img
-                    src="/regra-da-vida/mockup-ebook.png"
+                    src="/regra-da-vida/mockup 3(2) resize.png"
                     alt="Mockup do eBook A Regra da Vida"
-                    className="w-full max-w-sm object-contain drop-shadow-2xl rounded-3xl"
+                    className="w-full max-w-sm object-contain drop-shadow-2xl rounded-3xl animate-float"
                   />
                 </div>
 
@@ -663,10 +659,10 @@ const Index = () => {
 
                 {/* Subtitle */}
                 <h4 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
-                  Não perca tempo!
+                  Torne-se o dono do jogo.
                 </h4>
                 <p className="text-xl md:text-2xl font-semibold mb-8 text-gray-800">
-                  A <span className="text-blue-500 font-black">Regra</span> está em <span className="text-blue-500 font-black">suas mãos</span>.
+                  Seja quem <span className="text-blue-500 font-black">dita a regra</span>.
                 </p>
 
                 {/* Benefits */}
@@ -674,7 +670,6 @@ const Index = () => {
                   {[
                     "Manual Estratégico em PDF",
                     "Diagramas de Fluxo Mental",
-                    "Mapas de Implementação de Hábitos",
                     "Acesso Vitalício + Atualizações"
                   ].map((benefit, index) => (
                     <p key={index} className="text-gray-700 flex items-center gap-3 text-base">
@@ -694,6 +689,7 @@ const Index = () => {
                     R$ 47,00
                   </p>
                   <p className="text-lg font-semibold text-gray-600">à vista</p>
+                  <p className="text-base font-medium text-gray-500 mt-2">ou 6x de R$ 8,82</p>
                 </div>
 
                 {/* CTA */}
@@ -742,7 +738,7 @@ const Index = () => {
             href="https://pay.hotmart.com/E103440064H?checkoutMode=10"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
+            className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow-blue"
           >
             <span>COMEÇAR AGORA</span>
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">

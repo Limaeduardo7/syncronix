@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <main className="min-h-screen overflow-x-hidden quantum-key-page">
       <SEO
-        title="The Key to Power | eBook - Transform Your Reality"
+        title="The Key to Power | eBook Transform Your Reality"
         description="Discover ancient and modern knowledge in 351 pages. Quantum Physics, Kabbalah, Metaphysics and much more. The truth they never told you."
         keywords="ebook, power, knowledge, kabbalah, metaphysics, quantum physics, transformation, consciousness, alchemy, taoism, personal magnetism"
         ogImage="https://achavdopoder.com/mockup-3-ebook-black.webp"

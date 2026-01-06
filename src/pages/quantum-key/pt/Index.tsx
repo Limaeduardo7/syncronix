@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <main className="min-h-screen overflow-x-hidden quantum-key-page">
       <SEO
-        title="A Chave do Poder | eBook - Transforme sua Realidade"
+        title="A Chave do Poder | eBook Transforme sua Realidade"
         description="Descubra os conhecimentos ancestrais e modernos em 351 páginas. Física Quântica, Kabbalah, Metafísica e muito mais. A verdade que jamais te contaram."
         keywords="ebook, poder, conhecimento, kabbalah, metafísica, física quântica, transformação, consciência, alquimia, taoísmo, magnetismo pessoal"
         ogImage="https://achavdopoder.com/mockup-3-ebook-black.webp"

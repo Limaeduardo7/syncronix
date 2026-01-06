@@ -3,9 +3,10 @@ import { Eye } from "lucide-react";
 
 interface LiveViewersProps {
   text: string;
+  color?: "yellow" | "blue";
 }
 
-const LiveViewers = ({ text }: LiveViewersProps) => {
+const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
   const [viewers, setViewers] = useState(Math.floor(Math.random() * 20) + 80); // Random between 80-100
 
   useEffect(() => {
@@ -24,14 +25,18 @@ const LiveViewers = ({ text }: LiveViewersProps) => {
     return () => clearInterval(interval);
   }, []);
 
+  const colorClasses = color === "blue"
+    ? "bg-gradient-to-r from-blue-500/70 to-blue-600/70 border-blue-400/80"
+    : "bg-gradient-to-r from-yellow-500/70 to-yellow-600/70 border-yellow-400/80";
+
   return (
-    <div className="flex items-center justify-center gap-2 py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 backdrop-blur-sm rounded-lg border border-blue-400 shadow-lg animate-fade-in">
+    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${colorClasses} backdrop-blur-md rounded-lg shadow-lg animate-fade-in`}>
       <div className="relative">
         <Eye className="w-5 h-5 text-white animate-pulse" />
-        <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+        <span className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse"></span>
       </div>
       <p className="text-sm font-semibold text-white">
-        <span className="text-yellow-300 font-bold text-lg">{viewers}</span> {text}
+        <span className="text-white font-bold text-lg">{viewers}</span> {text}
       </p>
     </div>
   );

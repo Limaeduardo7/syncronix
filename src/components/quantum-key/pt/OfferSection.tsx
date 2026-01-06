@@ -9,7 +9,7 @@ const OfferSection = () => {
           {/* eBook Mockup */}
           <div className="flex justify-center animate-fade-up">
             <img
-              src="/mockup-3-ebook-black.webp"
+              src="/achavedopoder.webp"
               alt="A Chave do Poder - eBook"
               className="w-full max-w-md animate-float drop-shadow-2xl rounded-3xl"
             />

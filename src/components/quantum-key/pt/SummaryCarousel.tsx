@@ -10,9 +10,9 @@ import Autoplay from "embla-carousel-autoplay";
 const SummaryCarousel = () => {
   // Imagens do sumário do livro
   const summaryImages = [
-    "/IMG_3758.webp",
-    "/IMG_3759.webp",
-    "/IMG_3760.webp",
+    "/sumario-1.jpeg",
+    "/sumario-2.jpeg",
+    "/sumario-3.jpeg",
   ];
 
   return (
