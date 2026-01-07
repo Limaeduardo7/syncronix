@@ -26,17 +26,17 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
   }, []);
 
   const colorClasses = color === "blue"
-    ? "bg-gradient-to-r from-blue-500/70 to-blue-600/70 border-blue-400/80"
-    : "bg-gradient-to-r from-yellow-500/70 to-yellow-600/70 border-yellow-400/80";
+    ? "bg-transparent border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+    : "bg-transparent border-2 border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]";
 
   return (
-    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${colorClasses} backdrop-blur-md rounded-lg shadow-lg animate-fade-in`}>
+    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${colorClasses} backdrop-blur-sm rounded-lg animate-fade-in`}>
       <div className="relative">
-        <Eye className="w-5 h-5 text-white animate-pulse" />
-        <span className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse"></span>
+        <Eye className={`w-5 h-5 animate-pulse ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`} />
+        <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse ${color === "blue" ? "bg-blue-400" : "bg-yellow-400"}`}></span>
       </div>
-      <p className="text-sm font-semibold text-white">
-        <span className="text-white font-bold text-lg">{viewers}</span> {text}
+      <p className={`text-sm font-semibold ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`}>
+        <span className={`font-bold text-lg ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`}>{viewers}</span> {text}
       </p>
     </div>
   );

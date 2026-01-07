@@ -1,4 +1,5 @@
 import { Check, CreditCard, ShieldCheck, Clock, Download } from "lucide-react";
+import mockupPhysical from "@/assets/quantum-key/fisico/IMG_5440-1-scaled.jpg";
 
 const OfferSection = () => {
   return (
@@ -9,7 +10,7 @@ const OfferSection = () => {
           {/* eBook Mockup */}
           <div className="flex justify-center animate-fade-up">
             <img
-              src="/achavedopoder.webp"
+              src={mockupPhysical}
               alt="A Chave do Poder - Livro Físico"
               className="w-full max-w-md animate-float drop-shadow-2xl rounded-3xl"
             />

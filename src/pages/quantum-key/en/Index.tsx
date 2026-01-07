@@ -23,7 +23,7 @@ const Index = () => {
         title="The Key to Power | eBook Transform Your Reality"
         description="Discover ancient and modern knowledge in 351 pages. Quantum Physics, Kabbalah, Metaphysics and much more. The truth they never told you."
         keywords="ebook, power, knowledge, kabbalah, metaphysics, quantum physics, transformation, consciousness, alchemy, taoism, personal magnetism"
-        ogImage="https://achavdopoder.com/mockup-3-ebook-black.webp"
+        ogImage="https://achavdopoder.com/mockup-ebook-english.png"
         canonical="https://achavdopoder.com/us"
         lang="en-US"
       />

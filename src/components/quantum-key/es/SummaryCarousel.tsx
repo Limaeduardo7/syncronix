@@ -11,8 +11,8 @@ const SummaryCarousel = () => {
   // Imagens do sumário do livro
   const summaryImages = [
     "/sumario-es-1.jpg",
-    "/sumario-es-2.jpg",
     "/sumario-es-3.jpg",
+    "/sumario-es-2.jpg",
   ];
 
   return (
