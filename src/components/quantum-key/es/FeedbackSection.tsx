@@ -19,6 +19,17 @@ const feedbacks = [
   "/testimonial-es-9.jpg",
   "/testimonial-es-10.jpg",
   "/testimonial-es-11.jpg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11-1.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11-2.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11-1 (1).jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11-4.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11-5.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.11.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.12-1.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.12-3.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.12-4.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.12.jpeg",
+  "/WhatsApp-Image-2024-12-11-at-16.41.12-2.jpeg",
 ];
 
 const FeedbackSection = () => {

@@ -73,11 +73,11 @@ const OfferSection = () => {
             {/* Pricing */}
             <div className="mb-8 space-y-3 animate-fade-up delay-100">
               <p className="text-red-600 line-through text-2xl md:text-3xl font-black">
-                $39.90
+                US$ 39.90
               </p>
               <p className="text-lg font-semibold">por solo</p>
               <p className="text-5xl md:text-6xl font-black neon-text">
-                $12.99
+                US$ 12.99
               </p>
               <p className="text-lg font-semibold">al contado</p>
             </div>

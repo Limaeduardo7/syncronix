@@ -168,6 +168,19 @@ const Index = () => {
             A Regra da Vida é um manual visual de engenharia mental que revela o que realmente controla suas decisões, hábitos e resultados.
           </p>
 
+          {/* VSL Video Player */}
+          <div className="mb-16 max-w-4xl mx-auto px-4">
+            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 border-4 border-white">
+              <iframe
+                src="https://www.youtube.com/embed/IFVVj7UWR8s"
+                title="VSL A Regra da Vida"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
           {/* Mockup do eBook */}
           <div className="mb-12 flex justify-center">
             <img

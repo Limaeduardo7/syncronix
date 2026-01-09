@@ -6,9 +6,9 @@ import { Check, Brain, Target, Zap, ChevronLeft, ChevronRight, ShieldCheck, Cred
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import CountdownTimer from "@/components/regra-da-vida/CountdownTimer";
-import GuaranteeSection from "@/components/regra-da-vida/GuaranteeSection";
-import Footer from "@/components/regra-da-vida/Footer";
+import CountdownTimer from "@/components/regra-da-vida/en/CountdownTimer";
+import GuaranteeSection from "@/components/regra-da-vida/en/GuaranteeSection";
+import Footer from "@/components/regra-da-vida/en/Footer";
 import WhatsAppButton from "@/components/regra-da-vida/WhatsAppButton";
 
 const BookPreviewCarousel = () => {
@@ -30,10 +30,6 @@ const BookPreviewCarousel = () => {
   }, [emblaApi]);
 
   const previews = [
-    {
-      image: "/regra-da-vida/ingles/MOCKUP PRESENTS INGLES.png",
-      alt: "Cover - The Rule of Life"
-    },
     {
       image: "/regra-da-vida/ingles/pt1.jpeg",
       alt: "Part 1 - The Rule of Life"
@@ -173,8 +169,21 @@ const Index = () => {
           </p>
 
           <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-            The Rule of Life is a visual manual of mental engineering that reveals what really controls your decisions, habits, and results.
+            The Rule of Life is a visual mental engineering manual that reveals what really controls your decisions, habits, and results.
           </p>
+
+          {/* VSL Video Player */}
+          <div className="mb-16 max-w-4xl mx-auto px-4">
+            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 border-4 border-white">
+              <iframe
+                src="https://www.youtube.com/embed/Tz0blcWBZ-M"
+                title="VSL The Rule of Life"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+          </div>
 
           {/* Mockup do eBook */}
           <div className="mb-12 flex justify-center">
@@ -690,11 +699,11 @@ const Index = () => {
                 {/* Pricing */}
                 <div className="mb-8 space-y-3">
                   <p className="text-red-500 line-through text-2xl md:text-3xl font-black">
-                    USD 29.99
+                    $ 29.99
                   </p>
                   <p className="text-lg font-semibold text-gray-600">for only</p>
                   <p className="text-5xl md:text-6xl font-black text-blue-500">
-                    USD 12.99
+                    $ 12.99
                   </p>
                   <p className="text-lg font-semibold text-gray-600">cash payment</p>
                 </div>
