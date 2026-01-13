@@ -4,30 +4,32 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import MatrixRain from "@/components/ui/matrix-code";
-
-const products = [
-  {
-    id: 1,
-    name: "Essential Tee",
-    category: "Sportlife",
-    description: "Minimalismo em forma física"
-  },
-  {
-    id: 2,
-    name: "Power Hoodie",
-    category: "Streetwear",
-    description: "Conforto como declaração"
-  },
-  {
-    id: 3,
-    name: "Elite Joggers",
-    category: "Performance",
-    description: "Mobilidade sem compromissos"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Shop() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
+
+  const products = [
+    {
+      id: 1,
+      name: t('shop.product1.name'),
+      category: t('shop.product1.category'),
+      description: t('shop.product1.description')
+    },
+    {
+      id: 2,
+      name: t('shop.product2.name'),
+      category: t('shop.product2.category'),
+      description: t('shop.product2.description')
+    },
+    {
+      id: 3,
+      name: t('shop.product3.name'),
+      category: t('shop.product3.category'),
+      description: t('shop.product3.description')
+    }
+  ];
   
   const handleCTAClick = () => {
     console.log('[Shop]', 'cta_shop_click');
@@ -56,25 +58,23 @@ export function Shop() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            SYNCWEAR: A Materialização do Poder.
+            {t('shop.title')}
           </h2>
           <p className="text-2xl text-muted-foreground mb-8">
-            Sportlife: Equipamento para a guerra diária.
+            {t('shop.subtitle')}
           </p>
-          
+
           <div className="max-w-3xl mx-auto space-y-6 text-foreground">
             <p className="text-lg leading-relaxed">
-              Cada peça SYNCWEAR é projetada para o indivíduo que entende que até 
-              mesmo o que você veste comunica poder. Não fazemos roupas. Criamos armaduras modernas.
+              {t('shop.description1')}
             </p>
-            
+
             <p className="text-lg leading-relaxed">
-              Tecidos premium, cortes precisos, design minimalista. Porque quando você 
-              domina sua realidade, não precisa gritar sobre isso. Sua presença já é suficiente.
+              {t('shop.description2')}
             </p>
-            
+
             <p className="text-lg font-medium text-primary">
-              SYNCWEAR: Vista-se como quem você está se tornando.
+              {t('shop.description3')}
             </p>
           </div>
         </motion.div>
@@ -129,7 +129,7 @@ export function Shop() {
             className="btn-hero"
             aria-label="Ver coleções SYNCWEAR"
           >
-            CONHEÇA AS COLEÇÕES
+            {t('shop.button')}
           </Button>
         </motion.div>
       </div>

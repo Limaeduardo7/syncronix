@@ -4,6 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -24,6 +26,9 @@ const QuantumKeyFisico = lazy(() => import("./pages/quantum-key/fisico/Index"));
 const RegraDaVidaPT = lazy(() => import("./pages/regra-da-vida/pt/Index"));
 const RegraDaVidaEN = lazy(() => import("./pages/regra-da-vida/en/Index"));
 const RegraDaVidaES = lazy(() => import("./pages/regra-da-vida/es/Index"));
+
+// Alma Livre pages
+const AlmaLivrePT = lazy(() => import("./pages/alma-livre/pt/Index"));
 
 // Optimize QueryClient with better defaults
 const queryClient = new QueryClient({
@@ -47,15 +52,16 @@ const PageLoader = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -76,12 +82,19 @@ const App = () => (
             <Route path="/ebook-the-rule-of-life" element={<RegraDaVidaEN />} />
             <Route path="/ebook-la-regla-de-la-vida" element={<RegraDaVidaES />} />
 
+            {/* Alma Livre Routes */}
+            <Route path="/alma-livre-leve-abundante" element={<AlmaLivrePT />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+
+        {/* WhatsApp Button - appears on all pages */}
+        <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 

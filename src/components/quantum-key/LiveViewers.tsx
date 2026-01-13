@@ -3,7 +3,7 @@ import { Eye } from "lucide-react";
 
 interface LiveViewersProps {
   text: string;
-  color?: "yellow" | "blue";
+  color?: "yellow" | "blue" | "purple" | "pink";
 }
 
 const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
@@ -25,18 +25,45 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  const colorClasses = color === "blue"
-    ? "bg-transparent border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
-    : "bg-transparent border-2 border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]";
+  const getColorClasses = () => {
+    switch (color) {
+      case "blue":
+        return "bg-transparent border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]";
+      case "purple":
+        return "bg-transparent border-2 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]";
+      case "pink":
+        return "bg-transparent border-2 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]";
+      default:
+        return "bg-transparent border-2 border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]";
+    }
+  };
+
+  const getIconColor = () => {
+    switch (color) {
+      case "blue": return "text-blue-500";
+      case "purple": return "text-purple-500";
+      case "pink": return "text-pink-500";
+      default: return "text-yellow-500";
+    }
+  };
+
+  const getDotColor = () => {
+    switch (color) {
+      case "blue": return "bg-blue-400";
+      case "purple": return "bg-purple-400";
+      case "pink": return "bg-pink-400";
+      default: return "bg-yellow-400";
+    }
+  };
 
   return (
-    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${colorClasses} backdrop-blur-sm rounded-lg animate-fade-in`}>
+    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${getColorClasses()} backdrop-blur-sm rounded-lg animate-fade-in`}>
       <div className="relative">
-        <Eye className={`w-5 h-5 animate-pulse ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`} />
-        <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse ${color === "blue" ? "bg-blue-400" : "bg-yellow-400"}`}></span>
+        <Eye className={`w-5 h-5 animate-pulse ${getIconColor()}`} />
+        <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse ${getDotColor()}`}></span>
       </div>
-      <p className={`text-sm font-semibold ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`}>
-        <span className={`font-bold text-lg ${color === "blue" ? "text-blue-500" : "text-yellow-500"}`}>{viewers}</span> {text}
+      <p className={`text-sm font-semibold ${getIconColor()}`}>
+        <span className={`font-bold text-lg ${getIconColor()}`}>{viewers}</span> {text}
       </p>
     </div>
   );

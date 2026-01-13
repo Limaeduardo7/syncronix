@@ -8,11 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
 export function Community() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [state, setState] = useState<FormState>("idle");
   const { toast } = useToast();
@@ -27,17 +29,17 @@ export function Community() {
     
     if (!email) {
       toast({
-        title: "Email obrigatório",
-        description: "Por favor, insira seu endereço de email.",
+        title: t('community.toast.email.required'),
+        description: t('community.toast.email.required.desc'),
         variant: "destructive"
       });
       return;
     }
-    
+
     if (!validateEmail(email)) {
       toast({
-        title: "Email inválido",
-        description: "Por favor, insira um endereço de email válido.",
+        title: t('community.toast.email.invalid'),
+        description: t('community.toast.email.invalid.desc'),
         variant: "destructive"
       });
       return;
@@ -56,24 +58,24 @@ export function Community() {
       if (success) {
         setState("success");
         toast({
-          title: "Bem-vindo à SYNCRONIX!",
-          description: "Sua jornada de ascensão começou. Verifique seu email.",
+          title: t('community.toast.success'),
+          description: t('community.toast.success.desc'),
         });
         setEmail("");
         console.log('[Community]', 'subscribe_success', { email });
       } else {
         setState("error");
         toast({
-          title: "Erro na inscrição",
-          description: "Tente novamente em alguns instantes.",
+          title: t('community.toast.error'),
+          description: t('community.toast.error.desc'),
           variant: "destructive"
         });
       }
     } catch (error) {
       setState("error");
       toast({
-        title: "Erro de conexão",
-        description: "Verifique sua conexão e tente novamente.",
+        title: t('community.toast.connection'),
+        description: t('community.toast.connection.desc'),
         variant: "destructive"
       });
     }
@@ -88,25 +90,25 @@ export function Community() {
         return (
           <>
             <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-            Processando...
+            {t('community.button.loading')}
           </>
         );
       case "success":
         return (
           <>
             <CheckCircle className="w-4 h-4 mr-2" />
-            Sucesso!
+            {t('community.button.success')}
           </>
         );
       case "error":
         return (
           <>
             <AlertCircle className="w-4 h-4 mr-2" />
-            Tentar novamente
+            {t('community.button.error')}
           </>
         );
       default:
-        return "DESBLOQUEIE SUA ASCENÇÃO";
+        return t('community.button.subscribe');
     }
   };
 
@@ -143,9 +145,9 @@ export function Community() {
         >
           {/* Título Principal */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            A Comunidade SYNCRONIX
+            {t('community.title')}
           </h2>
-          
+
           {/* Subtítulos animados */}
           <div className="space-y-3 mb-12">
             <motion.div
@@ -155,7 +157,7 @@ export function Community() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-primary font-semibold"
             >
-              Você não está sozinho nesta jornada
+              {t('community.subtitle1')}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -164,7 +166,7 @@ export function Community() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-primary font-semibold"
             >
-              Rejeitar a mediocridade
+              {t('community.subtitle2')}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -173,7 +175,7 @@ export function Community() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-primary font-semibold"
             >
-              Construir excelência
+              {t('community.subtitle3')}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -182,19 +184,17 @@ export function Community() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-primary font-semibold"
             >
-              Formar alianças
+              {t('community.subtitle4')}
             </motion.div>
           </div>
-          
+
           <div className="space-y-6 text-foreground mb-12 max-w-3xl mx-auto">
             <p className="text-lg leading-relaxed">
-              Aqui você encontrará mentores, parceiros estratégicos e mentes que operam 
-              na mesma frequência. Networking não é sobre trocar cartões. É sobre formar 
-              alianças que amplificam o poder de todos os envolvidos.
+              {t('community.description1')}
             </p>
-            
+
             <p className="text-lg font-medium text-primary">
-              Entre na frequência do poder. Junte-se a nós.
+              {t('community.description2')}
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export function Community() {
               className="btn-hero mb-8"
               aria-label="Conhecer a Comunidade Syncronix"
             >
-              CONHEÇA A COMUNIDADE COMPLETA
+              {t('community.button.main')}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </motion.div>
@@ -227,7 +227,7 @@ export function Community() {
           >
             <Input
               type="email"
-              placeholder="seu@email.com"
+              placeholder={t('community.form.placeholder')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-input border-border text-foreground placeholder-muted-foreground"
@@ -246,13 +246,13 @@ export function Community() {
 
           {/* Privacy Link */}
           <p className="text-sm text-muted-foreground">
-            Ao se inscrever, você concorda com nossa{" "}
-            <a 
-              href="/legal/privacy" 
+            {t('community.form.privacy')}{" "}
+            <a
+              href="/legal/privacy"
               className="text-primary hover:underline"
               aria-label="Política de privacidade"
             >
-              política de privacidade
+              {t('community.form.privacy.link')}
             </a>
           </p>
         </motion.div>

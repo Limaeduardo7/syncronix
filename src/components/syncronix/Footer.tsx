@@ -3,13 +3,7 @@
 import { memo, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Instagram, Twitter, Youtube, Linkedin, MessageCircle, Facebook } from "lucide-react";
-
-const quickLinks = [
-  { name: "Sobre a Marca", href: "#manifesto", route: "/sobre" },
-  { name: "Conhecimento", href: "#ebook", route: "/ebooks" },
-  { name: "Roupas", href: "#shop", route: "/shop" },
-  { name: "Comunidade", href: "#comunidade", route: "/comunidade" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const socialLinks = [
   { 
@@ -53,6 +47,14 @@ const socialLinks = [
 export const Footer = memo(function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const quickLinks = [
+    { name: t('footer.link.about'), href: "#manifesto", route: "/sobre" },
+    { name: t('footer.link.knowledge'), href: "#ebook", route: "/ebooks" },
+    { name: t('footer.link.clothes'), href: "#shop", route: "/shop" },
+    { name: t('footer.link.community'), href: "#comunidade", route: "/comunidade" },
+  ];
 
   const handleLinkClick = useCallback((href: string, route?: string) => {
     console.log('[Footer]', 'link_click', { href, route });
@@ -99,18 +101,17 @@ export const Footer = memo(function Footer() {
               SYNCRONIX®
             </div>
             <p className="text-lg font-medium text-primary">
-              SYNCRONIX. FULLPOWER ENERGY.
+              {t('footer.tagline')}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Redefina sua realidade. Sintonize sua frequência. 
-              Construa seu poder.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">
-              Links Rápidos
+              {t('footer.quicklinks')}
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -132,7 +133,7 @@ export const Footer = memo(function Footer() {
           {/* Social Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">
-              Conecte-se
+              {t('footer.connect')}
             </h3>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
@@ -156,23 +157,23 @@ export const Footer = memo(function Footer() {
         <div className="mt-16 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2025 SYNCRONIX®. A realidade espera por suas ordens.
+              {t('footer.copyright')}
             </p>
-            
+
             <div className="flex space-x-6 text-sm">
               <a
                 href="/legal/privacy"
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => handleLinkClick('/legal/privacy')}
               >
-                Privacidade
+                {t('footer.privacy')}
               </a>
               <a
                 href="/legal/terms"
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={() => handleLinkClick('/legal/terms')}
               >
-                Termos
+                {t('footer.terms')}
               </a>
             </div>
           </div>

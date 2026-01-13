@@ -13,7 +13,7 @@ export interface CosmicPortalProps extends React.HTMLAttributes<HTMLDivElement> 
    * Cor do portal
    * @default "violet"
    */
-  color?: "violet" | "blue" | "cyan" | "purple" | "pink" | "indigo";
+  color?: "violet" | "blue" | "cyan" | "purple" | "pink" | "indigo" | "green";
   
   /**
    * Velocidade da animação (em segundos)
@@ -82,6 +82,12 @@ const colorMap = {
     via: "rgb(59, 130, 246)", // blue-500
     to: "rgb(139, 92, 246)", // violet-500
     glow: "rgba(99, 102, 241, 0.5)",
+  },
+  green: {
+    from: "rgb(34, 197, 94)", // green-500
+    via: "rgb(16, 185, 129)", // emerald-500
+    to: "rgb(20, 184, 166)", // teal-500
+    glow: "rgba(34, 197, 94, 0.5)",
   },
 };
 

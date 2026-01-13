@@ -14,17 +14,17 @@ export function Hero() {
         script.type = 'module';
         script.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
         document.head.appendChild(script);
-        
+
         // Aguardar o script carregar
         await new Promise((resolve) => {
           script.onload = resolve;
           script.onerror = resolve;
         });
       }
-      
+
       // Criar o model-viewer diretamente no DOM
       const container = document.getElementById('model-container');
-      
+
       if (container && !container.querySelector('model-viewer')) {
         container.innerHTML = `
           <model-viewer
@@ -46,19 +46,19 @@ export function Hero() {
         `;
       }
     };
-    
+
     loadModelViewer();
   }, []);
 
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
-      {/* Background with sparkles effect */}
-      <div 
+      {/* Background with gradient */}
+      <div
         className="absolute inset-0 opacity-20 z-0"
         style={{ background: 'var(--gradient-hero)' }}
       ></div>
-      
+
       {/* Sparkles background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <SparklesCore
@@ -72,21 +72,21 @@ export function Hero() {
           speed={0.8}
         />
       </div>
-      
+
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center gap-12">
-          {/* Modelo 3D - Primeiro */}
+          {/* Modelo 3D */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full flex justify-center items-center"
           >
-            <div 
-              id="model-container" 
+            <div
+              id="model-container"
               className="w-full max-w-[560px]"
-              style={{ 
+              style={{
                 height: '420px',
                 position: 'relative',
                 zIndex: 2,
@@ -95,7 +95,7 @@ export function Hero() {
                 justifyContent: 'center'
               }}
             >
-              <div 
+              <div
                 className="w-full h-full flex items-center justify-center text-white/60 text-sm"
               >
                 Carregando modelo 3D...
@@ -103,15 +103,15 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Título MorphingText - Segundo */}
+          {/* Título MorphingText */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="w-full flex justify-center items-center"
           >
             <div className="w-full max-w-5xl px-4 overflow-hidden">
-              <MorphingText 
+              <MorphingText
                 texts={[
                   "Scientia potentia est.",
                   "Conhecimento é poder.",
@@ -124,14 +124,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-      
-      {/* Subtle parallax effect */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none z-0"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
     </section>
   );
 }

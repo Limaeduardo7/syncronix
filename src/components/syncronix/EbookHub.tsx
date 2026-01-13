@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button";
 import { EbookMock3D } from "./EbookMock3D";
 import { Pillars } from "./Pillars";
 import { FallingPattern } from "@/components/ui/falling-pattern";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function EbookHub() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   
   const handleCTAClick = () => {
     console.log('[EbookHub]', 'cta_ebook_click');
@@ -39,10 +41,10 @@ export function EbookHub() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Construa Sua Realidade.
+            {t('ebookhub.title')}
           </h2>
           <p className="text-subtitle max-w-2xl mx-auto">
-            Desbloqueie o poder que habita em você com a CHAVE MESTRE.
+            {t('ebookhub.subtitle')}
           </p>
         </motion.div>
 
@@ -65,22 +67,19 @@ export function EbookHub() {
             className="space-y-6"
           >
             <p className="text-lg text-foreground leading-relaxed">
-              Este não é mais um livro de autoajuda. É um manual de engenharia humana. 
-              Um sistema comprovado para reescrever sua programação mental e alinhar 
-              suas ações com a frequência do poder.
+              {t('ebookhub.description1')}
             </p>
-            
+
             <p className="text-lg text-foreground leading-relaxed">
-              Desenvolvido através de anos de estudo sobre neurociência, psicologia 
-              comportamental e os padrões de sucesso das elites globais.
+              {t('ebookhub.description2')}
             </p>
-            
-            <Button 
+
+            <Button
               onClick={handleCTAClick}
               className="btn-hero"
               aria-label="Acessar conhecimento SYNCRONIX"
             >
-              ACESSAR O CONHECIMENTO
+              {t('ebookhub.button')}
             </Button>
           </motion.div>
         </div>
@@ -94,10 +93,10 @@ export function EbookHub() {
           className="text-center mb-12"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-            Domine os Pilares da Sua Existência:
+            {t('ebookhub.pillars.title')}
           </h3>
         </motion.div>
-        
+
         <Pillars />
 
         {/* Ecosystem Text */}
@@ -109,19 +108,15 @@ export function EbookHub() {
           className="max-w-4xl mx-auto mt-20 space-y-6 text-center"
         >
           <p className="text-lg text-foreground leading-relaxed">
-            SYNCRONIX não é apenas conhecimento. É um ecossistema completo de 
-            transformação. Além do ebook fundamental, você terá acesso a:
+            {t('ebookhub.ecosystem1')}
           </p>
-          
+
           <p className="text-lg text-foreground leading-relaxed">
-            Workshops exclusivos, comunidade de alto nível, mentoria direta, 
-            ferramentas de tracking de progresso e updates constantes conforme 
-            evoluímos nossos métodos.
+            {t('ebookhub.ecosystem2')}
           </p>
-          
+
           <p className="text-lg font-medium text-primary">
-            Quando você entra na SYNCRONIX, você não compra um produto. 
-            Você ganha acesso a uma realidade superior.
+            {t('ebookhub.ecosystem3')}
           </p>
         </motion.div>
       </div>

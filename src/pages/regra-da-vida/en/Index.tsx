@@ -31,6 +31,10 @@ const BookPreviewCarousel = () => {
 
   const previews = [
     {
+      image: "/regra-da-vida/ingles/CAPA.jpeg",
+      alt: "Front Cover - The Rule of Life"
+    },
+    {
       image: "/regra-da-vida/ingles/pt1.jpeg",
       alt: "Part 1 - The Rule of Life"
     },
@@ -39,24 +43,12 @@ const BookPreviewCarousel = () => {
       alt: "Part 2 - The Rule of Life"
     },
     {
-      image: "/regra-da-vida/ingles/CAPA.jpeg",
-      alt: "Front Cover - The Rule of Life"
-    },
-    {
       image: "/regra-da-vida/ingles/pt2.jpeg",
       alt: "Part 2 Continued - The Rule of Life"
     },
     {
-      image: "/regra-da-vida/ingles/pt3 (1).jpeg",
-      alt: "Part 3 - The Rule of Life"
-    },
-    {
-      image: "/regra-da-vida/ingles/pt3 (2).jpeg",
-      alt: "Part 3 Additional - The Rule of Life"
-    },
-    {
       image: "/regra-da-vida/ingles/pt3.jpeg",
-      alt: "Part 3 Continued - The Rule of Life"
+      alt: "Part 3 - The Rule of Life"
     }
   ];
 
