@@ -1,0 +1,16 @@
+TESTE DE DEPLOY AUTOMÁTICO - GitHub Actions
+Data: 16 de Janeiro de 2026
+Horário: 15:58
+
+Este arquivo foi criado para testar o sistema de deploy automático via GitHub Actions.
+
+Se você está vendo este arquivo no servidor da Hostinger, significa que:
+✅ O GitHub Actions está funcionando
+✅ O workflow deploy-hostinger.yml foi executado com sucesso
+✅ As credenciais FTP estão corretas
+✅ O deploy incremental está operacional
+
+Próximos passos:
+1. Verificar logs no GitHub Actions
+2. Confirmar que apenas arquivos modificados foram enviados
+3. Deletar este arquivo de teste após confirmação
