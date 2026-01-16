@@ -19,7 +19,8 @@
       "Bash(cat:*)",
       "Bash(cp:*)",
       "Bash(du:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
