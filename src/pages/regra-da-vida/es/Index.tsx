@@ -135,7 +135,7 @@ const Index = () => {
         description="Manual visual de ingeniería mental que revela lo que realmente controla tus decisiones, hábitos y resultados. Deja de esforzarte más y entiende el sistema."
         keywords="ebook, cambio de hábitos, identidad, comportamiento, mente humana, transformación, claridad mental, desarrollo personal, ingeniería mental"
         ogImage="https://achavdopoder.com/regra-da-vida/espanhol/MOCKUP%20PRESENTS%20ESPANOL.png"
-        canonical="https://achavdopoder.com/es/ebook-la-regla-de-la-vida"
+        canonical="https://achavdopoder.com/ebook-la-regla-de-la-vida"
         lang="es"
       />
 

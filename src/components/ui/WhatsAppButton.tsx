@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
@@ -10,6 +11,28 @@ export const WhatsAppButton = memo(function WhatsAppButton({
   phoneNumber = "555431963107",
   message = "Olá! Vim através do site da SYNCRONIX.",
 }: WhatsAppButtonProps) {
+  const location = useLocation();
+
+  // Lista de rotas onde o botão NÃO deve aparecer (páginas de venda)
+  const hideButtonRoutes = [
+    '/ebook-a-chave-do-poder',
+    '/ebook-the-key-to-power',
+    '/ebook-la-clave-del-poder',
+    '/livro-fisico',
+    '/ebook-a-regra-da-vida',
+    '/ebook-the-rule-of-life',
+    '/ebook-la-regla-de-la-vida',
+    '/alma-livre-leve-abundante',
+  ];
+
+  // Verifica se estamos em uma página de venda
+  const shouldHideButton = hideButtonRoutes.includes(location.pathname);
+
+  // Se deve esconder o botão, retorna null (não renderiza nada)
+  if (shouldHideButton) {
+    return null;
+  }
+
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

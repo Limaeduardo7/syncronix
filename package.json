@@ -9,7 +9,9 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-glb": "node scripts/optimizeGLB.js"
+    "optimize-glb": "node scripts/optimizeGLB.js",
+    "deploy": "npm run build && node scripts/deploy-ftp.js",
+    "deploy:manual": "node scripts/deploy-ftp.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

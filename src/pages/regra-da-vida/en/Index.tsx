@@ -127,7 +127,7 @@ const Index = () => {
         description="Visual manual of mental engineering that reveals what really controls your decisions, habits, and results. Stop trying harder and understand the system."
         keywords="ebook, habit change, identity, behavior, human mind, transformation, mental clarity, personal development, mental engineering"
         ogImage="https://achavdopoder.com/regra-da-vida/ingles/MOCKUP%20PRESENTS%20INGLES.png"
-        canonical="https://achavdopoder.com/en/ebook-the-rule-of-life"
+        canonical="https://achavdopoder.com/ebook-the-rule-of-life"
         lang="en"
       />
 
