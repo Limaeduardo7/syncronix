@@ -23,8 +23,8 @@ const Index = () => {
         title="La Clave del Poder | eBook Transforma tu Realidad"
         description="Descubre los conocimientos ancestrales y modernos en 351 páginas. Física Cuántica, Kabbalah, Metafísica y mucho más. La verdad que nunca te contaron."
         keywords="ebook, poder, conocimiento, kabbalah, metafísica, física cuántica, transformación, consciencia, alquimia, taoísmo, magnetismo personal"
-        ogImage="https://achavdopoder.com/mockup-ebook-spanish.png"
-        canonical="https://achavdopoder.com/es"
+        ogImage="https://syncronix.co/mockup-ebook-spanish.png"
+        canonical="https://syncronix.co/es"
         lang="es-ES"
       />
       <WhatsAppButton />

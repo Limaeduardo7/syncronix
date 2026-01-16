@@ -19,7 +19,7 @@ const Index = () => {
         title="A Regra da Vida | eBook - Clareza Mental Aplicada"
         description="Manual direto e visual que mostra como a mente humana opera por trás das decisões, hábitos e resultados. Descubra como a mudança real acontece."
         keywords="ebook, mudança de hábitos, identidade, comportamento, mente humana, transformação, clareza mental, desenvolvimento pessoal"
-        canonical="https://achavdopoder.com/ebook-a-regra-da-vida"
+        canonical="https://syncronix.co/ebook-a-regra-da-vida"
         lang="pt-BR"
       />
 

@@ -134,8 +134,8 @@ const Index = () => {
         title="La Regla de la Vida | eBook - Claridad Mental Aplicada"
         description="Manual visual de ingeniería mental que revela lo que realmente controla tus decisiones, hábitos y resultados. Deja de esforzarte más y entiende el sistema."
         keywords="ebook, cambio de hábitos, identidad, comportamiento, mente humana, transformación, claridad mental, desarrollo personal, ingeniería mental"
-        ogImage="https://achavdopoder.com/regra-da-vida/espanhol/MOCKUP%20PRESENTS%20ESPANOL.png"
-        canonical="https://achavdopoder.com/ebook-la-regla-de-la-vida"
+        ogImage="https://syncronix.co/regra-da-vida/espanhol/MOCKUP%20PRESENTS%20ESPANOL.png"
+        canonical="https://syncronix.co/ebook-la-regla-de-la-vida"
         lang="es"
       />
 

@@ -23,8 +23,8 @@ const Index = () => {
         title="A Chave do Poder | Livro Físico Transforme sua Realidade"
         description="Adquira o livro físico com 351 páginas de conhecimento ancestral e moderno. Física Quântica, Kabbalah, Metafísica e muito mais. Edição física premium."
         keywords="livro físico, poder, conhecimento, kabbalah, metafísica, física quântica, transformação, consciência, alquimia, taoísmo, edição física"
-        ogImage="https://achavdopoder.com/fisico/mockup-livro.jpg"
-        canonical="https://achavdopoder.com/fisico"
+        ogImage="https://syncronix.co/fisico/mockup-livro.jpg"
+        canonical="https://syncronix.co/fisico"
         lang="pt-BR"
       />
       <WhatsAppButton />

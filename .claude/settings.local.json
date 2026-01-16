@@ -17,7 +17,9 @@
       "Bash(do cp \"C:\\\\Users\\\\Eduar\\\\Desktop\\\\SITES\\\\ChavedoPoder\\\\quantum-key\\\\src\\\\components$file\" src/components/quantum-key/)",
       "Bash(done)",
       "Bash(cat:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(du:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

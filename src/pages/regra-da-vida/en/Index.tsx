@@ -126,8 +126,8 @@ const Index = () => {
         title="The Rule of Life | eBook - Applied Mental Clarity"
         description="Visual manual of mental engineering that reveals what really controls your decisions, habits, and results. Stop trying harder and understand the system."
         keywords="ebook, habit change, identity, behavior, human mind, transformation, mental clarity, personal development, mental engineering"
-        ogImage="https://achavdopoder.com/regra-da-vida/ingles/MOCKUP%20PRESENTS%20INGLES.png"
-        canonical="https://achavdopoder.com/ebook-the-rule-of-life"
+        ogImage="https://syncronix.co/regra-da-vida/ingles/MOCKUP%20PRESENTS%20INGLES.png"
+        canonical="https://syncronix.co/ebook-the-rule-of-life"
         lang="en"
       />
 

@@ -60,7 +60,7 @@ Este documento explica como configurar o sistema de deploy automático increment
 
 #### Secret 1: FTP_SERVER
 - **Name:** `FTP_SERVER`
-- **Value:** `ftp.achavdopoder.com` (ou seu servidor FTP)
+- **Value:** `ftp.syncronix.co` (ou seu servidor FTP)
 
 #### Secret 2: FTP_USERNAME
 - **Name:** `FTP_USERNAME`
@@ -125,7 +125,7 @@ npm install ftp-deploy --save-dev
 Crie um arquivo `.env` na raiz do projeto (não commitar este arquivo!):
 
 ```env
-FTP_SERVER=ftp.achavdopoder.com
+FTP_SERVER=ftp.syncronix.co
 FTP_USERNAME=seu_usuario_ftp
 FTP_PASSWORD=sua_senha_ftp
 FTP_REMOTE_ROOT=/public_html/

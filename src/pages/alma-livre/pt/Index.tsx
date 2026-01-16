@@ -232,8 +232,8 @@ const Index = () => {
         title="Alma Livre, Leve & Abundante | eBook - Liberdade Emocional"
         description="Guia prático para mulheres que buscam liberdade emocional, leveza interior e abundância em todas as áreas da vida. Transforme sua relação consigo mesma."
         keywords="liberdade emocional, abundância, mulher, transformação pessoal, ebook, autoconhecimento, leveza interior"
-        ogImage="https://achavdopoder.com/alma-livre/mockup-alma-livre.png"
-        canonical="https://achavdopoder.com/alma-livre-leve-abundante"
+        ogImage="https://syncronix.co/alma-livre/mockup-alma-livre.png"
+        canonical="https://syncronix.co/alma-livre-leve-abundante"
         lang="pt-BR"
       />
 
