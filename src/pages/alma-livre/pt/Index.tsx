@@ -7,7 +7,7 @@ import GuaranteeSection from "@/components/alma-livre/GuaranteeSection";
 import CountdownTimer from "@/components/alma-livre/CountdownTimer";
 import WhatsAppButton from "@/components/alma-livre/WhatsAppButton";
 import { Check, Heart, Star, Clock, Sparkles, Zap, ShieldCheck, CreditCard, Download, Gift, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -101,8 +101,18 @@ const BookPreviewCarousel = () => {
   );
 };
 
-const Index = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+const TestimonialsCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "center",
+      slidesToScroll: 1,
+      dragFree: false
+    },
+    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const testimonials = [
     {
@@ -121,6 +131,64 @@ const Index = () => {
       location: "Belo Horizonte, MG"
     }
   ];
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden touch-pan-y" ref={emblaRef}>
+        <div className="flex">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-[0_0_100%] min-w-0 px-4"
+            >
+              <div className="bg-white/10 p-8 rounded-2xl border border-purple-300/20 backdrop-blur-sm">
+                <p className="text-xl text-gray-200 mb-6 italic leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                    <span className="text-white font-bold">{testimonial.author[0]}</span>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-white font-semibold">{testimonial.author}</p>
+                    <p className="text-gray-400 text-sm">{testimonial.location}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Indicadores de navegação */}
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => emblaApi?.scrollTo(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === selectedIndex ? 'bg-purple-400' : 'bg-gray-600 hover:bg-gray-500'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Index = () => {
 
   return (
     <>
@@ -519,34 +587,10 @@ const Index = () => {
             Mais de 3.000 mulheres já transformaram suas vidas
           </h3>
 
-          {/* Carrossel de depoimentos */}
-          <div className="bg-white/10 p-8 rounded-2xl border border-purple-300/20 backdrop-blur-sm mb-8">
-            <p className="text-xl text-gray-200 mb-6 italic leading-relaxed">
-              "{testimonials[currentTestimonial].text}"
-            </p>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                <span className="text-white font-bold">{testimonials[currentTestimonial].author[0]}</span>
-              </div>
-              <div className="text-left">
-                <p className="text-white font-semibold">{testimonials[currentTestimonial].author}</p>
-                <p className="text-gray-400 text-sm">{testimonials[currentTestimonial].location}</p>
-              </div>
-            </div>
-          </div>
+          {/* Carrossel de depoimentos com autoplay e touch */}
+          <TestimonialsCarousel />
 
-          {/* Navegação dos depoimentos */}
-          <div className="flex justify-center gap-2 mb-12">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentTestimonial ? 'bg-purple-400' : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-              />
-            ))}
-          </div>
+          <div className="mb-12"></div>
 
           {/* CTA Button */}
           <div className="text-center">
@@ -561,7 +605,85 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 8. Oferta e Preço */}
+      {/* Prévia do Conteúdo */}
+      <BookPreviewCarousel />
+
+      {/* 8. Bônus Inclusos */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+            Bônus Exclusivos Inclusos
+          </h2>
+
+          <div className="space-y-8">
+            {/* BÔNUS 01 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 bg-white/10 p-8 rounded-2xl border border-purple-300/20 backdrop-blur-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 bg-purple-500 text-white px-4 py-1 rounded-bl-xl font-bold text-sm">BÔNUS 01</div>
+              <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center border border-purple-500/30 group-hover:border-purple-500/60 transition-colors">
+                <Gift className="w-16 h-16 text-purple-400" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-3">Ebook ALMA LIVRE – Guia do Poder Feminino (184 páginas)</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Uma visão prática da Lei da Atração aplicada no seu campo energético, para manifestar com mais clareza e intenção.
+                </p>
+              </div>
+            </div>
+
+            {/* BÔNUS 02 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 bg-white/10 p-8 rounded-2xl border border-pink-300/20 backdrop-blur-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 bg-pink-500 text-white px-4 py-1 rounded-bl-xl font-bold text-sm">BÔNUS 02</div>
+              <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl flex items-center justify-center border border-pink-500/30 group-hover:border-pink-500/60 transition-colors">
+                <Sparkles className="w-16 h-16 text-pink-400" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-3">Glow Checklist</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Um mapa prático com áreas da vida, exercícios e uma playlist vibracional para te ajudar a manter sua energia alinhada e sua rotina leve todos os dias.
+                </p>
+              </div>
+            </div>
+
+            {/* SUPER BÔNUS */}
+            <div className="mt-12 bg-gradient-to-br from-purple-900/40 to-pink-900/40 p-8 md:p-12 rounded-3xl border-2 border-purple-400/30 shadow-2xl relative overflow-hidden">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/20 blur-3xl rounded-full"></div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-pink-500/20 blur-3xl rounded-full"></div>
+
+              <h3 className="text-2xl md:text-3xl font-black text-center mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Você também terá acesso a esses SUPER BÔNUS:
+              </h3>
+
+              <ul className="grid md:grid-cols-1 gap-6">
+                {[
+                  "Áudio de reprogramação mental para ouvir ao acordar e antes de dormir",
+                  "Glow Checklist — um mapa prático com áreas da vida, exercícios e uma playlist vibracional para manter sua energia alinhada e sua rotina leve todos os dias",
+                  "Acesso à Comunidade de Mulheres Livres, Leves & Abundantes"
+                ].map((superBonus, index) => (
+                  <li key={index} className="flex items-start gap-4 text-gray-200">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 mt-1 shadow-lg shadow-purple-500/20">
+                      <Star className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-lg md:text-xl font-medium leading-relaxed">{superBonus}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a
+              href="#oferta"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-gray-900 font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-green-500/30 animate-pulse-glow-green"
+            >
+              <span>QUERO TODOS ESSES BÔNUS AGORA</span>
+              <Gift className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Oferta e Preço */}
       <section id="oferta" className="relative py-20 px-4">
         <div className="max-w-3xl mx-auto">
           <div className="relative p-8 md:p-12 rounded-2xl bg-white text-gray-900 shadow-2xl shadow-purple-500/20 text-center overflow-hidden">
@@ -637,84 +759,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prévia do Conteúdo */}
-      <BookPreviewCarousel />
-
-      {/* 9. Bônus Inclusos */}
-      <section className="relative py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Bônus Exclusivos Inclusos
-          </h2>
-
-          <div className="space-y-8">
-            {/* BÔNUS 01 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 bg-white/10 p-8 rounded-2xl border border-purple-300/20 backdrop-blur-sm relative overflow-hidden group">
-              <div className="absolute top-0 right-0 bg-purple-500 text-white px-4 py-1 rounded-bl-xl font-bold text-sm">BÔNUS 01</div>
-              <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center border border-purple-500/30 group-hover:border-purple-500/60 transition-colors">
-                <Gift className="w-16 h-16 text-purple-400" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Ebook ALMA LIVRE – Guia do Poder Feminino (184 páginas)</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Uma visão prática da Lei da Atração aplicada no seu campo energético, para manifestar com mais clareza e intenção.
-                </p>
-              </div>
-            </div>
-
-            {/* BÔNUS 02 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 bg-white/10 p-8 rounded-2xl border border-pink-300/20 backdrop-blur-sm relative overflow-hidden group">
-              <div className="absolute top-0 right-0 bg-pink-500 text-white px-4 py-1 rounded-bl-xl font-bold text-sm">BÔNUS 02</div>
-              <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl flex items-center justify-center border border-pink-500/30 group-hover:border-pink-500/60 transition-colors">
-                <Sparkles className="w-16 h-16 text-pink-400" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-3">Glow Checklist</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  Um mapa prático com áreas da vida, exercícios e uma playlist vibracional para te ajudar a manter sua energia alinhada e sua rotina leve todos os dias.
-                </p>
-              </div>
-            </div>
-
-            {/* SUPER BÔNUS */}
-            <div className="mt-12 bg-gradient-to-br from-purple-900/40 to-pink-900/40 p-8 md:p-12 rounded-3xl border-2 border-purple-400/30 shadow-2xl relative overflow-hidden">
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/20 blur-3xl rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-pink-500/20 blur-3xl rounded-full"></div>
-              
-              <h3 className="text-2xl md:text-3xl font-black text-center mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Você também terá acesso a esses SUPER BÔNUS:
-              </h3>
-
-              <ul className="grid md:grid-cols-1 gap-6">
-                {[
-                  "Áudio de reprogramação mental para ouvir ao acordar e antes de dormir",
-                  "Glow Checklist — um mapa prático com áreas da vida, exercícios e uma playlist vibracional para manter sua energia alinhada e sua rotina leve todos os dias",
-                  "Acesso à Comunidade de Mulheres Livres, Leves & Abundantes"
-                ].map((superBonus, index) => (
-                  <li key={index} className="flex items-start gap-4 text-gray-200">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 mt-1 shadow-lg shadow-purple-500/20">
-                      <Star className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-lg md:text-xl font-medium leading-relaxed">{superBonus}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="text-center mt-12">
-            <a
-              href="#oferta"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-gray-900 font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-green-500/30 animate-pulse-glow-green"
-            >
-              <span>QUERO TODOS ESSES BÔNUS AGORA</span>
-              <Gift className="w-6 h-6" />
-            </a>
           </div>
         </div>
       </section>
