@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const message = encodeURIComponent("Olá! Tenho interesse no ebook Alma Livre, Leve & Abundante. Poderia me enviar mais informações?");
+  const message = encodeURIComponent("Hello! I'm interested in The Rule of Life ebook. Could you send me more information?");
 
   return (
     <a

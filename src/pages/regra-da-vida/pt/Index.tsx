@@ -9,7 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import CountdownTimer from "@/components/regra-da-vida/CountdownTimer";
 import GuaranteeSection from "@/components/regra-da-vida/GuaranteeSection";
 import Footer from "@/components/regra-da-vida/Footer";
-import WhatsAppButton from "@/components/regra-da-vida/WhatsAppButton";
+import WhatsAppButton from "@/components/regra-da-vida/pt/WhatsAppButton";
 
 const BookPreviewCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(

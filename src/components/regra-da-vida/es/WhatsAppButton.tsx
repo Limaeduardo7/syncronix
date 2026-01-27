@@ -1,5 +1,5 @@
 const WhatsAppButton = () => {
-  const message = encodeURIComponent("Olá! Tenho interesse no ebook Alma Livre, Leve & Abundante. Poderia me enviar mais informações?");
+  const message = encodeURIComponent("¡Hola! Estoy interesado/a en el ebook La Regla de la Vida. ¿Podría enviarme más información?");
 
   return (
     <a
@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
-      aria-label="Contact via WhatsApp"
+      aria-label="Contactar por WhatsApp"
       style={{
         padding: 0,
         border: 'none',
