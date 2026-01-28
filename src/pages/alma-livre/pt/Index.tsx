@@ -61,11 +61,11 @@ const BookPreviewCarousel = () => {
         <div className="relative">
           {/* Carousel */}
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex">
               {previews.map((preview, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_40%] min-w-0"
+                  className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_40%] min-w-0 px-3"
                 >
                   <div className="group relative rounded-3xl overflow-hidden border-2 border-purple-500/30 hover:border-purple-500/60 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300"></div>
@@ -344,7 +344,7 @@ const Index = () => {
           <div className="mb-16 max-w-4xl mx-auto px-4">
             <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/20 border-4 border-purple-300/30">
               <iframe
-                src="https://www.youtube.com/embed/OiCUbmQhbbo"
+                src="https://www.youtube.com/embed/qUJrFLnh1Lo"
                 title="VSL Alma Livre, Leve & Abundante"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -526,6 +526,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Prévia do Conteúdo */}
+      <BookPreviewCarousel />
+
       {/* 6. Seção de Conteúdo Profundo (Pilares do Método) */}
       <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -604,9 +607,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Prévia do Conteúdo */}
-      <BookPreviewCarousel />
 
       {/* 8. Bônus Inclusos */}
       <section className="relative py-20 px-4">
