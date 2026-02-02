@@ -29,6 +29,7 @@ const RegraDaVidaES = lazy(() => import("./pages/regra-da-vida/es/Index"));
 
 // Alma Livre pages
 const AlmaLivrePT = lazy(() => import("./pages/alma-livre/pt/Index"));
+const GestaoInteligente = lazy(() => import("./pages/GestaoInteligente"));
 
 // Optimize QueryClient with better defaults
 const queryClient = new QueryClient({
@@ -84,6 +85,9 @@ const App = () => (
 
             {/* Alma Livre Routes */}
             <Route path="/alma-livre-leve-abundante" element={<AlmaLivrePT />} />
+
+            {/* Gestão Inteligente Route */}
+            <Route path="/gestao-inteligente" element={<GestaoInteligente />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
