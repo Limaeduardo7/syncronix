@@ -21,7 +21,7 @@ const GestaoInteligente = () => {
         <div className="fixed bottom-0 -right-40 w-96 h-96 bg-gradient-to-r from-gray-200/40 to-slate-200/40 rounded-full blur-[120px] animate-pulse delay-1000"></div>
 
         {/* HERO */}
-        <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-20">
+        <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 md:pt-32 pb-20">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
