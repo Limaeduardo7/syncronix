@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Brain, Target, Zap, BookOpen, Lightbulb, ListChecks, RefreshCw, ShieldCheck, CreditCard, Download, Clock } from "lucide-react";
 import { Header } from "@/components/syncronix/Header";
 import { Footer } from "@/components/syncronix/Footer";
 import { motion } from "framer-motion";
@@ -13,296 +13,591 @@ const GestaoInteligente = () => {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Header />
-      <main className="flex-1 bg-white text-gray-900">
-        {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-28 pb-20">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-32 -left-10 w-72 h-72 bg-slate-200/60 blur-3xl rounded-full" />
-            <div className="absolute -bottom-32 -right-10 w-72 h-72 bg-slate-300/60 blur-3xl rounded-full" />
-          </div>
+      <main className="flex-1 bg-white text-gray-900 relative overflow-x-hidden">
+        {/* Animated Background Grid */}
+        <div className="fixed inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
-          <div className="relative max-w-6xl mx-auto px-4">
+        {/* Gradient Orbs */}
+        <div className="fixed top-0 -left-40 w-96 h-96 bg-gradient-to-r from-slate-200/40 to-gray-200/40 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="fixed bottom-0 -right-40 w-96 h-96 bg-gradient-to-r from-gray-200/40 to-slate-200/40 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+
+        {/* HERO */}
+        <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
+
+          <div className="relative z-10 max-w-6xl mx-auto text-center">
+            {/* Offer Badge */}
             <motion.div
               {...fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="max-w-3xl"
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-slate-300 rounded-full bg-slate-50"
             >
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-xs uppercase tracking-[0.2em] mb-4">
-                Sistema Gestão Inteligente · Notion + Minicurso
+              <span className="text-slate-700 font-bold text-sm tracking-wide">SISTEMA GESTÃO INTELIGENTE · NOTION + MINICURSO</span>
+            </motion.div>
+
+            <motion.h1
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900 leading-tight"
+            >
+              Sistema de Organização Mental{" "}
+              <span className="bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
+                aplicado à Vida e aos Negócios
               </span>
+            </motion.h1>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-4">
-                Sistema de Organização Mental{" "}
-                <span className="text-slate-700">aplicado à Vida e aos Negócios</span>
-              </h1>
+            <motion.p
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-medium"
+            >
+              Um sistema prático de organização que transforma caos em clareza, improviso em direção e esforço em resultado.
+            </motion.p>
 
-              <p className="text-slate-600 text-base md:text-lg max-w-xl mb-6">
-                Um sistema prático de organização que transforma caos em clareza, improviso em direção e esforço em
-                resultado aplicado na vida e nos negócios.
-              </p>
+            <motion.p
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed"
+            >
+              "Esse é o sistema que eu uso para organizar projetos, decisões e negócios que já faturaram mais de{" "}
+              <span className="text-gray-900 font-semibold">R$ 600 mil</span>."
+            </motion.p>
 
-              <p className="text-slate-500 text-sm md:text-base mb-8">
-                "Esse é o sistema que eu uso para organizar projetos, decisões e negócios que já faturaram mais de{" "}
-                <span className="text-slate-900 font-medium">R$ 600 mil</span>."
-              </p>
+            <motion.div
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            >
+              <a
+                href="#oferta"
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                <span>QUERO O SISTEMA AGORA</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                {/* CTA principal preto */}
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl">
-                  Quero o Sistema Gestão Inteligente
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-
-                {/* CTA secundário outline */}
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
-                  Ver como funciona por dentro
-                </button>
-              </div>
+              <button className="inline-flex items-center justify-center px-8 py-5 rounded-xl border border-slate-300 text-lg font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
+                Ver como funciona
+              </button>
             </motion.div>
           </div>
         </section>
 
-        {/* O QUE É / DESCRIÇÃO */}
-        <section className="py-16 md:py-20 bg-white">
-          <motion.div
-            {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-4xl mx-auto px-4 space-y-8"
-          >
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-                Sistema de Organização Mental aplicado à Vida e aos Negócios
+        {/* O QUE É */}
+        <section className="relative py-20 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+                O que é o Gestão Inteligente?
               </h2>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                Este não é apenas um template de Notion. É um sistema prático de organização mental que transforma caos
-                em clareza, improviso em direção e esforço em resultado.
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+                Não é apenas um template de Notion. É um <span className="text-gray-900 font-bold">sistema prático de organização mental</span> que 
+                transforma caos em clareza, improviso em direção e esforço em resultado.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-3 text-sm md:text-base text-slate-700">
-                <p>O Gestão Inteligente foi criado para pessoas que querem:</p>
-                <ul className="space-y-2 list-disc list-inside">
-                  <li>parar de se sentir perdidas</li>
-                  <li>organizar ideias, projetos e objetivos</li>
-                  <li>ter um plano claro para a vida e os negócios</li>
-                  <li>executar com mais foco, leveza e previsibilidade</li>
-                </ul>
-              </div>
+              <motion.div
+                {...fadeInUp}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-16 h-16 mb-6 rounded-xl bg-slate-100 flex items-center justify-center">
+                  <Brain className="w-8 h-8 text-slate-700" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Organização Mental</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Criado para pessoas que querem parar de se sentir perdidas, organizar ideias, projetos e objetivos, 
+                  e ter um plano claro para a vida e os negócios.
+                </p>
+              </motion.div>
 
-              <div className="space-y-3 text-sm md:text-base text-slate-700">
-                <p>
-                  Esse é o mesmo sistema que eu utilizo para gerenciar projetos e negócios digitais que já faturaram
-                  mais de <span className="font-semibold text-slate-900">R$ 600 mil</span>, aplicado de forma simples,
-                  funcional e acessível.
+              <motion.div
+                {...fadeInUp}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-16 h-16 mb-6 rounded-xl bg-slate-100 flex items-center justify-center">
+                  <Target className="w-8 h-8 text-slate-700" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Execução com Foco</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Execute com mais foco, leveza e previsibilidade. O mesmo sistema usado para gerenciar projetos 
+                  e negócios digitais que já faturaram mais de R$ 600 mil.
                 </p>
-                <p className="text-slate-500 text-sm">
-                  O básico bem feito é perfeito. Estrutura antes da execução. Arquitetura &gt; força bruta.
-                </p>
-              </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
+        </section>
+
+        {/* VIRADA DE CHAVE */}
+        <section className="relative py-20 px-4 bg-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+                🧠 Virada de Chave
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                Insights que mudam a forma como você pensa sobre produtividade e organização.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Zap className="w-8 h-8 text-slate-700" />,
+                  title: "Estrutura liberta",
+                  description: "Execução sem estrutura vira ansiedade. Quem não tem sistema vive apagando incêndio."
+                },
+                {
+                  icon: <Lightbulb className="w-8 h-8 text-slate-700" />,
+                  title: "Clareza primeiro",
+                  description: "O problema não é fazer mais, é saber o que fazer. Clareza vem antes da produtividade."
+                },
+                {
+                  icon: <Target className="w-8 h-8 text-slate-700" />,
+                  title: "Domínio do resultado",
+                  description: "Improviso constante cansa. Quem domina a estrutura, domina o resultado."
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  {...fadeInUp}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative p-8 rounded-2xl bg-white border border-slate-200 text-center hover:border-slate-400 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-16 h-16 mb-6 rounded-xl bg-slate-100 flex items-center justify-center mx-auto">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* O PROBLEMA / A SOLUÇÃO */}
+        <section className="relative py-20 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+                O jogo muda quando você tem um sistema
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                Saia da tentativa e erro e entre no campo da estratégia pura.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* O JEITO COMUM */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="relative p-8 rounded-2xl bg-white border border-gray-200"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                    <span className="text-red-500 font-bold text-xl">✗</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-red-600">SEM SISTEMA</h3>
+                </div>
+
+                <h4 className="text-2xl font-bold text-gray-900 mb-6">Improviso constante</h4>
+
+                <ul className="space-y-4">
+                  {[
+                    "Ideias soltas na cabeça sem organização",
+                    "Sensação de estar sempre atrasado",
+                    "Confusão e procrastinação constantes",
+                    "Esforço que não vira resultado"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-gray-600">
+                      <span className="text-gray-400 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* GESTÃO INTELIGENTE */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 shadow-xl"
+              >
+                <div className="absolute top-4 right-4 px-4 py-1 bg-green-600 text-white text-xs font-bold rounded-full">
+                  RECOMENDADO
+                </div>
+
+                <div className="flex items-center gap-3 mb-6 mt-4">
+                  <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
+                    <Check className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-green-600">GESTÃO INTELIGENTE</h3>
+                </div>
+
+                <h4 className="text-2xl font-bold text-gray-900 mb-6">Sistema de organização</h4>
+
+                <ul className="space-y-4">
+                  {[
+                    "Visão clara de objetivos e metas",
+                    "Planos de ação estruturados",
+                    "Projetos e tarefas conectados",
+                    "Execução com foco e previsibilidade"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-gray-700">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* CTA Button */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mt-12"
+            >
+              <a
+                href="#oferta"
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                <span>QUERO ORGANIZAR MINHA VIDA</span>
+                <ArrowRight className="w-6 h-6" />
+              </a>
+            </motion.div>
+          </div>
         </section>
 
         {/* O QUE VOCÊ RECEBE */}
-        <section className="py-16 md:py-20 bg-slate-50">
-          <motion.div
-            {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="max-w-5xl mx-auto px-4"
-          >
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2">🎯 O que você recebe</h2>
-            <p className="text-slate-600 text-sm md:text-base mb-8 max-w-2xl">
-              Um sistema completo para sair do improviso e ter clareza de visão, objetivos e execução — sem complicar o
-              Notion.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-lg font-semibold mb-2">Template exclusivo "Gestão Inteligente" (Notion)</h3>
-                <p className="text-slate-700 text-sm mb-3">Um sistema pronto para organizar:</p>
-                <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
-                  <li>visão, objetivos e metas</li>
-                  <li>planos de ação e projetos</li>
-                  <li>tarefas, atividades e checklists</li>
-                </ul>
-                <p className="text-slate-500 text-xs mt-3">Tudo conectado de forma lógica, simples e prática.</p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-lg font-semibold mb-2">Minicurso prático com 6 aulas</h3>
-                <p className="text-slate-700 text-sm mb-3">Aulas diretas mostrando:</p>
-                <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
-                  <li>como usar o template na prática</li>
-                  <li>como estruturar projetos do zero</li>
-                  <li>como organizar uma gestão básica funcional</li>
-                  <li>como transformar ideias em execução clara</li>
-                  <li>como usar o Notion sem complicação</li>
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-lg font-semibold mb-2">Tutorial simples de Notion</h3>
-                <p className="text-slate-700 text-sm mb-3">Mesmo que você seja iniciante, você aprende:</p>
-                <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
-                  <li>como navegar e adaptar o template</li>
-                  <li>como construir dentro do sistema</li>
-                  <li>como usar o Notion como ferramenta de gestão real</li>
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-lg font-semibold mb-2">Atualizações futuras do template</h3>
-                <p className="text-slate-700 text-sm">
-                  Este é um produto vivo. Sempre que o template for aprimorado, quem já comprou recebe a atualização,
-                  sem custo extra.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* VIRADA DE CHAVE / PROBLEMA / SOLUÇÃO */}
-        <section className="py-16 md:py-20 bg-white">
-          <motion.div
-            {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-5xl mx-auto px-4 space-y-14"
-          >
-            {/* Virada de chave */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4">🧠 Virada de chave</h2>
-              <div className="grid md:grid-cols-2 gap-4 text-sm md:text-base text-slate-800">
-                <ul className="space-y-2">
-                  <li>• Execução sem estrutura vira ansiedade.</li>
-                  <li>• Quem não tem sistema vive apagando incêndio.</li>
-                  <li>• O problema não é fazer mais, é saber o que fazer.</li>
-                </ul>
-                <ul className="space-y-2">
-                  <li>• Improviso constante cansa. Estrutura liberta.</li>
-                  <li>• Clareza vem antes da produtividade.</li>
-                  <li>• Quem domina a estrutura, domina o resultado.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Problema + copy forte */}
-            <div className="grid md:grid-cols-[1.2fr,1fr] gap-8 items-start">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-semibold mb-3">🧩 O problema (sem drama)</h2>
-                <p className="text-slate-700 text-sm md:text-base mb-3">
-                  Você não está travado porque é preguiçoso. Você está travado porque tudo está solto na sua cabeça.
-                </p>
-                <p className="text-slate-700 text-sm md:text-base mb-3">
-                  Ideias, tarefas, planos e objetivos misturados criam:
-                </p>
-                <ul className="space-y-1 text-sm md:text-base text-slate-700 list-disc list-inside">
-                  <li>confusão</li>
-                  <li>procrastinação</li>
-                  <li>sensação de estar sempre atrasado</li>
-                </ul>
-                <p className="text-slate-500 text-sm mt-3">Sem estrutura, até gente boa trava.</p>
-              </div>
-
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-800">
-                <p className="mb-2">
-                  quer fazer dinheiro, fazer bufunfa, imprimir as nota, fazer chover pra cima né?
-                </p>
-                <p className="mb-2">
-                  mas vou te contar uma coisa: se você não tiver estrutura pra sustentar o resultado, esqueça.
-                </p>
-                <p>
-                  Não se constrói casa na areia, a fundação tem que ser na rocha. Por isso ter uma estrutura para o seu
-                  projeto é fundamental, e é isso que eu te apresento aqui.
-                </p>
-              </div>
-            </div>
-
-            {/* Solução */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-3">✅ A solução (direto)</h2>
-              <p className="text-slate-700 text-sm md:text-base mb-3">
-                Gestão Inteligente é um sistema simples, fácil e prático que organiza:
+        <section className="relative py-20 px-4 bg-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
+                🎯 O que você recebe
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                Um sistema completo para sair do improviso e ter clareza de visão, objetivos e execução.
               </p>
-              <ul className="space-y-1 text-sm md:text-base text-slate-700 list-disc list-inside mb-4">
-                <li>o que você quer</li>
-                <li>o que você precisa fazer</li>
-                <li>e como executar sem travar</li>
-              </ul>
-              <p className="text-slate-700 text-sm md:text-base">
-                Tudo em um único lugar, com lógica clara e aplicação prática.
-              </p>
-            </div>
-          </motion.div>
-        </section>
+            </motion.div>
 
-        {/* COMO FUNCIONA / PARA QUEM É */}
-        <section className="py-16 md:py-20 bg-slate-50">
-          <motion.div
-            {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="max-w-5xl mx-auto px-4 space-y-12 pb-10"
-          >
-            {/* Como funciona */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-3">⚙️ Como funciona na prática</h2>
-              <p className="text-slate-700 text-sm md:text-base mb-4">
-                Um fluxo simples para tirar tudo da cabeça e colocar em execução:
-              </p>
-              <ol className="space-y-2 text-sm md:text-base text-slate-700 list-decimal list-inside">
-                <li>Você organiza a visão</li>
-                <li>Define objetivos claros</li>
-                <li>Transforma isso em metas</li>
-                <li>Cria um plano de ação</li>
-                <li>Executa com projetos, tarefas e checklists</li>
-              </ol>
-              <p className="text-slate-500 text-sm mt-3">Sem complicação. Sem excesso. Sem improviso.</p>
-            </div>
-
-            {/* Para quem é / não é */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">🎯 Para quem é</h3>
-                <ul className="space-y-2 text-sm md:text-base text-slate-700 list-disc list-inside">
-                  <li>Para quem quer mais clareza</li>
-                  <li>Para quem quer agilidade</li>
-                  <li>Para quem quer parar de se sentir perdido</li>
-                  <li>Para quem quer um plano real (inclusive para sair do CLT)</li>
-                  <li>Para quem valoriza simplicidade funcional</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-3">🚫 Para quem não é</h3>
-                <ul className="space-y-2 text-sm md:text-base text-slate-700 list-disc list-inside">
-                  <li>Para quem busca atalhos mágicos</li>
-                  <li>Para quem não pretende aplicar</li>
-                  <li>Para quem quer algo complexo só para parecer avançado</li>
-                </ul>
-              </div>
+              {[
+                {
+                  icon: <BookOpen className="w-10 h-10" />,
+                  title: "Template exclusivo 'Gestão Inteligente' (Notion)",
+                  description: "Um sistema pronto para organizar visão, objetivos, metas, planos de ação, projetos, tarefas, atividades e checklists. Tudo conectado de forma lógica, simples e prática."
+                },
+                {
+                  icon: <ListChecks className="w-10 h-10" />,
+                  title: "Minicurso prático com 6 aulas",
+                  description: "Aulas diretas mostrando como usar o template na prática, estruturar projetos do zero, organizar uma gestão básica funcional e transformar ideias em execução clara."
+                },
+                {
+                  icon: <Lightbulb className="w-10 h-10" />,
+                  title: "Tutorial simples de Notion",
+                  description: "Mesmo que você seja iniciante, você aprende como navegar, adaptar e construir dentro do sistema. Use o Notion como ferramenta de gestão real."
+                },
+                {
+                  icon: <RefreshCw className="w-10 h-10" />,
+                  title: "Atualizações futuras do template",
+                  description: "Este é um produto vivo. Sempre que o template for aprimorado, quem já comprou recebe a atualização, sem custo extra."
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  {...fadeInUp}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative p-6 rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-14 h-14 mb-6 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </section>
 
-            {/* Prova de confiança + CTA final */}
-            <div className="border border-slate-200 rounded-3xl bg-white p-6 md:p-8 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-              <p className="text-slate-700 text-sm md:text-base mb-4">
-                Esse é o mesmo sistema que eu uso para organizar projetos e negócios digitais que já faturaram mais de{" "}
-                <span className="font-semibold text-slate-900">R$ 600 mil</span>, aplicado aqui de forma simples e
-                acessível.
+        {/* COMO FUNCIONA NA PRÁTICA */}
+        <section className="relative py-20 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
+                ⚙️ Como funciona na prática
+              </h2>
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                Um fluxo simples para tirar tudo da cabeça e colocar em execução.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Se você quer parar de improvisar e ganhar clareza, o Gestão Inteligente é o ponto de partida.
-              </h3>
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
-                  Quero o Sistema Gestão Inteligente
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
-                  Ver detalhes do template
-                </button>
-              </div>
+            </motion.div>
+
+            <div className="max-w-3xl mx-auto">
+              {[
+                { step: "01", title: "Organiza a visão", description: "Defina onde você quer chegar na vida e nos negócios." },
+                { step: "02", title: "Define objetivos claros", description: "Transforme a visão em objetivos mensuráveis." },
+                { step: "03", title: "Transforma em metas", description: "Quebre objetivos em metas alcançáveis." },
+                { step: "04", title: "Cria um plano de ação", description: "Monte o caminho passo a passo." },
+                { step: "05", title: "Executa com foco", description: "Projetos, tarefas e checklists organizados." }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  {...fadeInUp}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="flex items-start gap-6 mb-8"
+                >
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-slate-900 text-white flex items-center justify-center font-black text-xl">
+                    {item.step}
+                  </div>
+                  <div className="pt-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+
+            <motion.p
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center text-gray-500 text-lg mt-8"
+            >
+              Sem complicação. Sem excesso. Sem improviso.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* PARA QUEM É / NÃO É */}
+        <section className="relative py-20 px-4 bg-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Para quem é */}
+              <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.1 }}>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-4xl font-black text-green-600">01</span>
+                  <h3 className="text-2xl font-bold text-gray-900">Este sistema é para você se:</h3>
+                </div>
+
+                <ul className="space-y-4">
+                  {[
+                    "Quer mais clareza e agilidade na execução.",
+                    "Quer parar de se sentir perdido.",
+                    "Quer um plano real (inclusive para sair do CLT).",
+                    "Valoriza simplicidade funcional, não complexidade inútil.",
+                    "Está cansado de improvisar e quer estrutura."
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-4 text-gray-700">
+                      <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Para quem não é */}
+              <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-4xl font-black text-red-600">02</span>
+                  <h3 className="text-2xl font-bold text-gray-400">Não perca seu tempo se:</h3>
+                </div>
+
+                <ul className="space-y-4">
+                  {[
+                    "Você busca atalhos mágicos ou soluções instantâneas.",
+                    "Você não pretende aplicar o que vai aprender.",
+                    "Você quer algo complexo só para parecer avançado."
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-4 text-gray-400">
+                      <span className="w-6 h-6 flex-shrink-0 mt-1 text-xl text-red-500">✗</span>
+                      <span className="text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROVA DE CONFIANÇA */}
+        <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <div className="w-16 h-16 mb-8 mx-auto rounded-full bg-slate-100 flex items-center justify-center">
+                <Zap className="w-8 h-8 text-slate-700" />
+              </div>
+
+              <h2 className="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
+                O básico bem feito é perfeito. Estrutura antes da execução. Arquitetura &gt; força bruta.
+              </h2>
+
+              <p className="text-xl text-gray-500 font-medium tracking-wider">
+                GESTÃO INTELIGENTE É SOBRE CLAREZA, NÃO COMPLICAÇÃO.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* OFFER SECTION */}
+        <section id="oferta" className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-100/30 via-transparent to-transparent"></div>
+
+          <div className="relative max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto">
+              <motion.div
+                {...fadeInUp}
+                transition={{ duration: 0.6 }}
+                className="relative p-8 md:p-12 rounded-2xl bg-white border-2 border-slate-300 shadow-2xl shadow-slate-200/50 text-center overflow-hidden"
+              >
+                {/* Animated Border Glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-100/30 via-gray-100/30 to-slate-100/30 opacity-50 blur-xl"></div>
+
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-slate-300 rounded-full bg-slate-50">
+                    <span className="text-slate-700 font-bold text-sm tracking-wide">OFERTA ESPECIAL</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
+                    Gestão Inteligente
+                  </h3>
+
+                  {/* Subtitle */}
+                  <h4 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+                    Organize sua vida e seus negócios.
+                  </h4>
+                  <p className="text-xl md:text-2xl font-semibold mb-8 text-gray-800">
+                    Saia do caos e ganhe <span className="text-slate-700 font-black">direção</span>.
+                  </p>
+
+                  {/* Benefits */}
+                  <div className="text-left mb-8 space-y-3 bg-slate-50/50 p-6 rounded-xl">
+                    {[
+                      "Template Gestão Inteligente (Notion)",
+                      "Minicurso prático com 6 aulas",
+                      "Tutorial simples de Notion",
+                      "Atualizações futuras do template"
+                    ].map((benefit, index) => (
+                      <p key={index} className="text-gray-700 flex items-center gap-3 text-base">
+                        <Check className="w-5 h-5 text-slate-700 flex-shrink-0" />
+                        <span className="font-medium">{benefit}</span>
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Pricing */}
+                  <div className="mb-8 space-y-3">
+                    <p className="text-red-500 line-through text-2xl md:text-3xl font-black">
+                      R$ 97,00
+                    </p>
+                    <p className="text-lg font-semibold text-gray-600">por apenas</p>
+                    <p className="text-5xl md:text-6xl font-black text-slate-800">
+                      R$ 47,00
+                    </p>
+                    <p className="text-lg font-semibold text-gray-600">à vista</p>
+                    <p className="text-base font-medium text-gray-500 mt-2">ou 6x de R$ 8,82</p>
+                  </div>
+
+                  {/* CTA */}
+                  <a
+                    href="#"
+                    className="inline-block w-full px-12 py-6 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl mb-8"
+                  >
+                    COMPRAR AGORA
+                  </a>
+
+                  {/* Trust badges */}
+                  <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-2 justify-center">
+                      <ShieldCheck className="w-5 h-5 text-slate-700" />
+                      <span>Compra segura</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center">
+                      <CreditCard className="w-5 h-5 text-slate-700" />
+                      <span>Pagamento fácil</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center">
+                      <Download className="w-5 h-5 text-slate-700" />
+                      <span>Acesso imediato</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center">
+                      <Clock className="w-5 h-5 text-slate-700" />
+                      <span>Garantia de 7 dias</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="relative py-20 px-4 bg-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">
+                Se você quer parar de improvisar e ganhar clareza, o Gestão Inteligente é o ponto de partida.
+              </h2>
+
+              <a
+                href="#oferta"
+                className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-black hover:bg-gray-900 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              >
+                <span>COMEÇAR AGORA</span>
+                <ArrowRight className="w-7 h-7" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="relative py-20 px-4 bg-gradient-to-b from-slate-50/30 to-white">
+          <div className="max-w-4xl mx-auto">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
+                Perguntas Frequentes
+              </h2>
+            </motion.div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  question: "Como e quando recebo o acesso?",
+                  answer: "O acesso é imediato via e-mail. Assim que o pagamento for confirmado, você recebe um link exclusivo para acessar o template e o minicurso."
+                },
+                {
+                  question: "Preciso saber usar o Notion?",
+                  answer: "Não! O minicurso inclui um tutorial completo de Notion para iniciantes. Você vai aprender tudo do zero."
+                },
+                {
+                  question: "Funciona para qualquer tipo de negócio?",
+                  answer: "Sim. O sistema é baseado em princípios universais de organização que funcionam para vida pessoal, projetos, freelancers, empresas e qualquer área de atuação."
+                },
+                {
+                  question: "Tem garantia?",
+                  answer: "Sim! Você tem 7 dias para testar. Se não gostar, devolvemos 100% do seu dinheiro, sem perguntas."
+                }
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  {...fadeInUp}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 bg-white rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-lg transition-all duration-300"
+                >
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start gap-3">
+                    <span className="text-slate-600 text-2xl">?</span>
+                    {faq.question}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed pl-8">
+                    {faq.answer}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
