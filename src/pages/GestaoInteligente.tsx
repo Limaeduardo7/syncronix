@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Brain, Target, Zap, BookOpen, Lightbulb, ListChecks, RefreshCw, ShieldCheck, CreditCard, Download, Clock } from "lucide-react";
-import { Header } from "@/components/syncronix/Header";
-import { Footer } from "@/components/syncronix/Footer";
 import { motion } from "framer-motion";
+import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
+import GuaranteeSection from "@/components/gestao-inteligente/GuaranteeSection";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -12,7 +12,6 @@ const fadeInUp = {
 const GestaoInteligente = () => {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <Header />
       <main className="flex-1 bg-white text-gray-900 relative overflow-x-hidden">
         {/* Animated Background Grid */}
         <div className="fixed inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
@@ -26,6 +25,12 @@ const GestaoInteligente = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
+            
+            {/* Countdown Timer */}
+            <div className="flex justify-center mb-6">
+              <CountdownTimer />
+            </div>
+
             {/* Offer Badge */}
             <motion.div
               {...fadeInUp}
@@ -553,6 +558,9 @@ const GestaoInteligente = () => {
           </div>
         </section>
 
+        {/* GUARANTEE SECTION */}
+        <GuaranteeSection />
+
         {/* FAQ Section */}
         <section className="relative py-20 px-4 bg-gradient-to-b from-slate-50/30 to-white">
           <div className="max-w-4xl mx-auto">
@@ -600,7 +608,6 @@ const GestaoInteligente = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
