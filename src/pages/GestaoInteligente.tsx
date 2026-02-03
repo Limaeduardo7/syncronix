@@ -22,7 +22,7 @@ const GestaoInteligente = () => {
         <div className="fixed bottom-0 -right-40 w-96 h-96 bg-gradient-to-r from-gray-200/40 to-slate-200/40 rounded-full blur-[120px] animate-pulse delay-1000"></div>
 
         {/* HERO */}
-        <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+        <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-20">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -276,7 +276,7 @@ const GestaoInteligente = () => {
         <section className="relative py-20 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
                 🎯 O que você recebe
               </h2>
               <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
