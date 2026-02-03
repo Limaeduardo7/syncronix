@@ -1,6 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/syncronix/Header";
 import { Footer } from "@/components/syncronix/Footer";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+};
 
 const GestaoInteligente = () => {
   return (
@@ -8,14 +15,18 @@ const GestaoInteligente = () => {
       <Header />
       <main className="flex-1 bg-white text-gray-900">
         {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-28 pb-20">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute -top-32 -left-10 w-72 h-72 bg-slate-200/60 blur-3xl rounded-full" />
             <div className="absolute -bottom-32 -right-10 w-72 h-72 bg-slate-300/60 blur-3xl rounded-full" />
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 lg:py-32">
-            <div className="max-w-3xl">
+          <div className="relative max-w-6xl mx-auto px-4">
+            <motion.div
+              {...fadeInUp}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="max-w-3xl"
+            >
               <span className="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-xs uppercase tracking-[0.2em] mb-4">
                 Sistema Gestão Inteligente · Notion + Minicurso
               </span>
@@ -47,13 +58,17 @@ const GestaoInteligente = () => {
                   Ver como funciona por dentro
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* O QUE É / DESCRIÇÃO */}
         <section className="py-16 md:py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 space-y-8">
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="max-w-4xl mx-auto px-4 space-y-8"
+          >
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-3">
                 Sistema de Organização Mental aplicado à Vida e aos Negócios
@@ -86,12 +101,16 @@ const GestaoInteligente = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* O QUE VOCÊ RECEBE */}
         <section className="py-16 md:py-20 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="max-w-5xl mx-auto px-4"
+          >
             <h2 className="text-2xl md:text-3xl font-semibold mb-2">🎯 O que você recebe</h2>
             <p className="text-slate-600 text-sm md:text-base mb-8 max-w-2xl">
               Um sistema completo para sair do improviso e ter clareza de visão, objetivos e execução — sem complicar o
@@ -140,12 +159,16 @@ const GestaoInteligente = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* VIRADA DE CHAVE / PROBLEMA / SOLUÇÃO */}
         <section className="py-16 md:py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-4 space-y-14">
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-5xl mx-auto px-4 space-y-14"
+          >
             {/* Virada de chave */}
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-4">🧠 Virada de chave</h2>
@@ -210,12 +233,16 @@ const GestaoInteligente = () => {
                 Tudo em um único lugar, com lógica clara e aplicação prática.
               </p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* COMO FUNCIONA / PARA QUEM É */}
         <section className="py-16 md:py-20 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-4 space-y-12 pb-10">
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="max-w-5xl mx-auto px-4 space-y-12 pb-10"
+          >
             {/* Como funciona */}
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-3">⚙️ Como funciona na prática</h2>
@@ -266,16 +293,16 @@ const GestaoInteligente = () => {
                 Se você quer parar de improvisar e ganhar clareza, o Gestão Inteligente é o ponto de partida.
               </h3>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition">
+                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
                   Quero o Sistema Gestão Inteligente
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition bg-white">
+                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
                   Ver detalhes do template
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
       <Footer />
