@@ -37,13 +37,13 @@ const GestaoInteligente = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 {/* CTA principal preto */}
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition">
+                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-black hover:bg-slate-900 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl">
                   Quero o Sistema Gestão Inteligente
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
 
                 {/* CTA secundário outline */}
-                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition bg-white">
+                <button className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-slate-300 text-sm font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
                   Ver como funciona por dentro
                 </button>
               </div>
@@ -99,7 +99,7 @@ const GestaoInteligente = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-lg font-semibold mb-2">Template exclusivo "Gestão Inteligente" (Notion)</h3>
                 <p className="text-slate-700 text-sm mb-3">Um sistema pronto para organizar:</p>
                 <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
@@ -110,7 +110,7 @@ const GestaoInteligente = () => {
                 <p className="text-slate-500 text-xs mt-3">Tudo conectado de forma lógica, simples e prática.</p>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-lg font-semibold mb-2">Minicurso prático com 6 aulas</h3>
                 <p className="text-slate-700 text-sm mb-3">Aulas diretas mostrando:</p>
                 <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
@@ -122,7 +122,7 @@ const GestaoInteligente = () => {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-lg font-semibold mb-2">Tutorial simples de Notion</h3>
                 <p className="text-slate-700 text-sm mb-3">Mesmo que você seja iniciante, você aprende:</p>
                 <ul className="space-y-1 text-sm text-slate-700 list-disc list-inside">
@@ -132,7 +132,7 @@ const GestaoInteligente = () => {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-lg font-semibold mb-2">Atualizações futuras do template</h3>
                 <p className="text-slate-700 text-sm">
                   Este é um produto vivo. Sempre que o template for aprimorado, quem já comprou recebe a atualização,
@@ -256,7 +256,7 @@ const GestaoInteligente = () => {
             </div>
 
             {/* Prova de confiança + CTA final */}
-            <div className="border border-slate-200 rounded-3xl bg-white p-6 md:p-8 shadow-sm">
+            <div className="border border-slate-200 rounded-3xl bg-white p-6 md:p-8 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl">
               <p className="text-slate-700 text-sm md:text-base mb-4">
                 Esse é o mesmo sistema que eu uso para organizar projetos e negócios digitais que já faturaram mais de{" "}
                 <span className="font-semibold text-slate-900">R$ 600 mil</span>, aplicado aqui de forma simples e
