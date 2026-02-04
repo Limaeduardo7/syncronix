@@ -22,7 +22,15 @@ const GestaoInteligente = () => {
 
         {/* HERO */}
         <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 md:pt-32 pb-20">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
+          {/* Hero Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="https://placehold.co/1920x1080/f1f5f9/94a3b8?text=Hero+Background+Abstract+Flow" 
+              alt="Background" 
+              className="w-full h-full object-cover opacity-40 mix-blend-multiply"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/80 to-white"></div>
+          </div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             
@@ -146,6 +154,15 @@ const GestaoInteligente = () => {
                 Insights que mudam a forma como você pensa sobre produtividade e organização.
               </p>
             </motion.div>
+
+            {/* Visual Metaphor Image */}
+            <div className="flex justify-center mb-16">
+              <img 
+                src="https://placehold.co/800x400/f8fafc/334155?text=Caos+vs+Ordem+Visual+Metaphor" 
+                alt="De Caos para Ordem" 
+                className="rounded-2xl shadow-lg w-full max-w-2xl object-cover"
+              />
+            </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
