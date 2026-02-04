@@ -6,12 +6,8 @@ const GuaranteeSection = () => {
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <div className="p-8 md:p-12 rounded-2xl bg-white border-2 border-slate-200 shadow-2xl">
           {/* Guarantee Icon */}
-          <div className="w-40 h-40 mx-auto mb-6 flex items-center justify-center">
-            <img 
-              src="https://placehold.co/400x400/e2e8f0/0f172a?text=Selo+Garantia+7+Dias" 
-              alt="Selo de Garantia 7 Dias" 
-              className="w-full h-full object-contain drop-shadow-xl"
-            />
+          <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center bg-slate-50 rounded-full">
+            <ShieldCheck className="w-16 h-16 text-slate-900" />
           </div>
 
           {/* Title */}
