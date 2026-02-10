@@ -2,6 +2,7 @@ import { ArrowRight, Check, Brain, Target, Zap, BookOpen, Lightbulb, ListChecks,
 import { motion } from "framer-motion";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import GuaranteeSection from "@/components/gestao-inteligente/GuaranteeSection";
+import NotionCarousel from "@/components/gestao-inteligente/NotionCarousel";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -25,7 +26,7 @@ const GestaoInteligente = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white"></div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-            
+
             {/* Countdown Timer */}
             <div className="flex justify-center mb-6">
               <CountdownTimer />
@@ -35,9 +36,10 @@ const GestaoInteligente = () => {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-slate-300 rounded-full bg-slate-50"
+              className="inline-flex items-center gap-3 px-4 py-2 mb-6 border border-slate-300 rounded-full bg-slate-50 shadow-sm"
             >
-              <span className="text-slate-700 font-bold text-sm tracking-wide">SISTEMA GESTÃO INTELIGENTE · NOTION + MINICURSO</span>
+              <img src="/images/notion-logo.png" alt="Notion" className="w-5 h-5 object-contain" />
+              <span className="text-slate-700 font-bold text-sm tracking-wide uppercase">Sistema Gestão Inteligente · Notion + Minicurso</span>
             </motion.div>
 
             <motion.h1
@@ -95,8 +97,13 @@ const GestaoInteligente = () => {
               <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
                 O que é o Gestão Inteligente?
               </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-                Não é apenas um template de Notion. É um <span className="text-gray-900 font-bold">sistema prático de organização mental</span> que 
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed flex flex-wrap items-center justify-center gap-2">
+                Não é apenas um template de
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-gray-900 font-bold">
+                  <img src="/images/notion-logo.png" alt="Notion" className="w-5 h-5 object-contain" />
+                  Notion
+                </span>.
+                É um <span className="text-gray-900 font-bold">sistema prático de organização mental</span> que
                 transforma caos em clareza, improviso em direção e esforço em resultado.
               </p>
             </motion.div>
@@ -112,7 +119,7 @@ const GestaoInteligente = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Organização Mental</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Criado para pessoas que querem parar de se sentir perdidas, organizar ideias, projetos e objetivos, 
+                  Criado para pessoas que querem parar de se sentir perdidas, organizar ideias, projetos e objetivos,
                   e ter um plano claro para a vida e os negócios.
                 </p>
               </motion.div>
@@ -127,13 +134,16 @@ const GestaoInteligente = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Execução com Foco</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Execute com mais foco, leveza e previsibilidade. O mesmo sistema usado para gerenciar projetos 
+                  Execute com mais foco, leveza e previsibilidade. O mesmo sistema usado para gerenciar projetos
                   e negócios digitais que já faturaram mais de R$ 600 mil.
                 </p>
               </motion.div>
             </div>
           </div>
         </section>
+
+        {/* CAROUSEL PREVIEW */}
+        <NotionCarousel />
 
         {/* VIRADA DE CHAVE */}
         <section className="relative py-20 px-4 bg-gray-50">
@@ -293,7 +303,15 @@ const GestaoInteligente = () => {
               {[
                 {
                   icon: <BookOpen className="w-10 h-10" />,
-                  title: "Template exclusivo 'Gestão Inteligente' (Notion)",
+                  title: (
+                    <span className="flex items-center gap-2">
+                      Template exclusivo 'Gestão Inteligente'
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-xs text-gray-900 font-bold">
+                        <img src="/images/notion-logo.png" alt="" className="w-3 h-3 object-contain" />
+                        Notion
+                      </span>
+                    </span>
+                  ),
                   description: "Um sistema pronto para organizar visão, objetivos, metas, planos de ação, projetos, tarefas, atividades e checklists. Tudo conectado de forma lógica, simples e prática."
                 },
                 {
@@ -303,7 +321,15 @@ const GestaoInteligente = () => {
                 },
                 {
                   icon: <Lightbulb className="w-10 h-10" />,
-                  title: "Tutorial simples de Notion",
+                  title: (
+                    <span className="flex items-center gap-2">
+                      Tutorial simples de
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-xs text-gray-900 font-bold">
+                        <img src="/images/notion-logo.png" alt="" className="w-3 h-3 object-contain" />
+                        Notion
+                      </span>
+                    </span>
+                  ),
                   description: "Mesmo que você seja iniciante, você aprende como navegar, adaptar e construir dentro do sistema. Use o Notion como ferramenta de gestão real."
                 },
                 {
@@ -318,8 +344,9 @@ const GestaoInteligente = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative p-6 rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-14 h-14 mb-6 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+                  <div className="w-14 h-14 mb-6 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 relative">
                     {item.icon}
+                    <img src="/images/notion-logo.png" alt="" className="absolute -top-2 -right-2 w-6 h-6 object-contain bg-white rounded-full p-0.5 shadow-sm border border-slate-100" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
@@ -465,10 +492,12 @@ const GestaoInteligente = () => {
                     <span className="text-slate-700 font-bold text-sm tracking-wide">OFERTA ESPECIAL</span>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
-                    Gestão Inteligente
-                  </h3>
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <img src="/images/notion-logo.png" alt="Notion" className="w-10 h-10 object-contain drop-shadow-sm" />
+                    <h3 className="text-3xl md:text-4xl font-black text-gray-900">
+                      Gestão Inteligente
+                    </h3>
+                  </div>
 
                   {/* Subtitle */}
                   <h4 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">

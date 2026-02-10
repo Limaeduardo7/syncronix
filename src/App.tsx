@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { m, LazyMotion, domMax } from "framer-motion";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import LoadingOverlay from "@/components/ui/LoadingOverlay";
 
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -46,59 +48,79 @@ const queryClient = new QueryClient({
 
 // Loading fallback component
 const PageLoader = () => (
-  <div className="min-h-screen bg-background flex items-center justify-center">
-    <div className="text-muted-foreground">Carregando...</div>
+  <div className="min-h-screen bg-black flex items-center justify-center">
+    <m.div
+      animate={{
+        scale: [1, 1.1, 1],
+        rotateY: [0, 360],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="w-20 h-20"
+    >
+      <img
+        src="/HEXACRONIX-ADESIVO-300x300.webp"
+        alt="Loading..."
+        className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+      />
+    </m.div>
   </div>
 );
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/ebooks" element={<Ebooks />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/comunidade" element={<Comunidade />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/BookDemo" element={<BookDemo />} />
+    <LazyMotion features={domMax}>
+      <LanguageProvider>
+        <TooltipProvider>
+          <LoadingOverlay />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/ebooks" element={<Ebooks />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/comunidade" element={<Comunidade />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="/BookDemo" element={<BookDemo />} />
 
-            {/* Quantum Key Routes */}
-            <Route path="/ebook-a-chave-do-poder" element={<QuantumKeyPT />} />
-            <Route path="/ebook-the-key-to-power" element={<QuantumKeyEN />} />
-            <Route path="/ebook-la-clave-del-poder" element={<QuantumKeyES />} />
-            <Route path="/livro-fisico" element={<QuantumKeyFisico />} />
+                {/* Quantum Key Routes */}
+                <Route path="/ebook-a-chave-do-poder" element={<QuantumKeyPT />} />
+                <Route path="/ebook-the-key-to-power" element={<QuantumKeyEN />} />
+                <Route path="/ebook-la-clave-del-poder" element={<QuantumKeyES />} />
+                <Route path="/livro-fisico" element={<QuantumKeyFisico />} />
 
-            {/* Regra da Vida Routes */}
-            <Route path="/ebook-a-regra-da-vida" element={<RegraDaVidaPT />} />
-            <Route path="/ebook-the-rule-of-life" element={<RegraDaVidaEN />} />
-            <Route path="/ebook-la-regla-de-la-vida" element={<RegraDaVidaES />} />
+                {/* Regra da Vida Routes */}
+                <Route path="/ebook-a-regra-da-vida" element={<RegraDaVidaPT />} />
+                <Route path="/ebook-the-rule-of-life" element={<RegraDaVidaEN />} />
+                <Route path="/ebook-la-regla-de-la-vida" element={<RegraDaVidaES />} />
 
-            {/* Alma Livre Routes */}
-            <Route path="/alma-livre-leve-abundante" element={<AlmaLivrePT />} />
+                {/* Alma Livre Routes */}
+                <Route path="/alma-livre-leve-abundante" element={<AlmaLivrePT />} />
 
-            {/* Gestão Inteligente Route */}
-            <Route path="/gestao-inteligente" element={<GestaoInteligente />} />
+                {/* Gestão Inteligente Route */}
+                <Route path="/gestao-inteligente" element={<GestaoInteligente />} />
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
 
-        {/* WhatsApp Button - appears on all pages */}
-        <WhatsAppButton />
-      </BrowserRouter>
-    </TooltipProvider>
-    </LanguageProvider>
+            {/* WhatsApp Button - appears on all pages */}
+            <WhatsAppButton />
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </LazyMotion>
   </QueryClientProvider>
 );
 
