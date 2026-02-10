@@ -61,14 +61,6 @@ const GestaoInteligente = () => {
               Um sistema prático de organização que transforma caos em clareza, improviso em direção e esforço em resultado.
             </motion.p>
 
-            <motion.p
-              {...fadeInUp}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed"
-            >
-              "Esse é o sistema que eu uso para organizar projetos, decisões e negócios que já faturaram mais de{" "}
-              <span className="text-gray-900 font-semibold">R$ 600 mil</span>."
-            </motion.p>
 
             <motion.div
               {...fadeInUp}
@@ -83,9 +75,9 @@ const GestaoInteligente = () => {
                 <ArrowRight className="w-5 h-5" />
               </a>
 
-              <button className="inline-flex items-center justify-center px-8 py-5 rounded-xl border border-slate-300 text-lg font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
+              <a href="#preview" className="inline-flex items-center justify-center px-8 py-5 rounded-xl border border-slate-300 text-lg font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
                 Ver como funciona
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>
@@ -97,12 +89,13 @@ const GestaoInteligente = () => {
               <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
                 O que é o Gestão Inteligente?
               </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed flex flex-wrap items-center justify-center gap-2">
-                Não é apenas um template de
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-gray-900 font-bold">
+              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+                Não é apenas um template de{" "}
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-gray-900 font-bold align-middle">
                   <img src="/images/notion-logo.png" alt="Notion" className="w-5 h-5 object-contain" />
                   Notion
-                </span>.
+                </span>
+                <br />
                 É um <span className="text-gray-900 font-bold">sistema prático de organização mental</span> que
                 transforma caos em clareza, improviso em direção e esforço em resultado.
               </p>

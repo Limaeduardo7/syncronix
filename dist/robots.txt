@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://achavdopoder.com/sitemap.xml
+Sitemap: https://syncronix.co/sitemap.xml

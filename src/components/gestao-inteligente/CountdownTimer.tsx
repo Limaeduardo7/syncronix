@@ -27,7 +27,7 @@ const CountdownTimer = () => {
   return (
     <div className="mb-8 md:mb-12 animate-fade-in">
       <div
-        className="inline-block bg-slate-900 rounded-2xl border-4 border-slate-700 px-6 py-4 md:px-16 md:py-6 min-w-[300px] md:min-w-[520px]"
+        className="inline-block bg-red-600 rounded-2xl border-4 border-red-500 px-6 py-4 md:px-16 md:py-6 min-w-[300px] md:min-w-[520px]"
       >
         <p className="text-xs md:text-sm text-white font-bold uppercase tracking-wider mb-3 md:mb-4 drop-shadow-lg">
           ⚠️ Esta oferta termina em:
