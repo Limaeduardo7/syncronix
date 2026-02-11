@@ -39,7 +39,7 @@ const GestaoInteligente = () => {
               className="inline-flex items-center gap-3 px-4 py-2 mb-6 border border-slate-300 rounded-full bg-slate-50 shadow-sm"
             >
               <img src="/images/notion-logo.png" alt="Notion" className="w-5 h-5 object-contain" />
-              <span className="text-slate-700 font-bold text-sm tracking-wide uppercase">Sistema Gestão Inteligente · Notion + Minicurso</span>
+              <span className="text-slate-700 font-bold text-sm tracking-wide uppercase">Template Gestão Inteligente · Notion + Minicurso</span>
             </motion.div>
 
             <motion.h1
@@ -58,7 +58,7 @@ const GestaoInteligente = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-medium"
             >
-              Um sistema prático de organização que transforma caos em clareza, improviso em direção e esforço em resultado.
+              Um sistema prático de organização que transforma caos em clareza, improviso em direção e estratégia em resultado.
             </motion.p>
 
 
@@ -82,58 +82,6 @@ const GestaoInteligente = () => {
           </div>
         </section>
 
-        {/* O QUE É */}
-        <section className="relative py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
-                O que é o Gestão Inteligente?
-              </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-                Não é apenas um template de{" "}
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-gray-900 font-bold align-middle">
-                  <img src="/images/notion-logo.png" alt="Notion" className="w-5 h-5 object-contain" />
-                  Notion
-                </span>
-                <br />
-                É um <span className="text-gray-900 font-bold">sistema prático de organização mental</span> que
-                transforma caos em clareza, improviso em direção e esforço em resultado.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                {...fadeInUp}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-16 h-16 mb-6 rounded-xl bg-slate-100 flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-slate-700" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Organização Mental</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Criado para pessoas que querem parar de se sentir perdidas, organizar ideias, projetos e objetivos,
-                  e ter um plano claro para a vida e os negócios.
-                </p>
-              </motion.div>
-
-              <motion.div
-                {...fadeInUp}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="p-8 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-16 h-16 mb-6 rounded-xl bg-slate-100 flex items-center justify-center">
-                  <Target className="w-8 h-8 text-slate-700" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Execução com Foco</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Execute com mais foco, leveza e previsibilidade. O mesmo sistema usado para gerenciar projetos
-                  e negócios digitais que já faturaram mais de R$ 600 mil.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
         {/* CAROUSEL PREVIEW */}
         <NotionCarousel />
@@ -298,7 +246,7 @@ const GestaoInteligente = () => {
                   icon: <BookOpen className="w-10 h-10" />,
                   title: (
                     <span className="flex items-center gap-2">
-                      Template exclusivo 'Gestão Inteligente'
+                      Template exclusivo
                       <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-xs text-gray-900 font-bold">
                         <img src="/images/notion-logo.png" alt="" className="w-3 h-3 object-contain" />
                         Notion
@@ -485,8 +433,8 @@ const GestaoInteligente = () => {
                     <span className="text-slate-700 font-bold text-sm tracking-wide">OFERTA ESPECIAL</span>
                   </div>
 
-                  <div className="flex items-center justify-center gap-3 mb-6">
-                    <img src="/images/notion-logo.png" alt="Notion" className="w-10 h-10 object-contain drop-shadow-sm" />
+                  <div className="flex flex-col items-center gap-3 mb-6">
+                    <img src="/images/notion-logo.png" alt="Notion" className="w-12 h-12 object-contain drop-shadow-sm" />
                     <h3 className="text-3xl md:text-4xl font-black text-gray-900">
                       Gestão Inteligente
                     </h3>

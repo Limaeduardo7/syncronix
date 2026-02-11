@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
 
-const IMAGES = Array.from({ length: 10 }, (_, i) => `/images/gestao-inteligente/preview-${String(i + 1).padStart(2, '0')}.jpg`);
+const IMAGES = Array.from({ length: 17 }, (_, i) => `/images/gestao-inteligente/preview-${String(i + 1).padStart(2, '0')}.jpg`);
 
 const NotionCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
