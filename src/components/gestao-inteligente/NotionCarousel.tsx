@@ -2,8 +2,19 @@ import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
+import { Check } from 'lucide-react';
 
-const IMAGES = Array.from({ length: 17 }, (_, i) => `/images/gestao-inteligente/preview-${String(i + 1).padStart(2, '0')}.jpg`);
+const NEW_IMAGES = [
+  '/images/gestao-inteligente/preview-16.jpg',
+  '/images/gestao-inteligente/preview-11.jpg',
+  '/images/gestao-inteligente/preview-12.jpg',
+  '/images/gestao-inteligente/preview-13.jpg',
+  '/images/gestao-inteligente/preview-14.jpg',
+  '/images/gestao-inteligente/preview-15.jpg',
+  '/images/gestao-inteligente/preview-17.jpg'
+];
+const OLD_IMAGES = Array.from({ length: 10 }, (_, i) => `/images/gestao-inteligente/preview-${String(i + 1).padStart(2, '0')}.jpg`);
+const IMAGES = [...NEW_IMAGES, ...OLD_IMAGES];
 
 const NotionCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
@@ -24,8 +35,29 @@ const NotionCarousel = () => {
               Por dentro do sistema
             </h2>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
             Veja como o template organiza suas áreas, projetos e recursos visualmente.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-left max-w-2xl mx-auto mb-10">
+            {[
+              "Controle financeiro real",
+              "Gestão de metas",
+              "Organização de projetos",
+              "Tarefas do dia",
+              "Planejamento de marketing",
+              "Documentos e processos",
+              "Registro de reuniões e decisões"
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                <span className="text-lg text-gray-700 font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-lg md:text-xl text-gray-900 font-bold border-t border-slate-200 pt-6 inline-block">
+            Tudo conectado no Notion, pronto para usar.
           </p>
         </motion.div>
 

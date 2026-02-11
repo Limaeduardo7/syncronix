@@ -83,6 +83,7 @@ const GestaoInteligente = () => {
         </section>
 
 
+
         {/* CAROUSEL PREVIEW */}
         <NotionCarousel />
 
@@ -352,16 +353,17 @@ const GestaoInteligente = () => {
               <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.1 }}>
                 <div className="flex items-center gap-3 mb-8">
                   <span className="text-4xl font-black text-green-600">01</span>
-                  <h3 className="text-2xl font-bold text-gray-900">Este sistema é para você se:</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 tracking-tight">O Gestão Inteligente foi feito para:</h3>
                 </div>
 
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {[
-                    "Quer mais clareza e agilidade na execução.",
-                    "Quer parar de se sentir perdido.",
-                    "Quer um plano real (inclusive para sair do CLT).",
-                    "Valoriza simplicidade funcional, não complexidade inútil.",
-                    "Está cansado de improvisar e quer estrutura."
+                    "Quem está começando a empreender",
+                    "Equipes de até 10 pessoas",
+                    "Autônomos e prestadores de serviço",
+                    "Criadores digitais",
+                    "Pequenos negócios físicos",
+                    "Quem quer sair do improviso"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-4 text-gray-700">
                       <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
@@ -369,6 +371,11 @@ const GestaoInteligente = () => {
                     </li>
                   ))}
                 </ul>
+
+                <div className="pt-6 border-t border-slate-100 flex flex-col gap-1">
+                  <p className="text-gray-500 font-semibold italic">Não importa o tamanho do projeto.</p>
+                  <p className="text-gray-500 font-semibold italic">Organização profissional cabe em qualquer fase.</p>
+                </div>
               </motion.div>
 
               {/* Para quem não é */}
