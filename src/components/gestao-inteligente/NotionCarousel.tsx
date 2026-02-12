@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ZoomIn, X } from 'lucide-react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { motion } from 'framer-motion';
+import { Check, ZoomIn } from 'lucide-react';
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
 
 const IMAGES = [
   '/images/gestao-inteligente/preview-01.jpg',
@@ -24,9 +26,11 @@ const IMAGES = [
   '/images/gestao-inteligente/preview-08.jpg'
 ];
 
+const slides = IMAGES.map((src) => ({ src }));
+
 const NotionCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [index, setIndex] = useState(-1);
 
   return (
     <section id="preview" className="relative py-20 px-4 bg-gray-50 overflow-hidden scroll-mt-4">
@@ -76,7 +80,7 @@ const NotionCarousel = () => {
               <div
                 className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[600px] flex items-center justify-center bg-slate-100 p-4 cursor-zoom-in group"
                 key={index}
-                onClick={() => setSelectedImage(src)}
+                onClick={() => setIndex(index)}
               >
                 {/* Blurred background for aesthetic consistency */}
                 <div
@@ -101,34 +105,22 @@ const NotionCarousel = () => {
         </div>
       </div>
 
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="fixed inset-0 w-screen h-screen max-w-none m-0 p-0 border-none bg-black/95 shadow-none flex items-center justify-center z-[100] translate-x-0 translate-y-0 translate-z-0">
-          {selectedImage && (
-            <div className="relative w-full h-full flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
-              <div className="absolute top-6 right-6 z-[110]">
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 transition-colors shadow-lg"
-                >
-                  <X className="w-6 h-6 text-white" />
-                </button>
-              </div>
-
-              <motion.img
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                src={selectedImage}
-                alt="Zoomed preview"
-                className="max-w-full max-h-full object-contain shadow-2xl pointer-events-none"
-                layoutId="zoomed-image"
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      <Lightbox
+        index={index}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+        slides={slides}
+        plugins={[Zoom]}
+        animation={{ fade: 300 }}
+        carousel={{ finite: false }}
+        styles={{
+          container: { backgroundColor: "rgba(0, 0, 0, 0.95)" },
+        }}
+      />
     </section>
   );
 };
 
 export default NotionCarousel;
+
 
