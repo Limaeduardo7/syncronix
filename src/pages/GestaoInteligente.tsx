@@ -372,10 +372,7 @@ const GestaoInteligente = () => {
                   ))}
                 </ul>
 
-                <div className="pt-6 border-t border-slate-100 flex flex-col gap-1">
-                  <p className="text-gray-500 font-semibold italic">Não importa o tamanho do projeto.</p>
-                  <p className="text-gray-500 font-semibold italic">Organização profissional cabe em qualquer fase.</p>
-                </div>
+
               </motion.div>
 
               {/* Para quem não é */}
@@ -443,7 +440,7 @@ const GestaoInteligente = () => {
                   <div className="flex flex-col items-center gap-3 mb-6">
                     <img src="/images/notion-logo.png" alt="Notion" className="w-12 h-12 object-contain drop-shadow-sm" />
                     <h3 className="text-3xl md:text-4xl font-black text-gray-900">
-                      Gestão Inteligente
+                      Template Gestão Inteligente + Minicurso Notion
                     </h3>
                   </div>
 
@@ -521,7 +518,7 @@ const GestaoInteligente = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
               <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">
-                Se você quer parar de improvisar e ganhar clareza, o Gestão Inteligente é o ponto de partida.
+                Se você deseja avançar com velocidade e clareza o nosso modelo de gestão é o seu ponto de partida rumo ao sucesso.
               </h2>
 
               <a

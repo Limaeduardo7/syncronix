@@ -19,15 +19,15 @@ const GuaranteeSection = () => {
           {/* Description */}
           <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed mb-8">
             <p>
-              Você tem <span className="font-bold text-slate-900">7 dias completos</span> para explorar o sistema e aplicar os conceitos na prática. Se por qualquer razão você não sentir que o material entregou o que prometeu, devolvemos <span className="font-bold text-slate-900">100% do seu investimento</span>.
+              Você tem <span className="font-bold text-slate-900">7 dias completos</span> para explorar o template e aplicar o sistema na prática. Se por qualquer razão você não sentir que o material entregou o que prometeu, devolvemos <span className="font-bold text-slate-900">100% do seu investimento</span>.
             </p>
 
             <p>
-              Mas considere isto: a <span className="font-bold text-slate-900">mudança real</span> não acontece apenas pela leitura. Ela acontece quando você entende o sistema e começa a <span className="font-bold text-slate-900">aplicar a estrutura</span> no seu dia a dia.
+              A <span className="font-bold text-slate-900">clara visão e organização</span> não acontecem apenas por ter acesso ao template. Elas acontecem quando você entende a lógica e começa a <span className="font-bold text-slate-900">aplicar a estrutura</span> no seu dia a dia.
             </p>
 
             <p className="font-semibold text-gray-900">
-              Dê a si mesmo a chance de <span className="text-slate-900 font-bold">reprogramar seus padrões mentais</span>. Você não tem nada a perder.
+              Dê a si mesmo a chance de <span className="text-slate-900 font-bold">dominar sua gestão mental</span>. Você não tem nada a perder.
             </p>
           </div>
 
