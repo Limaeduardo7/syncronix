@@ -45,7 +45,7 @@ const GestaoInteligente = () => {
             <motion.h1
               {...fadeInUp}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900 leading-tight"
+              className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900 leading-tight"
             >
               Modelo de Gestão Universal{" "}
               <span className="bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
@@ -67,19 +67,15 @@ const GestaoInteligente = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <a
+              <motion.a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-xl"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-lg rounded-xl shadow-xl hover:scale-105 transition-transform"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center gap-3"
-                >
-                  <span>QUERO O SISTEMA AGORA</span>
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
-              </a>
+                <span>QUERO O SISTEMA AGORA</span>
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
 
               <a href="#preview" className="inline-flex items-center justify-center px-8 py-5 rounded-xl border border-slate-300 text-lg font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
                 Ver como funciona
@@ -97,12 +93,9 @@ const GestaoInteligente = () => {
         <section className="relative py-20 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
-                🧠 Virada de Chave
-              </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-gray-900 max-w-4xl mx-auto leading-tight">
                 Insights que mudam a forma como você pensa sobre produtividade e organização.
-              </p>
+              </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -224,19 +217,15 @@ const GestaoInteligente = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center mt-12"
             >
-              <a
+              <motion.a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 shadow-xl"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl shadow-xl hover:scale-105 transition-transform"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center gap-3"
-                >
-                  <span>QUERO ORGANIZAR MINHA VIDA</span>
-                  <ArrowRight className="w-6 h-6" />
-                </motion.div>
-              </a>
+                <span>QUERO ORGANIZAR MINHA VIDA</span>
+                <ArrowRight className="w-6 h-6" />
+              </motion.a>
             </motion.div>
           </div>
         </section>
@@ -418,7 +407,7 @@ const GestaoInteligente = () => {
                 <Zap className="w-8 h-8 text-slate-700" />
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
+              <h2 className="text-2xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
                 O básico bem feito é perfeito. Estrutura antes da execução. Arquitetura &gt; força bruta.
               </h2>
 
@@ -492,20 +481,16 @@ const GestaoInteligente = () => {
                   </div>
 
                   {/* CTA */}
-                  <a
+                  <motion.a
                     href="https://pay.hotmart.com/P104196723Q"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full px-12 py-6 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl mb-8"
+                    animate={{ scale: [1, 1.02, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="inline-block w-full px-12 py-6 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl shadow-xl hover:shadow-2xl mb-8 hover:scale-[1.03] transition-transform"
                   >
-                    <motion.span
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      className="block"
-                    >
-                      COMPRAR AGORA
-                    </motion.span>
-                  </a>
+                    COMPRAR AGORA
+                  </motion.a>
 
                   {/* Trust badges */}
                   <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
@@ -540,19 +525,15 @@ const GestaoInteligente = () => {
                 Se você deseja avançar com velocidade e clareza o nosso modelo de gestão é o seu ponto de partida rumo ao sucesso.
               </h2>
 
-              <a
+              <motion.a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-black hover:bg-gray-900 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 shadow-2xl"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-black hover:bg-gray-900 text-white font-bold text-lg md:text-2xl rounded-xl shadow-2xl hover:scale-105 transition-transform"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center gap-3"
-                >
-                  <span>COMEÇAR AGORA</span>
-                  <ArrowRight className="w-7 h-7" />
-                </motion.div>
-              </a>
+                <span>COMEÇAR AGORA</span>
+                <ArrowRight className="w-7 h-7" />
+              </motion.a>
             </motion.div>
           </div>
         </section>
