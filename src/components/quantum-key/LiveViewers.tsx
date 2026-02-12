@@ -3,7 +3,7 @@ import { Eye } from "lucide-react";
 
 interface LiveViewersProps {
   text: string;
-  color?: "yellow" | "blue" | "purple" | "pink";
+  color?: "yellow" | "blue" | "purple" | "pink" | "slate";
 }
 
 const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
@@ -33,6 +33,8 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
         return "bg-transparent border-2 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]";
       case "pink":
         return "bg-transparent border-2 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]";
+      case "slate":
+        return "bg-transparent border-2 border-slate-700 shadow-[0_0_15px_rgba(51,65,85,0.5)]";
       default:
         return "bg-transparent border-2 border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]";
     }
@@ -43,6 +45,7 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
       case "blue": return "text-blue-500";
       case "purple": return "text-purple-500";
       case "pink": return "text-pink-500";
+      case "slate": return "text-slate-700";
       default: return "text-yellow-500";
     }
   };
@@ -52,6 +55,7 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
       case "blue": return "bg-blue-400";
       case "purple": return "bg-purple-400";
       case "pink": return "bg-pink-400";
+      case "slate": return "bg-slate-400";
       default: return "bg-yellow-400";
     }
   };
