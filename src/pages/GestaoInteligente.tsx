@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Check, Brain, Target, Zap, BookOpen, Lightbulb, ListChecks, RefreshCw, ShieldCheck, CreditCard, Download, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
@@ -14,7 +14,41 @@ const fadeInUp = {
   viewport: { once: true, amount: 0.2 },
 };
 
+const HeroLiveViewers = () => {
+  const [viewers, setViewers] = useState(128);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setViewers(prev => {
+        const change = Math.floor(Math.random() * 3) + 1;
+        const direction = Math.random() > 0.5 ? 1 : -1;
+        const newValue = prev + (change * direction);
+        return Math.max(110, Math.min(150, newValue));
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5 }}
+      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 shadow-sm mb-4"
+    >
+      <span className="relative flex h-2 w-2">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+      </span>
+      <span className="text-xs md:text-sm text-slate-500 font-medium">
+        <strong className="text-slate-900 font-bold">{viewers}</strong> pessoas assistindo agora
+      </span>
+    </motion.div>
+  );
+};
+
 const GestaoInteligente = () => {
+
   useEffect(() => {
     document.title = "Gestão Inteligente | Template Notion + Minicurso";
   }, []);
@@ -44,6 +78,9 @@ const GestaoInteligente = () => {
             <div className="flex justify-center mb-6">
               <CountdownTimer />
             </div>
+
+            {/* Live Viewers Badge */}
+            <HeroLiveViewers />
 
             {/* Offer Badge */}
             <motion.div
