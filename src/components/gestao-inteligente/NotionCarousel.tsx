@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ZoomIn } from 'lucide-react';
+import { Check, ZoomIn, X } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 const IMAGES = [
@@ -65,7 +65,7 @@ const NotionCarousel = () => {
             ))}
           </div>
 
-          <p className="text-lg md:text-xl text-gray-900 font-bold border-t border-slate-200 pt-6 inline-block">
+          <p className="text-base md:text-xl text-gray-900 font-bold border-t border-slate-200 pt-6 inline-block">
             Tudo conectado no Notion, pronto para usar.
           </p>
         </motion.div>
@@ -102,19 +102,28 @@ const NotionCarousel = () => {
       </div>
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center">
-          <AnimatePresence>
-            {selectedImage && (
+        <DialogContent className="fixed inset-0 w-screen h-screen max-w-none m-0 p-0 border-none bg-black/95 shadow-none flex items-center justify-center z-[100] translate-x-0 translate-y-0 translate-z-0">
+          {selectedImage && (
+            <div className="relative w-full h-full flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+              <div className="absolute top-6 right-6 z-[110]">
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 transition-colors shadow-lg"
+                >
+                  <X className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
               <motion.img
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
                 src={selectedImage}
                 alt="Zoomed preview"
-                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                className="max-w-full max-h-full object-contain shadow-2xl pointer-events-none"
+                layoutId="zoomed-image"
               />
-            )}
-          </AnimatePresence>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </section>

@@ -52,9 +52,10 @@ const GestaoInteligente = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900 leading-tight"
             >
-              Modelo de Gestão Universal{" "}
+              Modelo de Gestão <br className="block md:hidden" />
+              Universal para <br className="block md:hidden" />
               <span className="bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
-                para Negócios Promissores
+                Negócios Promissores
               </span>
             </motion.h1>
 
@@ -526,7 +527,7 @@ const GestaoInteligente = () => {
         <section className="relative py-20 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-4xl md:text-6xl font-black mb-8 text-gray-900 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">
                 Se você deseja avançar com velocidade e clareza o nosso modelo de gestão é o seu ponto de partida rumo ao sucesso.
               </h2>
 
