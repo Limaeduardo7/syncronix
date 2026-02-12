@@ -47,9 +47,9 @@ const GestaoInteligente = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900 leading-tight"
             >
-              Sistema de Organização Mental{" "}
+              Modelo de Gestão Universal{" "}
               <span className="bg-gradient-to-r from-slate-600 to-gray-800 bg-clip-text text-transparent">
-                aplicado à Vida e aos Negócios
+                para Negócios Promissores
               </span>
             </motion.h1>
 
@@ -69,10 +69,16 @@ const GestaoInteligente = () => {
             >
               <a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-lg rounded-xl transition-all duration-300 shadow-xl"
               >
-                <span>QUERO O SISTEMA AGORA</span>
-                <ArrowRight className="w-5 h-5" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex items-center gap-3"
+                >
+                  <span>QUERO O SISTEMA AGORA</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
               </a>
 
               <a href="#preview" className="inline-flex items-center justify-center px-8 py-5 rounded-xl border border-slate-300 text-lg font-medium hover:border-slate-900 hover:text-slate-900 transition-colors duration-200 bg-white">
@@ -220,10 +226,16 @@ const GestaoInteligente = () => {
             >
               <a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
+                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 shadow-xl"
               >
-                <span>QUERO ORGANIZAR MINHA VIDA</span>
-                <ArrowRight className="w-6 h-6" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex items-center gap-3"
+                >
+                  <span>QUERO ORGANIZAR MINHA VIDA</span>
+                  <ArrowRight className="w-6 h-6" />
+                </motion.div>
               </a>
             </motion.div>
           </div>
@@ -233,12 +245,9 @@ const GestaoInteligente = () => {
         <section className="relative py-20 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
-                🎯 O que você recebe
-              </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-gray-900 max-w-4xl mx-auto leading-tight">
                 Um sistema completo para sair do improviso e ter clareza de visão, objetivos e execução.
-              </p>
+              </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -303,20 +312,22 @@ const GestaoInteligente = () => {
           <div className="max-w-6xl mx-auto">
             <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
               <h2 className="text-3xl md:text-5xl font-black text-center mb-6 text-gray-900">
-                ⚙️ Como funciona na prática
+                ⚙️ COMO FUNCIONA POR DENTRO
               </h2>
               <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-                Um fluxo simples para tirar tudo da cabeça e colocar em execução.
+                Um sistema completo para gerenciar todas as áreas da sua vida e dos seus negócios.
               </p>
             </motion.div>
 
             <div className="max-w-3xl mx-auto">
               {[
-                { step: "01", title: "Organiza a visão", description: "Defina onde você quer chegar na vida e nos negócios." },
-                { step: "02", title: "Define objetivos claros", description: "Transforme a visão em objetivos mensuráveis." },
-                { step: "03", title: "Transforma em metas", description: "Quebre objetivos em metas alcançáveis." },
-                { step: "04", title: "Cria um plano de ação", description: "Monte o caminho passo a passo." },
-                { step: "05", title: "Executa com foco", description: "Projetos, tarefas e checklists organizados." }
+                { step: "1", title: "Controle Financeiro", description: "Você registra receitas e despesas, acompanha fluxo de caixa e passa a tomar decisão com número na mão, não com sensação." },
+                { step: "2", title: "Notas & Pendências", description: "Caixa de captura de ideias e prioridades centralizadas. Nada mais perdido em conversa ou caderno." },
+                { step: "3", title: "Metas e KPIs", description: "Transforma intenção em ação com acompanhamento semanal e mensal." },
+                { step: "4", title: "Projetos", description: "Etapas claras, prazos, responsáveis e status de execução." },
+                { step: "5", title: "Tarefas Extras", description: "Organização do dia a dia sem sobrecarregar a cabeça." },
+                { step: "6", title: "Marketing", description: "Planejamento de conteúdo, anúncios e calendário de postagens." },
+                { step: "7", title: "Documentos e Processos", description: "Base de conhecimento da empresa em um só lugar." }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -482,10 +493,18 @@ const GestaoInteligente = () => {
 
                   {/* CTA */}
                   <a
-                    href="#"
-                    className="inline-block w-full px-12 py-6 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl mb-8"
+                    href="https://pay.hotmart.com/P104196723Q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full px-12 py-6 bg-black hover:bg-gray-900 text-white font-bold text-xl rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl mb-8"
                   >
-                    COMPRAR AGORA
+                    <motion.span
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="block"
+                    >
+                      COMPRAR AGORA
+                    </motion.span>
                   </a>
 
                   {/* Trust badges */}
@@ -523,10 +542,16 @@ const GestaoInteligente = () => {
 
               <a
                 href="#oferta"
-                className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-black hover:bg-gray-900 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                className="inline-flex items-center justify-center gap-3 px-16 py-6 bg-black hover:bg-gray-900 text-white font-bold text-lg md:text-2xl rounded-xl transition-all duration-300 shadow-2xl"
               >
-                <span>COMEÇAR AGORA</span>
-                <ArrowRight className="w-7 h-7" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex items-center gap-3"
+                >
+                  <span>COMEÇAR AGORA</span>
+                  <ArrowRight className="w-7 h-7" />
+                </motion.div>
               </a>
             </motion.div>
           </div>
