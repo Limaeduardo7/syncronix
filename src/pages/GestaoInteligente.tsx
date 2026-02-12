@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { ArrowRight, Check, Brain, Target, Zap, BookOpen, Lightbulb, ListChecks, RefreshCw, ShieldCheck, CreditCard, Download, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import GuaranteeSection from "@/components/gestao-inteligente/GuaranteeSection";
 import NotionCarousel from "@/components/gestao-inteligente/NotionCarousel";
@@ -11,6 +12,10 @@ const fadeInUp = {
 };
 
 const GestaoInteligente = () => {
+  useEffect(() => {
+    document.title = "Gestão Inteligente | Template Notion + Minicurso";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <main className="flex-1 bg-white text-gray-900 relative overflow-x-hidden">
