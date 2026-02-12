@@ -4,17 +4,24 @@ import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
-const NEW_IMAGES = [
-  '/images/gestao-inteligente/preview-16.jpg',
+const IMAGES = [
+  '/images/gestao-inteligente/preview-01.jpg',
   '/images/gestao-inteligente/preview-11.jpg',
   '/images/gestao-inteligente/preview-12.jpg',
   '/images/gestao-inteligente/preview-13.jpg',
-  '/images/gestao-inteligente/preview-14.jpg',
   '/images/gestao-inteligente/preview-15.jpg',
-  '/images/gestao-inteligente/preview-17.jpg'
+  '/images/gestao-inteligente/preview-14.jpg',
+  '/images/gestao-inteligente/preview-17.jpg',
+  '/images/gestao-inteligente/preview-16.jpg',
+  '/images/gestao-inteligente/preview-03.jpg',
+  '/images/gestao-inteligente/preview-02.jpg',
+  '/images/gestao-inteligente/preview-04.jpg',
+  '/images/gestao-inteligente/preview-05.jpg',
+  '/images/gestao-inteligente/preview-06.jpg',
+  '/images/gestao-inteligente/preview-09.jpg',
+  '/images/gestao-inteligente/preview-10.jpg',
+  '/images/gestao-inteligente/preview-08.jpg'
 ];
-const OLD_IMAGES = Array.from({ length: 10 }, (_, i) => `/images/gestao-inteligente/preview-${String(i + 1).padStart(2, '0')}.jpg`);
-const IMAGES = [...NEW_IMAGES, ...OLD_IMAGES];
 
 const NotionCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
