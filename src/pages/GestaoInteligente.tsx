@@ -20,10 +20,10 @@ const HeroLiveViewers = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setViewers(prev => {
-        const change = Math.floor(Math.random() * 3) + 1;
+        const change = Math.floor(Math.random() * 2) + 1;
         const direction = Math.random() > 0.5 ? 1 : -1;
         const newValue = prev + (change * direction);
-        return Math.max(110, Math.min(150, newValue));
+        return Math.max(120, Math.min(145, newValue));
       });
     }, 4000);
     return () => clearInterval(interval);
@@ -31,17 +31,17 @@ const HeroLiveViewers = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
-      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 shadow-sm mb-4"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-slate-100 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07)]"
     >
-      <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-      </span>
-      <span className="text-xs md:text-sm text-slate-500 font-medium">
-        <strong className="text-slate-900 font-bold">{viewers}</strong> pessoas assistindo agora
+      <div className="relative flex items-center justify-center">
+        <div className="absolute w-2 h-2 rounded-full bg-red-500 animate-ping opacity-40"></div>
+        <div className="relative w-2 h-2 rounded-full bg-red-500"></div>
+      </div>
+      <span className="text-sm md:text-base font-medium tracking-tight">
+        <strong className="text-black font-extrabold">{viewers}</strong>{" "}
+        <span className="text-slate-500">pessoas assistindo agora</span>
       </span>
     </motion.div>
   );
@@ -74,13 +74,15 @@ const GestaoInteligente = () => {
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
+            {/* Live Viewers Badge */}
+            <div className="flex justify-center mb-4">
+              <HeroLiveViewers />
+            </div>
+
             {/* Countdown Timer */}
             <div className="flex justify-center mb-6">
               <CountdownTimer />
             </div>
-
-            {/* Live Viewers Badge */}
-            <HeroLiveViewers />
 
             {/* Offer Badge */}
             <motion.div
