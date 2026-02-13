@@ -5,7 +5,6 @@ import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import GuaranteeSection from "@/components/gestao-inteligente/GuaranteeSection";
 import NotionCarousel from "@/components/gestao-inteligente/NotionCarousel";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
-import LiveViewers from "@/components/quantum-key/LiveViewers";
 import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 
 const fadeInUp = {
@@ -15,15 +14,15 @@ const fadeInUp = {
 };
 
 const HeroLiveViewers = () => {
-  const [viewers, setViewers] = useState(128);
+  const [viewers, setViewers] = useState(143);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setViewers(prev => {
-        const change = Math.floor(Math.random() * 2) + 1;
+        const change = Math.floor(Math.random() * 3) + 1;
         const direction = Math.random() > 0.5 ? 1 : -1;
         const newValue = prev + (change * direction);
-        return Math.max(120, Math.min(145, newValue));
+        return Math.max(124, Math.min(158, newValue));
       });
     }, 4000);
     return () => clearInterval(interval);
@@ -549,10 +548,6 @@ const GestaoInteligente = () => {
                     </p>
                     <p className="text-lg font-semibold text-gray-600">à vista</p>
                     <p className="text-base font-medium text-gray-500 mt-2">ou 6x de R$ 8,82</p>
-                  </div>
-
-                  <div className="mb-8">
-                    <LiveViewers text="pessoas estão visualizando esta página agora" color="slate" />
                   </div>
 
                   {/* CTA */}

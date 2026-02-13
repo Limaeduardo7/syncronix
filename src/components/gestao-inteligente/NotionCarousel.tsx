@@ -54,10 +54,9 @@ const NotionCarousel = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-left max-w-2xl mx-auto mb-10">
             {[
-              "Controle financeiro real",
               "Gestão de metas",
               "Organização de projetos",
-              "Tarefas do dia",
+              "Tarefas Paralelas e Diarias",
               "Planejamento de marketing",
               "Documentos e processos",
               "Registro de reuniões e decisões"
