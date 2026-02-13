@@ -106,6 +106,18 @@ const GestaoInteligente = () => {
               Um sistema prático de organização que transforma caos em clareza, improviso em direção e estratégia em resultado.
             </motion.p>
 
+            {/* Hero Image / Creative */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-10 flex justify-center"
+            >
+              <img
+                src="/images/gestao-inteligente/1-1 CRIATIVO GESTAO.png"
+                alt="Criativo Gestão Inteligente"
+                className="w-full max-w-sm md:max-w-md rounded-2xl shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
 
             <motion.div
               {...fadeInUp}
@@ -142,11 +154,6 @@ const GestaoInteligente = () => {
         {/* VIRADA DE CHAVE */}
         <section className="relative py-20 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <motion.div {...fadeInUp} transition={{ duration: 0.6 }}>
-              <h2 className="text-3xl md:text-5xl font-black text-center mb-16 text-gray-900 max-w-4xl mx-auto leading-tight">
-                Insights que mudam a forma como você pensa sobre produtividade e organização.
-              </h2>
-            </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
