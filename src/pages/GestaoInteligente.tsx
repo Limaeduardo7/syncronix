@@ -536,10 +536,10 @@ const GestaoInteligente = () => {
                         BÔNUS EXCLUSIVO
                       </div>
                       <h4 className="text-lg font-black mb-2 leading-tight text-white">
-                        Comunidade de gestores bônus
+                        Comunidade Syncronix
                       </h4>
                       <p className="text-sm text-gray-300 leading-relaxed">
-                        Grupo VIP para acompanhamento, insights de gestão e networking com outros empreendedores.
+                        Syncronix é um ecossistema de networking e conhecimento que conecta cripto, DeFi, negócios, IA e tendências de mercado com desenvolvimento pessoal e expansão de consciência, criando um ambiente voltado à evolução estratégica e alta performance.
                       </p>
                     </div>
                   </div>

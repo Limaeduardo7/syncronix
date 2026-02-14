@@ -56,7 +56,7 @@ const NotionCarousel = () => {
             {[
               "Gestão de metas",
               "Organização de projetos",
-              "Tarefas Diárias",
+              "Tarefas diárias",
               "Planejamento de marketing",
               "Documentos e processos",
               "Registro de reuniões e decisões"
