@@ -98,9 +98,27 @@ const GestaoInteligente = () => {
               Negócios Promissores
             </motion.h1>
 
-            <motion.p
+            {/* VSL Video */}
+            <motion.div
               {...fadeInUp}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-10 flex justify-center px-4"
+            >
+              <div className="relative w-full max-w-[315px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/Z8yrPFnaUkI"
+                  title="Gestão Inteligente VSL"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </motion.div>
+
+            <motion.p
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-medium"
             >
               Um sistema prático de organização que transforma caos em clareza, improviso em direção e estratégia em resultado.
@@ -109,7 +127,7 @@ const GestaoInteligente = () => {
             {/* Hero Image / Creative */}
             <motion.div
               {...fadeInUp}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="mb-10 flex justify-center"
             >
               <img
@@ -121,7 +139,7 @@ const GestaoInteligente = () => {
 
             <motion.div
               {...fadeInUp}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
             >
               <motion.a
