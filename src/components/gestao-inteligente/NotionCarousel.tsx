@@ -52,6 +52,15 @@ const NotionCarousel = () => {
             Veja como o template organiza suas áreas, projetos e recursos visualmente.
           </p>
 
+          {/* Creative Image */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src="/images/gestao-inteligente/1-1 CRIATIVO GESTAO.png"
+              alt="Criativo Gestão Inteligente"
+              className="w-full max-w-sm md:max-w-md rounded-2xl shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-left max-w-2xl mx-auto mb-10">
             {[
               "Gestão de metas",

@@ -124,22 +124,9 @@ const GestaoInteligente = () => {
               Um sistema prático de organização que transforma caos em clareza, improviso em direção e estratégia em resultado.
             </motion.p>
 
-            {/* Hero Image / Creative */}
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mb-10 flex justify-center"
-            >
-              <img
-                src="/images/gestao-inteligente/1-1 CRIATIVO GESTAO.png"
-                alt="Criativo Gestão Inteligente"
-                className="w-full max-w-sm md:max-w-md rounded-2xl shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
             >
               <motion.a
