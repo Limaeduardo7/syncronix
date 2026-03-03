@@ -1,0 +1,689 @@
+import { useEffect, useState } from "react";
+import { ArrowRight, Lock, Target, Zap, Activity, Cpu, ShieldCheck, Clock, CheckCircle, AlertTriangle, Eye, ChevronDown, Flame, Brain, Gem, X, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
+import LiveViewers from "@/components/quantum-key/LiveViewers";
+import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
+import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
+
+const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.15 },
+    transition: { duration: 0.7 }
+};
+
+const stagger = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.1 },
+};
+
+/* ── Animated Counter ── */
+const AnimatedNumber = ({ value }: { value: number }) => {
+    const [display, setDisplay] = useState(0);
+    useEffect(() => {
+        let start = 0;
+        const step = value / 40;
+        const id = setInterval(() => {
+            start += step;
+            if (start >= value) { setDisplay(value); clearInterval(id); }
+            else setDisplay(Math.floor(start));
+        }, 30);
+        return () => clearInterval(id);
+    }, [value]);
+    return <span>{display.toLocaleString("pt-BR")}</span>;
+};
+
+/* ── FAQ Accordion ── */
+const FAQ = ({ q, a }: { q: string; a: string }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <div className="border-b border-white/10 last:border-b-0">
+            <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-6 text-left group">
+                <span className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors pr-8">{q}</span>
+                <ChevronDown className={`w-5 h-5 text-amber-500 flex-shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+            </button>
+            <AnimatePresence>
+                {open && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
+                        <p className="pb-6 text-slate-400 leading-relaxed font-medium">{a}</p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
+
+const AlgoritmoDoUniverso = () => {
+    useEffect(() => {
+        document.title = "O Algoritmo do Universo | O Manual Definitivo da Realidade";
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-amber-500/30 selection:text-amber-200">
+            <PurchaseNotifications
+                purchaseText="acabou de adquirir O Algoritmo!"
+                justNowText="comprou agora"
+                notifications={brazilianPurchaseNotifications}
+            />
+
+            <main className="flex-1 relative overflow-x-hidden">
+                {/* ═══ GLOBAL BACKGROUND ═══ */}
+                <div className="fixed inset-0 pointer-events-none">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_60%)]" />
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40" />
+                </div>
+
+                {/* ═══════════════════════════════════════════════════════════
+            COUNTDOWN TIMER — Top of page
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative pt-6 pb-2 px-4 bg-black text-center z-30">
+                    <CountdownTimer />
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            HERO — Bloco 1: A Quebra de Padrão
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative min-h-[90vh] flex items-center justify-center px-4 pt-10 pb-16">
+                    {/* Hero glow */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-amber-500/8 blur-[150px] rounded-full pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+
+                    <div className="relative z-20 max-w-5xl mx-auto text-center">
+                        {/* Pre-headline badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 border border-amber-500/20 rounded-full bg-amber-500/5 backdrop-blur-sm"
+                        >
+                            <AlertTriangle className="w-4 h-4 text-amber-500" />
+                            <span className="text-amber-400 font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase">
+                                Aviso: O que você está prestes a ler invalida 99% do que te ensinaram
+                            </span>
+                        </motion.div>
+
+                        {/* Main headline */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.15 }}
+                            className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[1.1] tracking-tight"
+                        >
+                            O Universo não tem ouvidos
+                            <br className="hidden md:block" /> para a sua exaustão.
+                            <br />
+                            <span className="relative inline-block mt-2">
+                                <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+                                    Ele processa apenas códigos.
+                                </span>
+                                <motion.span
+                                    className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-500/0 via-amber-500 to-amber-500/0 rounded-full"
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: 1, delay: 1 }}
+                                />
+                            </span>
+                        </motion.h1>
+
+                        {/* Sub-headline */}
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-lg md:text-2xl text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed font-medium"
+                        >
+                            Descubra o sistema mecânico, frio e impecável por trás da realidade. O manual definitivo para parar de implorar por resultados e começar a{" "}
+                            <span className="text-amber-400 font-bold">operar a máquina ao seu favor.</span>
+                        </motion.p>
+
+                        {/* CTA */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            className="flex flex-col items-center gap-5"
+                        >
+                            <motion.a
+                                href="#oferta"
+                                animate={{ scale: [1, 1.03, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-5 md:py-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-base md:text-xl rounded-2xl shadow-[0_0_50px_-12px_rgba(245,158,11,0.5)] hover:shadow-[0_0_80px_-15px_rgba(245,158,11,0.6)] transform hover:-translate-y-1 transition-all duration-300"
+                            >
+                                <span>QUERO ACESSAR O ALGORITMO</span>
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </motion.a>
+                            <span className="text-slate-500 text-sm font-medium flex items-center gap-2">
+                                <Lock className="w-3.5 h-3.5" /> Acesso imediato · Garantia de 7 dias
+                            </span>
+                        </motion.div>
+
+                        {/* Live Viewers */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.8 }}
+                            className="mt-8 flex justify-center"
+                        >
+                            <LiveViewers text="pessoas estão nesta página agora" color="yellow" />
+                        </motion.div>
+
+                        {/* Scroll indicator */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1.5 }}
+                            className="mt-20"
+                        >
+                            <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="flex flex-col items-center gap-2 text-slate-600">
+                                <span className="text-xs font-medium uppercase tracking-widest">Continue lendo</span>
+                                <ChevronDown className="w-5 h-5" />
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            SOCIAL PROOF — Credibility Strip
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-8 border-y border-white/5 bg-neutral-950/30">
+                    <div className="max-w-6xl mx-auto px-4">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center">
+                            {[
+                                { num: 2847, label: "Cópias vendidas" },
+                                { num: 4.9, label: "Avaliação média", suffix: "/5" },
+                                { num: 98, label: "Taxa de satisfação", suffix: "%" },
+                                { num: 7, label: "Dias de Garantia" },
+                            ].map((stat, idx) => (
+                                <motion.div key={idx} {...stagger} transition={{ delay: idx * 0.1 }}>
+                                    <p className="text-2xl md:text-3xl font-black text-amber-500">
+                                        {typeof stat.num === "number" && stat.num > 100 ? <AnimatedNumber value={stat.num} /> : stat.num}
+                                        {stat.suffix && <span className="text-lg text-amber-400">{stat.suffix}</span>}
+                                    </p>
+                                    <p className="text-xs md:text-sm text-slate-500 font-semibold mt-1 uppercase tracking-wider">{stat.label}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            NARRATIVA DE VALIDAÇÃO — Bloco 2
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4">
+                    <div className="max-w-3xl mx-auto">
+                        <motion.div {...fadeInUp} className="space-y-10 text-lg md:text-xl text-slate-300 leading-[1.9]">
+                            <p className="first-letter:text-6xl first-letter:font-black first-letter:text-amber-500 first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+                                Você provavelmente se considera uma pessoa boa. Você trabalha duro, tenta fazer as coisas do jeito certo e, em algum nível, espera que a vida perceba o seu esforço.
+                            </p>
+
+                            {/* Dramatic callout */}
+                            <motion.div
+                                {...fadeInUp}
+                                className="relative py-10 my-16"
+                            >
+                                <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-amber-500 via-amber-500 to-transparent rounded-full" />
+                                <p className="text-white font-black text-3xl md:text-5xl pl-8 leading-[1.2]">
+                                    Mas os resultados não batem com o seu sacrifício.
+                                </p>
+                            </motion.div>
+
+                            <p>
+                                O desgaste mental aumenta. A frustração se torna rotina. E a pergunta que ecoa na sua cabeça no fim do dia é sempre a mesma:
+                            </p>
+
+                            <motion.p
+                                {...fadeInUp}
+                                className="text-center text-2xl md:text-3xl text-amber-200 italic font-medium py-8"
+                            >
+                                "O que eu estou fazendo de errado?
+                                <br />Por que parece tão fácil para os outros?"
+                            </motion.p>
+
+                            <motion.div {...fadeInUp} className="text-center py-10">
+                                <p className="text-amber-500 font-black text-2xl md:text-3xl mb-4">
+                                    A resposta vai doer, mas vai te libertar:
+                                </p>
+                                <p className="text-white font-black text-3xl md:text-4xl">
+                                    Você está operando sob uma mentira.
+                                </p>
+                            </motion.div>
+
+                            <p>
+                                Ensinaram a você que o universo é um juiz emocional. Que ele recompensa o suor, a moralidade e as histórias de superação. Mas a realidade <span className="text-white font-bold">não opera por mérito</span>. Ela não sente pena. Ela não avalia a sua índole.
+                            </p>
+
+                            {/* Glassmorphism quote card */}
+                            <motion.div
+                                {...fadeInUp}
+                                className="relative p-10 rounded-3xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 backdrop-blur-xl mt-16 overflow-hidden"
+                            >
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+                                <div className="relative z-10">
+                                    <Gem className="w-8 h-8 text-amber-500/50 mb-4" />
+                                    <p className="text-white text-xl md:text-2xl font-bold leading-relaxed">
+                                        "A realidade é um sistema mecânico e impessoal. E enquanto você tentar convencer a máquina com emoções, continuará sendo esmagado pelas engrenagens."
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            MECANISMO — Bloco 3: Anatomia da Máquina
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950/40 to-black">
+                    {/* Section glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="relative max-w-6xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center mb-20">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-amber-500/20 rounded-full bg-amber-500/5">
+                                <Cpu className="w-4 h-4 text-amber-500" />
+                                <span className="text-amber-400 font-bold text-[10px] tracking-[0.2em] uppercase">Decodificação do sistema</span>
+                            </div>
+                            <h2 className="text-3xl md:text-6xl font-black text-white mb-8 leading-tight">
+                                Foi para decodificar esse sistema que
+                                <br />
+                                <span className="relative inline-block mt-2">
+                                    <span className="bg-gradient-to-r from-amber-300 to-amber-600 bg-clip-text text-transparent">O Algoritmo do Universo</span>
+                                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500/0 via-amber-500/80 to-amber-500/0" />
+                                </span>
+                                {" "}foi criado.
+                            </h2>
+                            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                                Este não é um material de autoajuda fofa. É um <span className="text-white font-bold">mapa pragmático e direto ao ponto</span>. Ele quebra a ilusão da "justiça cósmica" e entrega em suas mãos o painel de controle da realidade.
+                            </p>
+                            <p className="text-lg text-slate-500 mt-6 max-w-3xl mx-auto italic">
+                                Você vai entender, de uma vez por todas, que a sua dor e o seu cansaço não são punições divinas ou falta de sorte. São apenas diagnósticos mecânicos de desalinhamento.
+                            </p>
+                        </motion.div>
+
+                        {/* 3 Pillar Cards — with numbering and visual hierarchy */}
+                        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+                            {[
+                                {
+                                    num: "01",
+                                    title: "O Funil",
+                                    subtitle: "INPUT",
+                                    desc: "O seu único ponto de controle absoluto. Aprenda por que o sistema ignora a sua \"embalagem\" e reage apenas à sua \"matéria\" — o seu estado interno bruto.",
+                                    icon: <Target className="w-7 h-7" />
+                                },
+                                {
+                                    num: "02",
+                                    title: "As Engrenagens",
+                                    subtitle: "PROCESSAMENTO",
+                                    desc: "A caixa-preta onde as leis imutáveis operam. Descubra como essa prensa invisível funciona, replicando e multiplicando a forma exata daquilo que você insere — sem julgamentos.",
+                                    icon: <Zap className="w-7 h-7" />
+                                },
+                                {
+                                    num: "03",
+                                    title: "A Esteira",
+                                    subtitle: "OUTPUT",
+                                    desc: "O fim da ansiedade. Entenda por que o tempo não é o seu inimigo, mas um filtro de segurança. A latência na manifestação dos seus resultados não é uma falha, é física.",
+                                    icon: <Activity className="w-7 h-7" />
+                                }
+                            ].map((item, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    {...stagger}
+                                    transition={{ delay: 0.15 * idx, duration: 0.6 }}
+                                    className="group relative p-8 md:p-10 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.06] hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(245,158,11,0.15)]"
+                                >
+                                    {/* Step number */}
+                                    <span className="absolute top-6 right-8 text-[5rem] font-black text-white/[0.03] leading-none select-none group-hover:text-amber-500/[0.06] transition-colors duration-500">{item.num}</span>
+                                    <div className="relative z-10">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <div className="p-3 rounded-xl bg-amber-500/10 text-amber-500 group-hover:bg-amber-500/20 transition-colors">
+                                                {item.icon}
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] font-bold text-amber-500/70 tracking-[0.2em] uppercase">{item.subtitle}</p>
+                                                <h3 className="text-xl font-black text-white">{item.title}</h3>
+                                            </div>
+                                        </div>
+                                        <p className="text-slate-400 leading-relaxed font-medium">{item.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Flow diagram */}
+                        <motion.div {...fadeInUp} className="hidden md:flex items-center justify-center gap-4 mt-12 text-slate-600">
+                            <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-bold text-white">SEU INPUT</span>
+                            <ArrowRight className="w-5 h-5 text-amber-500" />
+                            <span className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-bold text-slate-400">PROCESSAMENTO</span>
+                            <ArrowRight className="w-5 h-5 text-amber-500" />
+                            <span className="px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-sm font-bold text-amber-400">SEU RESULTADO</span>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            MUDANÇA DE PARADIGMA — Bloco 4
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <motion.div {...fadeInUp}>
+                            <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">
+                                Pare de tentar controlar o <span className="text-amber-500">"como"</span> as coisas devem acontecer.
+                            </h2>
+                            <p className="text-lg md:text-xl text-slate-400 mb-6 max-w-2xl mx-auto">
+                                Cada vez que você injeta dúvidas, ansiedade e controle excessivo no seu processo, você contamina o resultado e <span className="text-white font-bold">trava as engrenagens</span> da sua própria vida.
+                            </p>
+                        </motion.div>
+
+                        {/* Visual separator */}
+                        <motion.div {...fadeInUp} className="flex items-center justify-center gap-3 my-16">
+                            <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-amber-500/50" />
+                            <Flame className="w-6 h-6 text-amber-500" />
+                            <div className="h-px flex-1 max-w-[100px] bg-gradient-to-l from-transparent to-amber-500/50" />
+                        </motion.div>
+
+                        <motion.div {...fadeInUp}>
+                            <p className="text-2xl md:text-4xl font-black text-white mb-6 leading-tight">
+                                O Algoritmo do Universo vai te ensinar a
+                            </p>
+                            <p className="text-3xl md:text-5xl font-black text-amber-500 mb-12 uppercase tracking-wide">
+                                Engenharia do Preenchimento.
+                            </p>
+                            <p className="text-lg md:text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
+                                Elimine os espaços vazios e as contradições internas. Garanta um fluxo ininterrupto e lógico de realizações.
+                            </p>
+                        </motion.div>
+
+                        {/* Benefit pills */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+                            {[
+                                "Sem rituais exaustivos.",
+                                "Sem precisar \"pensar positivo\".",
+                                "Apenas alinhamento mecânico.",
+                                "Frio e altamente eficaz."
+                            ].map((text, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    {...stagger}
+                                    transition={{ delay: idx * 0.08 }}
+                                    className="flex items-center gap-3 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-amber-500/40 transition-all group"
+                                >
+                                    <div className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.6)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.8)] transition-shadow" />
+                                    <span className="text-white font-bold text-base">{text}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            ANTES vs DEPOIS — Novo bloco de persuasão
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950/30 to-black">
+                    <div className="max-w-5xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
+                                A diferença é <span className="text-amber-500">brutal.</span>
+                            </h2>
+                            <p className="text-slate-400 text-lg">O que muda quando você para de implorar e começa a operar.</p>
+                        </motion.div>
+
+                        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                            {/* ANTES */}
+                            <motion.div {...fadeInUp} className="p-8 md:p-10 rounded-3xl bg-red-500/[0.04] border border-red-500/10">
+                                <div className="flex items-center gap-3 mb-8">
+                                    <div className="p-2 rounded-lg bg-red-500/10"><X className="w-5 h-5 text-red-400" /></div>
+                                    <h3 className="text-xl font-black text-red-400 uppercase tracking-wider">Antes do Algoritmo</h3>
+                                </div>
+                                <ul className="space-y-5">
+                                    {[
+                                        "Trabalha duro mas os resultados não vêm",
+                                        "Frustração e cansaço mental constantes",
+                                        "Sensação de injustiça e falta de sorte",
+                                        "Tentativas aleatórias sem método",
+                                        "Ansiedade por não controlar o futuro",
+                                        "Depende de motivação para agir"
+                                    ].map((t, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-slate-400">
+                                            <X className="w-4 h-4 text-red-500/60 mt-1 flex-shrink-0" />
+                                            <span className="font-medium">{t}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+
+                            {/* DEPOIS */}
+                            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="p-8 md:p-10 rounded-3xl bg-amber-500/[0.04] border border-amber-500/10 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
+                                <div className="flex items-center gap-3 mb-8 relative z-10">
+                                    <div className="p-2 rounded-lg bg-amber-500/10"><Check className="w-5 h-5 text-amber-400" /></div>
+                                    <h3 className="text-xl font-black text-amber-400 uppercase tracking-wider">Depois do Algoritmo</h3>
+                                </div>
+                                <ul className="space-y-5 relative z-10">
+                                    {[
+                                        "Opera com clareza mecânica e direção",
+                                        "Alinhamento interno gera resultados reais",
+                                        "Entende que não é injusto — era desalinhado",
+                                        "Método pragmático e replicável",
+                                        "Latência não é ansiedade — é processo",
+                                        "Age por lógica, não por emoção"
+                                    ].map((t, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-slate-300">
+                                            <Check className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                                            <span className="font-medium">{t}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            CTA INTERMEDIÁRIO — Bloco de urgência
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-20 px-4 bg-amber-500/[0.03] border-y border-amber-500/10">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <motion.div {...fadeInUp}>
+                            <p className="text-2xl md:text-4xl font-black text-white mb-6">
+                                Chegou a hora de parar de levar os obstáculos da vida <span className="text-amber-500">para o lado pessoal.</span>
+                            </p>
+                            <p className="text-lg text-slate-400 mb-10">
+                                O universo não está contra você. Você apenas não tinha o manual de instruções. <span className="text-white font-bold">Até agora.</span>
+                            </p>
+                            <motion.a
+                                href="#oferta"
+                                animate={{ scale: [1, 1.03, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                className="group inline-flex items-center justify-center gap-3 px-12 py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg rounded-2xl shadow-[0_0_50px_-12px_rgba(245,158,11,0.4)] hover:shadow-[0_0_80px_-15px_rgba(245,158,11,0.6)] transform hover:-translate-y-1 transition-all duration-300"
+                            >
+                                <span>QUERO O MANUAL AGORA</span>
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </motion.a>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            FAQ — Quebra de objeções
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4">
+                    <div className="max-w-3xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center mb-16">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-white/10 rounded-full bg-white/5">
+                                <Brain className="w-4 h-4 text-amber-500" />
+                                <span className="text-slate-400 font-bold text-[10px] tracking-[0.2em] uppercase">Objeções eliminadas</span>
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-black text-white">
+                                Perguntas que a sua mente vai fazer
+                            </h2>
+                        </motion.div>
+                        <motion.div {...fadeInUp}>
+                            <FAQ q="Isso é mais um livro de autoajuda?" a="Não. 'O Algoritmo do Universo' utiliza uma linguagem técnica e mecânica intencionalmente. Aqui não há visualizações criativas, mantras ou 'pensamento positivo'. É um diagnóstico pragmático do sistema que governa os seus resultados — e um manual operacional para você manipulá-lo." />
+                            <FAQ q="Preciso acreditar em algo específico para funcionar?" a="Pelo contrário. O material foi desenhado para funcionar independente das suas crenças. Ele trata a realidade como um sistema operacional: não importa se você 'acredita' na gravidade — ela funciona de qualquer forma. O Algoritmo opera com a mesma lógica." />
+                            <FAQ q="R$ 29,90 parece barato demais. Qual é o truque?" a="Não há truque. O preço é uma decisão estratégica: queremos que o maior número possível de pessoas adultas tenham acesso a este conhecimento. O valor do conteúdo dentro do material é infinitamente superior ao preço cobrado. A pergunta é: quanto custa mais um ano operando sob uma mentira?" />
+                            <FAQ q="E se eu não gostar?" a="Você está coberto por 7 dias de garantia incondicional. Se o material não fizer sentido para você por qualquer motivo, basta solicitar o reembolso. Zero burocracia." />
+                            <FAQ q="É um livro digital?" a="Sim. O Algoritmo do Universo é um e-book. Após a compra, você recebe acesso imediato ao conteúdo. Leia no celular, tablet ou computador — onde e quando quiser." />
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            OFERTA PRINCIPAL — Bloco 5
+        ═══════════════════════════════════════════════════════════ */}
+                <section id="oferta" className="relative py-24 md:py-32 px-4 scroll-mt-10 bg-gradient-to-b from-black via-neutral-950/20 to-black">
+                    {/* Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 blur-[150px] rounded-full pointer-events-none" />
+
+                    <div className="relative max-w-lg mx-auto z-10">
+                        <motion.div {...fadeInUp} className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
+                                Assuma o controle. <span className="text-amber-500">Agora.</span>
+                            </h2>
+                        </motion.div>
+
+                        <motion.div
+                            {...fadeInUp}
+                            transition={{ delay: 0.1 }}
+                            className="relative p-8 md:p-12 rounded-[2rem] bg-gradient-to-b from-neutral-950 to-neutral-950/50 border-2 border-amber-500/20 shadow-[0_0_100px_-30px_rgba(245,158,11,0.25)] overflow-hidden"
+                        >
+                            {/* Top glow */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[200px] bg-amber-500/8 blur-[80px] rounded-full -mt-[100px] pointer-events-none" />
+
+                            <div className="relative z-10">
+                                {/* Product name */}
+                                <div className="text-center mb-10">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border border-amber-500/20 rounded-full bg-amber-500/5">
+                                        <Flame className="w-3.5 h-3.5 text-amber-500" />
+                                        <span className="text-amber-400 font-bold text-[10px] tracking-[0.15em] uppercase">Oferta Especial</span>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-black text-white">
+                                        O ALGORITMO DO UNIVERSO
+                                    </h3>
+                                </div>
+
+                                {/* What's included */}
+                                <div className="space-y-3 mb-10 text-left">
+                                    {[
+                                        "E-book completo: O Algoritmo do Universo",
+                                        "Framework Funil → Engrenagens → Esteira",
+                                        "Diagnóstico de desalinhamento pessoal",
+                                        "Guia de preenchimento de lacunas internas",
+                                        "Acesso vitalício e atualizações futuras"
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-3 text-slate-300">
+                                            <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                                            <span className="font-medium">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Pricing */}
+                                <div className="text-center mb-10 py-8 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                                    <p className="text-red-500/60 line-through text-2xl font-bold mb-2">
+                                        R$ 97,00
+                                    </p>
+                                    <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">por apenas</p>
+                                    <p className="text-6xl md:text-7xl font-black text-white tracking-tighter leading-none">
+                                        R$ 29<span className="text-4xl text-amber-500">,90</span>
+                                    </p>
+                                    <p className="text-amber-500 font-black text-lg mt-3 tracking-wide">
+                                        ou 4x de R$ 8,14
+                                    </p>
+                                    <p className="text-slate-500 font-medium text-sm mt-2">acesso imediato e vitalício</p>
+                                </div>
+
+
+
+                                {/* CTA Button */}
+                                <motion.a
+                                    href="https://pay.hotmart.com/P104196723Q"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    animate={{ scale: [1, 1.02, 1] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    className="group block w-full px-8 py-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xl text-center rounded-2xl shadow-[0_10px_50px_-15px_rgba(245,158,11,0.5)] transform hover:-translate-y-1 transition-all duration-300"
+                                >
+                                    <span className="flex items-center justify-center gap-3">
+                                        👉 QUERO ACESSAR O ALGORITMO
+                                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </motion.a>
+
+                                {/* Trust badges */}
+                                <div className="grid grid-cols-3 gap-4 mt-10 text-[11px] md:text-xs text-slate-500">
+                                    <div className="flex flex-col items-center gap-1.5 text-center">
+                                        <Lock className="w-4 h-4 text-amber-500/50" />
+                                        <span className="font-semibold">Compra Segura</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-1.5 text-center">
+                                        <ShieldCheck className="w-4 h-4 text-amber-500/50" />
+                                        <span className="font-semibold">Garantia 7 dias</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-1.5 text-center">
+                                        <Eye className="w-4 h-4 text-amber-500/50" />
+                                        <span className="font-semibold">Acesso Imediato</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            GARANTIA — Seção dedicada dark-mode
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-20 px-4">
+                    <div className="max-w-2xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06]">
+                            <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-amber-500/10 rounded-full">
+                                <ShieldCheck className="w-10 h-10 text-amber-500" />
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
+                                Garantia Incondicional de <span className="text-amber-500">7 Dias</span>
+                            </h3>
+                            <p className="text-slate-400 leading-relaxed mb-8 max-w-lg mx-auto">
+                                Você tem 7 dias completos para ler, aplicar e testar o conteúdo. Se por qualquer razão sentir que não é para você, devolvemos <span className="text-white font-bold">100% do seu investimento</span>. Sem perguntas, sem burocracia.
+                            </p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-6">
+                                <div className="flex items-center gap-2 justify-center text-slate-400">
+                                    <Clock className="w-5 h-5 text-amber-500/60" />
+                                    <span className="text-sm font-medium">7 dias para experimentar</span>
+                                </div>
+                                <div className="flex items-center gap-2 justify-center text-slate-400">
+                                    <CheckCircle className="w-5 h-5 text-amber-500/60" />
+                                    <span className="text-sm font-medium">Reembolso sem perguntas</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            NOTA PARA OS CÉTICOS — Bloco 6
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-20 px-4 border-t border-white/5">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <motion.div {...fadeInUp}>
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-red-500/20 rounded-full bg-red-500/5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                                <span className="text-red-400/70 font-bold text-[10px] uppercase tracking-[0.2em]">Nota Final</span>
+                            </div>
+                            <p className="text-slate-600 text-sm italic leading-relaxed max-w-2xl mx-auto">
+                                "Se você está procurando tapinhas nas costas ou validação para o seu vitimismo, feche esta página. Este material foi escrito para mentes adultas que preferem a verdade crua que funciona à mentira doce que paralisa. A escolha é sua."
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+            </main>
+
+            {/* FOOTER */}
+            <footer className="py-10 bg-black border-t border-white/5 text-center">
+                <p className="text-slate-600 text-sm">&copy; {new Date().getFullYear()} Syncronix. Todos os direitos reservados.</p>
+                <p className="text-slate-700 text-xs mt-2">Este produto não garante resultados. Resultados dependem da aplicação individual.</p>
+            </footer>
+        </div>
+    );
+};
+
+export default AlgoritmoDoUniverso;
