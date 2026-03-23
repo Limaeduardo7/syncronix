@@ -128,6 +128,16 @@ const AlgoritmoDoUniverso = () => {
                             </span>
                         </motion.h1>
 
+                        {/* Hero visual */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, delay: 0.3 }}
+                            className="my-10 flex justify-center"
+                        >
+                            <img src="https://i.pinimg.com/originals/25/56/71/2556714d789e9da6b988634db6aba014.gif" alt="" className="w-full max-w-xs md:max-w-sm rounded-2xl border border-white/10 opacity-80 mix-blend-luminosity" />
+                        </motion.div>
+
                         {/* Sub-headline */}
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -251,9 +261,19 @@ const AlgoritmoDoUniverso = () => {
                                 </p>
                             </motion.div>
 
+                            {/* Matrix face visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center my-12">
+                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-full max-w-xs rounded-2xl border border-white/10 opacity-70 mix-blend-luminosity" />
+                            </motion.div>
+
                             <p>
                                 Ensinaram a você que o universo é um juiz emocional. Que ele recompensa o suor, a moralidade e as histórias de superação. Mas a realidade <span className="text-white font-bold">não opera por mérito</span>. Ela não sente pena. Ela não avalia a sua índole.
                             </p>
+
+                            {/* Person processed in machine visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center my-12">
+                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-75" />
+                            </motion.div>
 
                             {/* Glassmorphism quote card */}
                             <motion.div
@@ -299,6 +319,11 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-lg text-slate-500 mt-6 max-w-3xl mx-auto italic">
                                 Você vai entender, de uma vez por todas, que a sua dor e o seu cansaço não são punições divinas ou falta de sorte. São apenas diagnósticos mecânicos de desalinhamento.
                             </p>
+                        </motion.div>
+
+                        {/* AI Core visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center mb-16">
+                            <img src="https://i.pinimg.com/originals/32/c3/a7/32c3a75b9d47ea321c108dc076708640.gif" alt="" className="w-full max-w-md rounded-2xl border border-white/10 opacity-80" />
                         </motion.div>
 
                         {/* 3 Pillar Cards — with numbering and visual hierarchy */}
@@ -358,6 +383,11 @@ const AlgoritmoDoUniverso = () => {
                             <ArrowRight className="w-5 h-5 text-amber-500" />
                             <span className="px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-sm font-bold text-amber-400">SEU RESULTADO</span>
                         </motion.div>
+
+                        {/* Circular monitors room visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center mt-16">
+                            <img src="https://i.pinimg.com/originals/a0/61/22/a061226b0125b9a410e609136198d3db.gif" alt="" className="w-full max-w-md rounded-2xl border border-white/10 opacity-75" />
+                        </motion.div>
                     </div>
                 </section>
 
@@ -389,6 +419,12 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-3xl md:text-5xl font-black text-amber-500 mb-12 uppercase tracking-wide">
                                 Engenharia do Preenchimento.
                             </p>
+
+                            {/* Brain scan interfaces visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center my-12">
+                                <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-70 mix-blend-luminosity" />
+                            </motion.div>
+
                             <p className="text-lg md:text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
                                 Elimine os espaços vazios e as contradições internas. Garanta um fluxo ininterrupto e lógico de realizações.
                             </p>
@@ -421,6 +457,11 @@ const AlgoritmoDoUniverso = () => {
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950/30 to-black">
                     <div className="max-w-5xl mx-auto">
+                        {/* Particle collision visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center mb-12">
+                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-full max-w-xs rounded-full border border-white/10 opacity-60 mix-blend-luminosity" />
+                        </motion.div>
+
                         <motion.div {...fadeInUp} className="text-center mb-16">
                             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
                                 A diferença é <span className="text-amber-500">brutal.</span>
@@ -482,8 +523,12 @@ const AlgoritmoDoUniverso = () => {
                 {/* ═══════════════════════════════════════════════════════════
             CTA INTERMEDIÁRIO — Bloco de urgência
         ═══════════════════════════════════════════════════════════ */}
-                <section className="relative py-20 px-4 bg-amber-500/[0.03] border-y border-amber-500/10">
-                    <div className="max-w-3xl mx-auto text-center">
+                <section className="relative py-20 px-4 bg-amber-500/[0.03] border-y border-amber-500/10 overflow-hidden">
+                    {/* Pixel-art factory decorative bg */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-15 pointer-events-none hidden md:block">
+                        <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-full h-full object-cover rounded-2xl" />
+                    </div>
+                    <div className="max-w-3xl mx-auto text-center relative z-10">
                         <motion.div {...fadeInUp}>
                             <p className="text-2xl md:text-4xl font-black text-white mb-6">
                                 Chegou a hora de parar de levar os obstáculos da vida <span className="text-amber-500">para o lado pessoal.</span>
@@ -517,6 +562,10 @@ const AlgoritmoDoUniverso = () => {
                             <h2 className="text-3xl md:text-5xl font-black text-white">
                                 Perguntas que a sua mente vai fazer
                             </h2>
+                            {/* Terminal code scrolling visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center mt-8">
+                                <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-full max-w-[200px] rounded-xl border border-white/10 opacity-50" />
+                            </motion.div>
                         </motion.div>
                         <motion.div {...fadeInUp}>
                             <FAQ q="Isso é mais um livro de autoajuda?" a="Não. 'O Algoritmo do Universo' utiliza uma linguagem técnica e mecânica intencionalmente. Aqui não há visualizações criativas, mantras ou 'pensamento positivo'. É um diagnóstico pragmático do sistema que governa os seus resultados — e um manual operacional para você manipulá-lo." />
@@ -536,6 +585,11 @@ const AlgoritmoDoUniverso = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 blur-[150px] rounded-full pointer-events-none" />
 
                     <div className="relative max-w-lg mx-auto z-10">
+                        {/* Cosmic spherical engine visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center mb-10">
+                            <img src="https://i.pinimg.com/originals/68/15/33/6815337ea6d3f02664a1dc631624b8fb.gif" alt="" className="w-full max-w-xs rounded-2xl border border-amber-500/20 opacity-70" />
+                        </motion.div>
+
                         <motion.div {...fadeInUp} className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
                                 Assuma o controle. <span className="text-amber-500">Agora.</span>
@@ -665,6 +719,11 @@ const AlgoritmoDoUniverso = () => {
                 <section className="relative py-20 px-4 border-t border-white/5">
                     <div className="max-w-3xl mx-auto text-center">
                         <motion.div {...fadeInUp}>
+                            {/* Mechanical eye scanning visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center mb-10">
+                                <img src="https://i.pinimg.com/originals/0e/3c/38/0e3c38f49ac9e74119382b06c5b256d1.gif" alt="" className="w-full max-w-[180px] rounded-full border border-white/10 opacity-60" />
+                            </motion.div>
+
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-red-500/20 rounded-full bg-red-500/5">
                                 <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                                 <span className="text-red-400/70 font-bold text-[10px] uppercase tracking-[0.2em]">Nota Final</span>
