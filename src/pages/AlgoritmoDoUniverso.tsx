@@ -128,6 +128,16 @@ const AlgoritmoDoUniverso = () => {
                             </span>
                         </motion.h1>
 
+                        {/* Hero visual */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, delay: 0.3 }}
+                            className="my-10 flex justify-center"
+                        >
+                            <img src="https://i.pinimg.com/originals/25/56/71/2556714d789e9da6b988634db6aba014.gif" alt="" className="w-64 md:w-80 rounded-3xl opacity-80 shadow-[0_0_60px_-15px_rgba(245,158,11,0.3)]" />
+                        </motion.div>
+
                         {/* Sub-headline */}
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -215,6 +225,11 @@ const AlgoritmoDoUniverso = () => {
                 <section className="relative py-24 md:py-32 px-4">
                     <div className="max-w-3xl mx-auto">
                         <motion.div {...fadeInUp} className="space-y-10 text-lg md:text-xl text-slate-300 leading-[1.9]">
+                            {/* Section visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center mb-10">
+                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-48 md:w-56 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
+                            </motion.div>
+
                             <p className="first-letter:text-6xl first-letter:font-black first-letter:text-amber-500 first-letter:float-left first-letter:mr-3 first-letter:leading-none">
                                 Você provavelmente se considera uma pessoa boa. Você trabalha duro, tenta fazer as coisas do jeito certo e, em algum nível, espera que a vida perceba o seu esforço.
                             </p>
@@ -233,6 +248,10 @@ const AlgoritmoDoUniverso = () => {
                             <p>
                                 O desgaste mental aumenta. A frustração se torna rotina. E a pergunta que ecoa na sua cabeça no fim do dia é sempre a mesma:
                             </p>
+
+                            <motion.div {...fadeInUp} className="flex justify-center my-6">
+                                <img src="https://i.pinimg.com/originals/32/c3/a7/32c3a75b9d47ea321c108dc076708640.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                            </motion.div>
 
                             <motion.p
                                 {...fadeInUp}
@@ -268,6 +287,11 @@ const AlgoritmoDoUniverso = () => {
                                     </p>
                                 </div>
                             </motion.div>
+
+                            {/* Visual after quote */}
+                            <motion.div {...fadeInUp} className="flex justify-center mt-12">
+                                <img src="https://i.pinimg.com/originals/a0/61/22/a061226b0125b9a410e609136198d3db.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-70 shadow-[0_0_50px_-12px_rgba(245,158,11,0.25)]" />
+                            </motion.div>
                         </motion.div>
                     </div>
                 </section>
@@ -299,6 +323,11 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-lg text-slate-500 mt-6 max-w-3xl mx-auto italic">
                                 Você vai entender, de uma vez por todas, que a sua dor e o seu cansaço não são punições divinas ou falta de sorte. São apenas diagnósticos mecânicos de desalinhamento.
                             </p>
+                        </motion.div>
+
+                        {/* Mechanism visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center mb-16">
+                            <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 border border-amber-500/10 shadow-[0_0_40px_-10px_rgba(245,158,11,0.15)]" />
                         </motion.div>
 
                         {/* 3 Pillar Cards — with numbering and visual hierarchy */}
@@ -375,6 +404,11 @@ const AlgoritmoDoUniverso = () => {
                             </p>
                         </motion.div>
 
+                        {/* Paradigm visual */}
+                        <motion.div {...fadeInUp} className="flex justify-center my-10">
+                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-48 md:w-60 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
+                        </motion.div>
+
                         {/* Visual separator */}
                         <motion.div {...fadeInUp} className="flex items-center justify-center gap-3 my-16">
                             <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-amber-500/50" />
@@ -426,6 +460,9 @@ const AlgoritmoDoUniverso = () => {
                                 A diferença é <span className="text-amber-500">brutal.</span>
                             </h2>
                             <p className="text-slate-400 text-lg">O que muda quando você para de implorar e começa a operar.</p>
+                            <motion.div {...fadeInUp} className="flex justify-center mt-10">
+                                <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-75 shadow-[0_0_50px_-12px_rgba(245,158,11,0.2)]" />
+                            </motion.div>
                         </motion.div>
 
                         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -491,6 +528,9 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-lg text-slate-400 mb-10">
                                 O universo não está contra você. Você apenas não tinha o manual de instruções. <span className="text-white font-bold">Até agora.</span>
                             </p>
+                            <motion.div {...fadeInUp} className="flex justify-center mb-10">
+                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.25)]" />
+                            </motion.div>
                             <motion.a
                                 href="#oferta"
                                 animate={{ scale: [1, 1.03, 1] }}
@@ -514,9 +554,12 @@ const AlgoritmoDoUniverso = () => {
                                 <Brain className="w-4 h-4 text-amber-500" />
                                 <span className="text-slate-400 font-bold text-[10px] tracking-[0.2em] uppercase">Objeções eliminadas</span>
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black text-white">
+                            <h2 className="text-3xl md:text-5xl font-black text-white mb-10">
                                 Perguntas que a sua mente vai fazer
                             </h2>
+                            <motion.div {...fadeInUp} className="flex justify-center">
+                                <img src="https://i.pinimg.com/originals/68/15/33/6815337ea6d3f02664a1dc631624b8fb.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                            </motion.div>
                         </motion.div>
                         <motion.div {...fadeInUp}>
                             <FAQ q="Isso é mais um livro de autoajuda?" a="Não. 'O Algoritmo do Universo' utiliza uma linguagem técnica e mecânica intencionalmente. Aqui não há visualizações criativas, mantras ou 'pensamento positivo'. É um diagnóstico pragmático do sistema que governa os seus resultados — e um manual operacional para você manipulá-lo." />
@@ -551,6 +594,11 @@ const AlgoritmoDoUniverso = () => {
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[200px] bg-amber-500/8 blur-[80px] rounded-full -mt-[100px] pointer-events-none" />
 
                             <div className="relative z-10">
+                                {/* Offer visual */}
+                                <div className="flex justify-center mb-8">
+                                    <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-80 shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]" />
+                                </div>
+
                                 {/* Product name */}
                                 <div className="text-center mb-10">
                                     <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border border-amber-500/20 rounded-full bg-amber-500/5">
@@ -636,6 +684,9 @@ const AlgoritmoDoUniverso = () => {
                 <section className="relative py-20 px-4">
                     <div className="max-w-2xl mx-auto">
                         <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06]">
+                            <div className="flex justify-center mb-8">
+                                <img src="https://i.pinimg.com/originals/0e/3c/38/0e3c38f49ac9e74119382b06c5b256d1.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                            </div>
                             <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-amber-500/10 rounded-full">
                                 <ShieldCheck className="w-10 h-10 text-amber-500" />
                             </div>
