@@ -135,7 +135,7 @@ const AlgoritmoDoUniverso = () => {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="my-10 flex justify-center"
                         >
-                            <img src="https://i.pinimg.com/originals/25/56/71/2556714d789e9da6b988634db6aba014.gif" alt="" className="w-64 md:w-80 rounded-3xl opacity-80 shadow-[0_0_60px_-15px_rgba(245,158,11,0.3)]" />
+                            <img src="/univ-gif-1.gif" alt="" className="w-64 md:w-80 rounded-3xl opacity-80 shadow-[0_0_60px_-15px_rgba(245,158,11,0.3)]" />
                         </motion.div>
 
                         {/* Sub-headline */}
@@ -227,7 +227,7 @@ const AlgoritmoDoUniverso = () => {
                         <motion.div {...fadeInUp} className="space-y-10 text-lg md:text-xl text-slate-300 leading-[1.9]">
                             {/* Section visual */}
                             <motion.div {...fadeInUp} className="flex justify-center mb-10">
-                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-48 md:w-56 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
+                                <img src="/univ-img-2.jpg" alt="" className="w-48 md:w-56 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
                             </motion.div>
 
                             <p className="first-letter:text-6xl first-letter:font-black first-letter:text-amber-500 first-letter:float-left first-letter:mr-3 first-letter:leading-none">
@@ -250,7 +250,7 @@ const AlgoritmoDoUniverso = () => {
                             </p>
 
                             <motion.div {...fadeInUp} className="flex justify-center my-6">
-                                <img src="https://i.pinimg.com/originals/32/c3/a7/32c3a75b9d47ea321c108dc076708640.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                                <img src="/univ-gif-3.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
                             </motion.div>
 
                             <motion.p
@@ -290,7 +290,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Visual after quote */}
                             <motion.div {...fadeInUp} className="flex justify-center mt-12">
-                                <img src="https://i.pinimg.com/originals/a0/61/22/a061226b0125b9a410e609136198d3db.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-70 shadow-[0_0_50px_-12px_rgba(245,158,11,0.25)]" />
+                                <img src="/univ-gif-4.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-70 shadow-[0_0_50px_-12px_rgba(245,158,11,0.25)]" />
                             </motion.div>
                         </motion.div>
                     </div>
@@ -327,7 +327,7 @@ const AlgoritmoDoUniverso = () => {
 
                         {/* Mechanism visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mb-16">
-                            <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 border border-amber-500/10 shadow-[0_0_40px_-10px_rgba(245,158,11,0.15)]" />
+                            <img src="/univ-img-5.jpg" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 border border-amber-500/10 shadow-[0_0_40px_-10px_rgba(245,158,11,0.15)]" />
                         </motion.div>
 
                         {/* 3 Pillar Cards — with numbering and visual hierarchy */}
@@ -406,7 +406,7 @@ const AlgoritmoDoUniverso = () => {
 
                         {/* Paradigm visual */}
                         <motion.div {...fadeInUp} className="flex justify-center my-10">
-                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-48 md:w-60 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
+                            <img src="/univ-img-6.jpg" alt="" className="w-48 md:w-60 rounded-2xl opacity-70 border border-white/10 shadow-lg" />
                         </motion.div>
 
                         {/* Visual separator */}
@@ -461,7 +461,7 @@ const AlgoritmoDoUniverso = () => {
                             </h2>
                             <p className="text-slate-400 text-lg">O que muda quando você para de implorar e começa a operar.</p>
                             <motion.div {...fadeInUp} className="flex justify-center mt-10">
-                                <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-75 shadow-[0_0_50px_-12px_rgba(245,158,11,0.2)]" />
+                                <img src="/univ-gif-7.gif" alt="" className="w-56 md:w-72 rounded-3xl opacity-75 shadow-[0_0_50px_-12px_rgba(245,158,11,0.2)]" />
                             </motion.div>
                         </motion.div>
 
@@ -529,7 +529,7 @@ const AlgoritmoDoUniverso = () => {
                                 O universo não está contra você. Você apenas não tinha o manual de instruções. <span className="text-white font-bold">Até agora.</span>
                             </p>
                             <motion.div {...fadeInUp} className="flex justify-center mb-10">
-                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.25)]" />
+                                <img src="/univ-gif-8.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.25)]" />
                             </motion.div>
                             <motion.a
                                 href="#oferta"
@@ -558,7 +558,7 @@ const AlgoritmoDoUniverso = () => {
                                 Perguntas que a sua mente vai fazer
                             </h2>
                             <motion.div {...fadeInUp} className="flex justify-center">
-                                <img src="https://i.pinimg.com/originals/68/15/33/6815337ea6d3f02664a1dc631624b8fb.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                                <img src="/univ-gif-9.gif" alt="" className="w-52 md:w-64 rounded-2xl opacity-70 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
                             </motion.div>
                         </motion.div>
                         <motion.div {...fadeInUp}>
@@ -596,7 +596,7 @@ const AlgoritmoDoUniverso = () => {
                             <div className="relative z-10">
                                 {/* Offer visual */}
                                 <div className="flex justify-center mb-8">
-                                    <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-80 shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]" />
+                                    <img src="/univ-gif-10.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-80 shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)]" />
                                 </div>
 
                                 {/* Product name */}
@@ -685,7 +685,7 @@ const AlgoritmoDoUniverso = () => {
                     <div className="max-w-2xl mx-auto">
                         <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06]">
                             <div className="flex justify-center mb-8">
-                                <img src="https://i.pinimg.com/originals/0e/3c/38/0e3c38f49ac9e74119382b06c5b256d1.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
+                                <img src="/univ-gif-11.gif" alt="" className="w-44 md:w-56 rounded-2xl opacity-75 shadow-[0_0_40px_-10px_rgba(245,158,11,0.2)]" />
                             </div>
                             <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-amber-500/10 rounded-full">
                                 <ShieldCheck className="w-10 h-10 text-amber-500" />
