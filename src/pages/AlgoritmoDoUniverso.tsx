@@ -523,13 +523,13 @@ const AlgoritmoDoUniverso = () => {
                 {/* ═══════════════════════════════════════════════════════════
             CTA INTERMEDIÁRIO — Bloco de urgência
         ═══════════════════════════════════════════════════════════ */}
-                <section className="relative py-20 px-4 bg-amber-500/[0.03] border-y border-amber-500/10 overflow-hidden">
-                    {/* Pixel-art factory decorative bg */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-15 pointer-events-none hidden md:block">
-                        <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-full h-full object-cover rounded-2xl" />
-                    </div>
-                    <div className="max-w-3xl mx-auto text-center relative z-10">
+                <section className="relative py-20 px-4 bg-amber-500/[0.03] border-y border-amber-500/10">
+                    <div className="max-w-3xl mx-auto text-center">
                         <motion.div {...fadeInUp}>
+                            {/* Pixel-art factory visual */}
+                            <div className="flex justify-center mb-10">
+                                <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-80" />
+                            </div>
                             <p className="text-2xl md:text-4xl font-black text-white mb-6">
                                 Chegou a hora de parar de levar os obstáculos da vida <span className="text-amber-500">para o lado pessoal.</span>
                             </p>
