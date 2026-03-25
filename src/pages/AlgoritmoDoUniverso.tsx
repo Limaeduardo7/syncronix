@@ -1,10 +1,24 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Lock, Target, Zap, Activity, Cpu, ShieldCheck, Clock, CheckCircle, AlertTriangle, Eye, ChevronDown, Flame, Brain, Gem, X, Check } from "lucide-react";
+import { ArrowRight, Lock, Target, Zap, Activity, Cpu, ShieldCheck, Clock, CheckCircle, AlertTriangle, Eye, ChevronDown, Flame, Brain, Gem, X, Check, ZoomIn, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Lightbox from "yet-another-react-lightbox";
+import LightboxZoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+
+const SUMARIO_IMAGES = [
+  "/images/algoritmo-universo/sumario-01.jpg",
+  "/images/algoritmo-universo/sumario-02.jpg",
+  "/images/algoritmo-universo/sumario-03.jpg",
+  "/images/algoritmo-universo/sumario-04.jpg",
+  "/images/algoritmo-universo/sumario-05.jpg",
+];
+const sumarioSlides = SUMARIO_IMAGES.map((src) => ({ src }));
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -56,6 +70,9 @@ const FAQ = ({ q, a }: { q: string; a: string }) => {
 };
 
 const AlgoritmoDoUniverso = () => {
+    const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3500, stopOnInteraction: false })]);
+    const [lightboxIndex, setLightboxIndex] = useState(-1);
+
     useEffect(() => {
         document.title = "O Algoritmo do Universo | O Manual Definitivo da Realidade";
         window.scrollTo(0, 0);
@@ -298,6 +315,76 @@ const AlgoritmoDoUniverso = () => {
                             </motion.div>
                         </motion.div>
                     </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            SUMÁRIO VISUAL — Carrossel de páginas do e-book
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-black via-neutral-950/30 to-black overflow-hidden">
+                    <div className="max-w-5xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center mb-16">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-amber-500/20 rounded-full bg-amber-500/5">
+                                <BookOpen className="w-4 h-4 text-amber-500" />
+                                <span className="text-amber-400 font-bold text-[10px] tracking-[0.2em] uppercase">Por dentro do e-book</span>
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
+                                O que você vai encontrar <span className="text-amber-500">lá dentro</span>
+                            </h2>
+                            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+                                Páginas projetadas para decodificar o sistema da realidade com infográficos mecânicos de alta definição.
+                            </p>
+                        </motion.div>
+
+                        <motion.div {...fadeInUp}>
+                            <div className="embla overflow-hidden rounded-2xl border-2 border-amber-500/15 shadow-[0_0_60px_-20px_rgba(245,158,11,0.15)] bg-neutral-950" ref={emblaRef}>
+                                <div className="flex touch-pan-y">
+                                    {SUMARIO_IMAGES.map((src, idx) => (
+                                        <div
+                                            className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[650px] md:h-[750px] flex items-center justify-center bg-black p-4 md:p-8 cursor-zoom-in group"
+                                            key={idx}
+                                            onClick={() => setLightboxIndex(idx)}
+                                        >
+                                            {/* Blurred background */}
+                                            <div
+                                                className="absolute inset-0 bg-cover bg-center blur-3xl opacity-20 pointer-events-none"
+                                                style={{ backgroundImage: `url(${src})` }}
+                                            />
+                                            <img
+                                                src={src}
+                                                alt={`Página ${idx + 1} do Algoritmo do Universo`}
+                                                className="relative z-10 max-h-full w-auto object-contain rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                                            />
+                                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                                                <div className="bg-black/60 p-4 rounded-full backdrop-blur-sm border border-amber-500/20">
+                                                    <ZoomIn className="w-8 h-8 text-amber-400" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Carousel dots */}
+                            <div className="flex justify-center gap-2 mt-6">
+                                {SUMARIO_IMAGES.map((_, idx) => (
+                                    <div key={idx} className="w-2 h-2 rounded-full bg-white/20" />
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <Lightbox
+                        index={lightboxIndex}
+                        open={lightboxIndex >= 0}
+                        close={() => setLightboxIndex(-1)}
+                        slides={sumarioSlides}
+                        plugins={[LightboxZoom]}
+                        animation={{ fade: 300 }}
+                        carousel={{ finite: false }}
+                        styles={{
+                            container: { backgroundColor: "rgba(0, 0, 0, 0.97)" },
+                        }}
+                    />
                 </section>
 
                 {/* ═══════════════════════════════════════════════════════════
