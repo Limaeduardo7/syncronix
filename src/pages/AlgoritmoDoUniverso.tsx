@@ -128,14 +128,22 @@ const AlgoritmoDoUniverso = () => {
                             </span>
                         </motion.h1>
 
-                        {/* Hero visual */}
+                        {/* Hero VSL */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="my-10 flex justify-center"
+                            className="my-10 w-full max-w-2xl mx-auto"
                         >
-                            <img src="https://i.pinimg.com/originals/25/56/71/2556714d789e9da6b988634db6aba014.gif" alt="" className="w-full max-w-xs md:max-w-sm rounded-2xl border border-white/10 opacity-80 mix-blend-luminosity" />
+                            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-amber-500/20 shadow-[0_0_60px_-15px_rgba(245,158,11,0.25)]">
+                                <iframe
+                                    src="https://www.youtube.com/embed/gqVO_H2E3kU?rel=0&modestbranding=1"
+                                    title="O Algoritmo do Universo"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full"
+                                />
+                            </div>
                         </motion.div>
 
                         {/* Sub-headline */}
