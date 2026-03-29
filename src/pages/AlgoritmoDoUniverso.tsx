@@ -154,7 +154,7 @@ const AlgoritmoDoUniverso = () => {
                         >
                             <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-amber-500/20 shadow-[0_0_60px_-15px_rgba(245,158,11,0.25)]">
                                 <iframe
-                                    src="https://www.youtube.com/embed/gqVO_H2E3kU?rel=0&modestbranding=1"
+                                    src="https://www.youtube.com/embed/3vJ7Z23rXSg?rel=0&modestbranding=1"
                                     title="O Algoritmo do Universo"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
