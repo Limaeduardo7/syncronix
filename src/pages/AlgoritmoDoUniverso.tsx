@@ -288,7 +288,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Matrix face visual */}
                             <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-full max-w-xs rounded-2xl border border-white/10 opacity-70 mix-blend-luminosity" />
+                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-full max-w-xs rounded-2xl border border-white/10 opacity-70" />
                             </motion.div>
 
                             <p>
@@ -517,7 +517,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Brain scan interfaces visual */}
                             <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-70 mix-blend-luminosity" />
+                                <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-70" />
                             </motion.div>
 
                             <p className="text-lg md:text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
@@ -554,7 +554,7 @@ const AlgoritmoDoUniverso = () => {
                     <div className="max-w-5xl mx-auto">
                         {/* Particle collision visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mb-12">
-                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-full max-w-xs rounded-full border border-white/10 opacity-60 mix-blend-luminosity" />
+                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-full max-w-xs rounded-full border border-white/10 opacity-60" />
                         </motion.div>
 
                         <motion.div {...fadeInUp} className="text-center mb-16">
