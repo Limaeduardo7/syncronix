@@ -288,7 +288,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Matrix face visual */}
                             <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-full max-w-xs rounded-2xl border border-white/10 opacity-70" />
+                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </motion.div>
 
                             <p>
@@ -297,7 +297,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Person processed in machine visual */}
                             <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-75" />
+                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </motion.div>
 
                             {/* Glassmorphism quote card */}
@@ -418,7 +418,7 @@ const AlgoritmoDoUniverso = () => {
 
                         {/* AI Core visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mb-16">
-                            <img src="https://i.pinimg.com/originals/32/c3/a7/32c3a75b9d47ea321c108dc076708640.gif" alt="" className="w-full max-w-md rounded-2xl border border-white/10 opacity-80" />
+                            <img src="https://i.pinimg.com/originals/32/c3/a7/32c3a75b9d47ea321c108dc076708640.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                         </motion.div>
 
                         {/* 3 Pillar Cards — with numbering and visual hierarchy */}
@@ -481,7 +481,7 @@ const AlgoritmoDoUniverso = () => {
 
                         {/* Circular monitors room visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mt-16">
-                            <img src="https://i.pinimg.com/originals/a0/61/22/a061226b0125b9a410e609136198d3db.gif" alt="" className="w-full max-w-md rounded-2xl border border-white/10 opacity-75" />
+                            <img src="https://i.pinimg.com/originals/a0/61/22/a061226b0125b9a410e609136198d3db.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                         </motion.div>
                     </div>
                 </section>
@@ -517,7 +517,7 @@ const AlgoritmoDoUniverso = () => {
 
                             {/* Brain scan interfaces visual */}
                             <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-70" />
+                                <img src="https://i.pinimg.com/736x/4d/0b/5b/4d0b5bb1d2ad4b818fed90ff68da35dd.jpg" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </motion.div>
 
                             <p className="text-lg md:text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
@@ -554,7 +554,7 @@ const AlgoritmoDoUniverso = () => {
                     <div className="max-w-5xl mx-auto">
                         {/* Particle collision visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mb-12">
-                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-full max-w-xs rounded-full border border-white/10 opacity-60" />
+                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                         </motion.div>
 
                         <motion.div {...fadeInUp} className="text-center mb-16">
@@ -623,7 +623,7 @@ const AlgoritmoDoUniverso = () => {
                         <motion.div {...fadeInUp}>
                             {/* Pixel-art factory visual */}
                             <div className="flex justify-center mb-10">
-                                <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-full max-w-sm rounded-2xl border border-white/10 opacity-80" />
+                                <img src="https://i.pinimg.com/originals/94/fb/73/94fb7368115c0945caa6f7b7c576821d.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </div>
                             <p className="text-2xl md:text-4xl font-black text-white mb-6">
                                 Chegou a hora de parar de levar os obstáculos da vida <span className="text-amber-500">para o lado pessoal.</span>
@@ -659,7 +659,7 @@ const AlgoritmoDoUniverso = () => {
                             </h2>
                             {/* Terminal code scrolling visual */}
                             <motion.div {...fadeInUp} className="flex justify-center mt-8">
-                                <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-full max-w-[200px] rounded-xl border border-white/10 opacity-50" />
+                                <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </motion.div>
                         </motion.div>
                         <motion.div {...fadeInUp}>
@@ -682,7 +682,7 @@ const AlgoritmoDoUniverso = () => {
                     <div className="relative max-w-lg mx-auto z-10">
                         {/* Cosmic spherical engine visual */}
                         <motion.div {...fadeInUp} className="flex justify-center mb-10">
-                            <img src="https://i.pinimg.com/originals/68/15/33/6815337ea6d3f02664a1dc631624b8fb.gif" alt="" className="w-full max-w-xs rounded-2xl border border-amber-500/20 opacity-70" />
+                            <img src="https://i.pinimg.com/originals/68/15/33/6815337ea6d3f02664a1dc631624b8fb.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                         </motion.div>
 
                         <motion.div {...fadeInUp} className="text-center mb-12">
@@ -816,7 +816,7 @@ const AlgoritmoDoUniverso = () => {
                         <motion.div {...fadeInUp}>
                             {/* Mechanical eye scanning visual */}
                             <motion.div {...fadeInUp} className="flex justify-center mb-10">
-                                <img src="https://i.pinimg.com/originals/0e/3c/38/0e3c38f49ac9e74119382b06c5b256d1.gif" alt="" className="w-full max-w-[180px] rounded-full border border-white/10 opacity-60" />
+                                <img src="https://i.pinimg.com/originals/0e/3c/38/0e3c38f49ac9e74119382b06c5b256d1.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
                             </motion.div>
 
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-red-500/20 rounded-full bg-red-500/5">
