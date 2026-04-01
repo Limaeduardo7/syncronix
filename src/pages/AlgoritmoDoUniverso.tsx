@@ -664,13 +664,11 @@ const AlgoritmoDoUniverso = () => {
                                 </div>
 
                                 <div className="mb-10 flex justify-center">
-                                    <div className="w-full max-w-[380px] md:max-w-[430px] aspect-square rounded-2xl overflow-hidden">
-                                        <img
-                                            src="/algoritmo/mockup.png"
-                                            alt="Mockup do ebook O Algoritmo do Universo"
-                                            className="w-full h-full object-cover drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
-                                        />
-                                    </div>
+                                    <img
+                                        src="/algoritmo/mockup.png"
+                                        alt="Mockup do ebook O Algoritmo do Universo"
+                                        className="max-w-full h-auto rounded-2xl drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
+                                    />
                                 </div>
 
                                 {/* What's included */}
