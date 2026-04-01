@@ -578,9 +578,9 @@ const AlgoritmoDoUniverso = () => {
                                     {[
                                         "Opera com clareza mecânica e direção",
                                         "Alinhamento interno gera resultados reais",
-                                        "Entende que não é injusto — era desalinhado",
+                                        "Entende que não é injusto, era desalinhado",
                                         "Método pragmático e replicável",
-                                        "Latência não é ansiedade — é processo",
+                                        "Latência não é ansiedade, é processo",
                                         "Age por lógica, não por emoção"
                                     ].map((t, i) => (
                                         <li key={i} className="flex items-start gap-3 text-slate-300">
