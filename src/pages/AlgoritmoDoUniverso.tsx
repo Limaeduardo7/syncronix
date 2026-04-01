@@ -276,10 +276,7 @@ const AlgoritmoDoUniverso = () => {
 
                             <motion.div {...fadeInUp} className="text-center py-10">
                                 <p className="text-amber-500 font-black text-2xl md:text-3xl mb-4">
-                                    A resposta vai doer, mas vai te libertar:
-                                </p>
-                                <p className="text-white font-black text-3xl md:text-4xl">
-                                    Você está operando sob uma mentira.
+                                    E a resposta é que...
                                 </p>
                             </motion.div>
 
@@ -291,11 +288,6 @@ const AlgoritmoDoUniverso = () => {
                             <p>
                                 Ensinaram a você que o universo é um juiz emocional. Que ele recompensa o suor, a moralidade e as histórias de superação. Mas a realidade <span className="text-white font-bold">não opera por mérito</span>. Ela não sente pena. Ela não avalia a sua índole.
                             </p>
-
-                            {/* Person processed in machine visual */}
-                            <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/originals/9a/6b/59/9a6b597896c8a591774f81a2d01818fa.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
-                            </motion.div>
 
                             {/* Glassmorphism quote card */}
                             <motion.div
@@ -549,11 +541,6 @@ const AlgoritmoDoUniverso = () => {
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950/30 to-black">
                     <div className="max-w-5xl mx-auto">
-                        {/* Particle collision visual */}
-                        <motion.div {...fadeInUp} className="flex justify-center mb-12">
-                            <img src="https://i.pinimg.com/736x/a2/3a/db/a23adbed0088e7121a8a2eef7db4c8ad.jpg" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
-                        </motion.div>
-
                         <motion.div {...fadeInUp} className="text-center mb-16">
                             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
                                 A diferença é <span className="text-amber-500">brutal.</span>
@@ -682,11 +669,13 @@ const AlgoritmoDoUniverso = () => {
                                 </div>
 
                                 <div className="mb-10 flex justify-center">
-                                    <img
-                                        src="/algoritmo/Untitled design - 2026-04-01T140656.231.png"
-                                        alt="Mockup do ebook O Algoritmo do Universo"
-                                        className="w-full max-w-[280px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
-                                    />
+                                    <div className="w-full max-w-[380px] md:max-w-[430px] aspect-square rounded-2xl overflow-hidden">
+                                        <img
+                                            src="/algoritmo/Untitled design - 2026-04-01T140656.231.png"
+                                            alt="Mockup do ebook O Algoritmo do Universo"
+                                            className="w-full h-full object-cover drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
+                                        />
+                                    </div>
                                 </div>
 
                                 {/* What's included */}
