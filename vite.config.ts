@@ -26,21 +26,51 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'framer-motion': ['framer-motion'],
-          'ui-vendor': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-select',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-tooltip',
-          ],
-          'particles': ['@tsparticles/react', '@tsparticles/engine', '@tsparticles/slim'],
-          'query': ['@tanstack/react-query'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (
+              id.includes('embla-carousel') ||
+              id.includes('yet-another-react-lightbox')
+            ) {
+              return 'algoritmo-shared';
+            }
+
+            if (id.includes('react-router-dom') || id.includes('/react/') || id.includes('/react-dom/')) {
+              return 'react-vendor';
+            }
+
+            if (id.includes('framer-motion')) {
+              return 'framer-motion';
+            }
+
+            if (
+              id.includes('@radix-ui') ||
+              id.includes('lucide-react')
+            ) {
+              return 'ui-vendor';
+            }
+
+            if (
+              id.includes('@tsparticles/react') ||
+              id.includes('@tsparticles/engine') ||
+              id.includes('@tsparticles/slim')
+            ) {
+              return 'particles';
+            }
+
+            if (id.includes('@tanstack/react-query')) {
+              return 'query';
+            }
+          }
+
+          if (
+            id.includes('src/components/quantum-key/notificationsData') ||
+            id.includes('src/components/quantum-key/PurchaseNotifications') ||
+            id.includes('src/components/quantum-key/LiveViewers') ||
+            id.includes('src/components/gestao-inteligente/CountdownTimer')
+          ) {
+            return 'algoritmo-shared';
+          }
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
