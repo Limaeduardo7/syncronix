@@ -74,7 +74,7 @@ const AlgoritmoDoUniverso = () => {
     const [lightboxIndex, setLightboxIndex] = useState(-1);
 
     useEffect(() => {
-        document.title = "O Algoritmo do Universo | O Manual Definitivo da Realidade";
+        document.title = "O ALGORITMO DO UNIVERSO";
         window.scrollTo(0, 0);
     }, []);
 
@@ -129,12 +129,9 @@ const AlgoritmoDoUniverso = () => {
                             transition={{ duration: 0.8, delay: 0.15 }}
                             className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[1.1] tracking-tight"
                         >
-                            O Universo não tem ouvidos
-                            <br className="hidden md:block" /> para a sua exaustão.
-                            <br />
                             <span className="relative inline-block mt-2">
                                 <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
-                                    Ele processa apenas códigos.
+                                    O ALGORITMO DO UNIVERSO
                                 </span>
                                 <motion.span
                                     className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-500/0 via-amber-500 to-amber-500/0 rounded-full"
@@ -644,33 +641,6 @@ const AlgoritmoDoUniverso = () => {
                     </div>
                 </section>
 
-                {/* ═══════════════════════════════════════════════════════════
-            FAQ — Quebra de objeções
-        ═══════════════════════════════════════════════════════════ */}
-                <section className="relative py-24 md:py-32 px-4">
-                    <div className="max-w-3xl mx-auto">
-                        <motion.div {...fadeInUp} className="text-center mb-16">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-white/10 rounded-full bg-white/5">
-                                <Brain className="w-4 h-4 text-amber-500" />
-                                <span className="text-slate-400 font-bold text-[10px] tracking-[0.2em] uppercase">Objeções eliminadas</span>
-                            </div>
-                            <h2 className="text-3xl md:text-5xl font-black text-white">
-                                Perguntas que a sua mente vai fazer
-                            </h2>
-                            {/* Terminal code scrolling visual */}
-                            <motion.div {...fadeInUp} className="flex justify-center mt-8">
-                                <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
-                            </motion.div>
-                        </motion.div>
-                        <motion.div {...fadeInUp}>
-                            <FAQ q="Isso é mais um livro de autoajuda?" a="Não. 'O Algoritmo do Universo' utiliza uma linguagem técnica e mecânica intencionalmente. Aqui não há visualizações criativas, mantras ou 'pensamento positivo'. É um diagnóstico pragmático do sistema que governa os seus resultados — e um manual operacional para você manipulá-lo." />
-                            <FAQ q="Preciso acreditar em algo específico para funcionar?" a="Pelo contrário. O material foi desenhado para funcionar independente das suas crenças. Ele trata a realidade como um sistema operacional: não importa se você 'acredita' na gravidade — ela funciona de qualquer forma. O Algoritmo opera com a mesma lógica." />
-                            <FAQ q="R$ 29,90 parece barato demais. Qual é o truque?" a="Não há truque. O preço é uma decisão estratégica: queremos que o maior número possível de pessoas adultas tenham acesso a este conhecimento. O valor do conteúdo dentro do material é infinitamente superior ao preço cobrado. A pergunta é: quanto custa mais um ano operando sob uma mentira?" />
-                            <FAQ q="E se eu não gostar?" a="Você está coberto por 7 dias de garantia incondicional. Se o material não fizer sentido para você por qualquer motivo, basta solicitar o reembolso. Zero burocracia." />
-                            <FAQ q="É um livro digital?" a="Sim. O Algoritmo do Universo é um e-book. Após a compra, você recebe acesso imediato ao conteúdo. Leia no celular, tablet ou computador — onde e quando quiser." />
-                        </motion.div>
-                    </div>
-                </section>
 
                 {/* ═══════════════════════════════════════════════════════════
             OFERTA PRINCIPAL — Bloco 5
@@ -711,13 +681,20 @@ const AlgoritmoDoUniverso = () => {
                                     </h3>
                                 </div>
 
+                                <div className="mb-10 flex justify-center">
+                                    <img
+                                        src="/algoritmo/Untitled design - 2026-04-01T140656.231.png"
+                                        alt="Mockup do ebook O Algoritmo do Universo"
+                                        className="w-full max-w-[280px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
+                                    />
+                                </div>
+
                                 {/* What's included */}
                                 <div className="space-y-3 mb-10 text-left">
                                     {[
                                         "E-book completo: O Algoritmo do Universo",
-                                        "Framework Funil → Engrenagens → Esteira",
+                                        "Framework Operacional da Realidade",
                                         "Diagnóstico de desalinhamento pessoal",
-                                        "Guia de preenchimento de lacunas internas",
                                         "Acesso vitalício e atualizações futuras"
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-center gap-3 text-slate-300">
@@ -775,6 +752,34 @@ const AlgoritmoDoUniverso = () => {
                                     </div>
                                 </div>
                             </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════════════════════════
+            FAQ — Quebra de objeções
+        ═══════════════════════════════════════════════════════════ */}
+                <section className="relative py-24 md:py-32 px-4">
+                    <div className="max-w-3xl mx-auto">
+                        <motion.div {...fadeInUp} className="text-center mb-16">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-white/10 rounded-full bg-white/5">
+                                <Brain className="w-4 h-4 text-amber-500" />
+                                <span className="text-slate-400 font-bold text-[10px] tracking-[0.2em] uppercase">Objeções eliminadas</span>
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-black text-white">
+                                Perguntas que a sua mente vai fazer
+                            </h2>
+                            {/* Terminal code scrolling visual */}
+                            <motion.div {...fadeInUp} className="flex justify-center mt-8">
+                                <img src="https://i.pinimg.com/originals/79/16/68/7916682c5b1910d5c54127d5ff15b0c5.gif" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
+                            </motion.div>
+                        </motion.div>
+                        <motion.div {...fadeInUp}>
+                            <FAQ q="Isso é mais um livro de autoajuda?" a="Não. 'O Algoritmo do Universo' utiliza uma linguagem técnica e mecânica intencionalmente. Aqui não há visualizações criativas, mantras ou 'pensamento positivo'. É um diagnóstico pragmático do sistema que governa os seus resultados — e um manual operacional para você manipulá-lo." />
+                            <FAQ q="Preciso acreditar em algo específico para funcionar?" a="Pelo contrário. O material foi desenhado para funcionar independente das suas crenças. Ele trata a realidade como um sistema operacional: não importa se você 'acredita' na gravidade — ela funciona de qualquer forma. O Algoritmo opera com a mesma lógica." />
+                            <FAQ q="R$ 29,90 parece barato demais. Qual é o truque?" a="Não há truque. O preço é uma decisão estratégica: queremos que o maior número possível de pessoas adultas tenham acesso a este conhecimento. O valor do conteúdo dentro do material é infinitamente superior ao preço cobrado. A pergunta é: quanto custa mais um ano operando sob uma mentira?" />
+                            <FAQ q="E se eu não gostar?" a="Você está coberto por 7 dias de garantia incondicional. Se o material não fizer sentido para você por qualquer motivo, basta solicitar o reembolso. Zero burocracia." />
+                            <FAQ q="É um livro digital?" a="Sim. O Algoritmo do Universo é um e-book. Após a compra, você recebe acesso imediato ao conteúdo. Leia no celular, tablet ou computador — onde e quando quiser." />
                         </motion.div>
                     </div>
                 </section>
