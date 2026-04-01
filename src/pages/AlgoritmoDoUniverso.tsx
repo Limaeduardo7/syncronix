@@ -280,11 +280,6 @@ const AlgoritmoDoUniverso = () => {
                                 </p>
                             </motion.div>
 
-                            {/* Matrix face visual */}
-                            <motion.div {...fadeInUp} className="flex justify-center my-12">
-                                <img src="https://i.pinimg.com/736x/b9/50/07/b95007e7e8f032c229480087383ea880.jpg" alt="" className="w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-xl border border-white/10 opacity-80" />
-                            </motion.div>
-
                             <p>
                                 Ensinaram a você que o universo é um juiz emocional. Que ele recompensa o suor, a moralidade e as histórias de superação. Mas a realidade <span className="text-white font-bold">não opera por mérito</span>. Ela não sente pena. Ela não avalia a sua índole.
                             </p>
@@ -671,7 +666,7 @@ const AlgoritmoDoUniverso = () => {
                                 <div className="mb-10 flex justify-center">
                                     <div className="w-full max-w-[380px] md:max-w-[430px] aspect-square rounded-2xl overflow-hidden">
                                         <img
-                                            src="/algoritmo/Untitled design - 2026-04-01T140656.231.png"
+                                            src="/algoritmo/mockup.png"
                                             alt="Mockup do ebook O Algoritmo do Universo"
                                             className="w-full h-full object-cover drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
                                         />
