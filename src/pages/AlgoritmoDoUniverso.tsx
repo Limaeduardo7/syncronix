@@ -429,7 +429,7 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
                                 Este não é um material de autoajuda fofa. É um <span className="text-white font-bold">mapa pragmático e direto ao ponto</span>. Ele quebra a ilusão da "justiça cósmica" e entrega em suas mãos o painel de controle da realidade.
                             </p>
-                            <p className="text-lg text-slate-500 mt-6 max-w-3xl mx-auto italic">
+                            <p className="text-lg text-slate-500 mt-6 max-w-3xl mx-auto">
                                 Você vai entender, de uma vez por todas, que a sua dor e o seu cansaço não são punições divinas ou falta de sorte. São apenas diagnósticos mecânicos de desalinhamento.
                             </p>
                         </motion.div>
