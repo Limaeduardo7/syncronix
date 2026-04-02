@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Lock, Target, Zap, Activity, Cpu, ShieldCheck, Clock, CheckCircle, AlertTriangle, Eye, ChevronDown, Flame, Brain, Gem, X, Check, ZoomIn, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "@/components/quantum-key/SEO";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
@@ -80,6 +81,14 @@ const AlgoritmoDoUniverso = () => {
 
     return (
         <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-amber-500/30 selection:text-amber-200">
+            <SEO
+                title="O Algoritmo do Universo | O manual definitivo da realidade"
+                description="Descubra o sistema mecanico por tras da realidade e acesse o e-book O Algoritmo do Universo para operar a maquina ao seu favor."
+                keywords="algoritmo do universo, ebook, realidade, desenvolvimento pessoal, alinhamento, resultados, manual da realidade, syncronix"
+                ogImage="https://syncronix.co/algoritmo-book-main.jpg"
+                canonical="https://syncronix.co/ebook-o-algoritmo-do-universo"
+                lang="pt-BR"
+            />
             {/* Global CSS animations */}
             <style>{`
                 @keyframes float-orb { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-40px) scale(1.1); } }

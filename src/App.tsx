@@ -114,7 +114,7 @@ const App = () => (
                 <Route path="/gestao-inteligente" element={<GestaoInteligente />} />
 
                 {/* O Algoritmo do Universo Route */}
-                <Route path="/o-algoritmo-do-universo" element={<AlgoritmoDoUniverso />} />
+                <Route path="/ebook-o-algoritmo-do-universo" element={<AlgoritmoDoUniverso />} />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
