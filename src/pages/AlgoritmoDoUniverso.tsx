@@ -80,6 +80,17 @@ const AlgoritmoDoUniverso = () => {
 
     return (
         <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-amber-500/30 selection:text-amber-200">
+            {/* Global CSS animations */}
+            <style>{`
+                @keyframes float-orb { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-40px) scale(1.1); } }
+                @keyframes float-orb-reverse { 0%,100% { transform: translateY(0) scale(1.05); } 50% { transform: translateY(30px) scale(0.95); } }
+                @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+                @keyframes pulse-glow { 0%,100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+                @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+                .shimmer-text { background: linear-gradient(110deg, #f59e0b 0%, #fbbf24 20%, #ffffff 40%, #fbbf24 60%, #f59e0b 80%); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s ease-in-out infinite; }
+                .glow-border { box-shadow: 0 0 15px rgba(245,158,11,0.3), 0 0 60px rgba(168,85,247,0.1), inset 0 0 30px rgba(0,0,0,0.5); }
+                .neon-amber { text-shadow: 0 0 10px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.2); }
+            `}</style>
             <PurchaseNotifications
                 purchaseText="acabou de adquirir O Algoritmo!"
                 justNowText="comprou agora"
@@ -87,10 +98,15 @@ const AlgoritmoDoUniverso = () => {
             />
 
             <main className="flex-1 relative overflow-x-hidden">
-                {/* ═══ GLOBAL BACKGROUND ═══ */}
+                {/* ═══ GLOBAL BACKGROUND — Animated Orbs + Grid ═══ */}
                 <div className="fixed inset-0 pointer-events-none">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_60%)]" />
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40" />
+                    {/* Floating orbs */}
+                    <div className="absolute top-[10%] left-[5%] w-[400px] h-[400px] bg-purple-600/[0.04] rounded-full blur-[120px]" style={{ animation: 'float-orb 12s ease-in-out infinite' }} />
+                    <div className="absolute top-[40%] right-[5%] w-[350px] h-[350px] bg-cyan-500/[0.03] rounded-full blur-[100px]" style={{ animation: 'float-orb-reverse 15s ease-in-out infinite' }} />
+                    <div className="absolute bottom-[20%] left-[15%] w-[300px] h-[300px] bg-amber-500/[0.04] rounded-full blur-[100px]" style={{ animation: 'float-orb 18s ease-in-out infinite 3s' }} />
+                    <div className="absolute top-[70%] right-[20%] w-[250px] h-[250px] bg-rose-500/[0.03] rounded-full blur-[80px]" style={{ animation: 'float-orb-reverse 14s ease-in-out infinite 2s' }} />
                 </div>
 
                 {/* ═══════════════════════════════════════════════════════════
@@ -104,8 +120,10 @@ const AlgoritmoDoUniverso = () => {
             HERO — Bloco 1: A Quebra de Padrão
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative min-h-[90vh] flex items-center justify-center px-4 pt-10 pb-16">
-                    {/* Hero glow */}
+                    {/* Hero multi-color glow */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-amber-500/8 blur-[150px] rounded-full pointer-events-none" />
+                    <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-purple-600/[0.06] blur-[150px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 6s ease-in-out infinite' }} />
+                    <div className="absolute top-[5%] right-[10%] w-[300px] h-[300px] bg-cyan-500/[0.04] blur-[120px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 8s ease-in-out infinite 2s' }} />
                     <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
                     <div className="relative z-20 max-w-5xl mx-auto text-center">
@@ -130,14 +148,15 @@ const AlgoritmoDoUniverso = () => {
                             className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[1.1] tracking-tight"
                         >
                             <span className="relative inline-block mt-2">
-                                <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+                                <span className="shimmer-text">
                                     O ALGORITMO DO UNIVERSO
                                 </span>
                                 <motion.span
-                                    className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-500/0 via-amber-500 to-amber-500/0 rounded-full"
+                                    className="absolute -bottom-2 left-0 w-full h-1 rounded-full"
+                                    style={{ background: 'linear-gradient(90deg, transparent, #f59e0b, #a855f7, #f59e0b, transparent)' }}
                                     initial={{ scaleX: 0 }}
                                     animate={{ scaleX: 1 }}
-                                    transition={{ duration: 1, delay: 1 }}
+                                    transition={{ duration: 1.2, delay: 0.8 }}
                                 />
                             </span>
                         </motion.h1>
@@ -149,7 +168,11 @@ const AlgoritmoDoUniverso = () => {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="my-10 w-full max-w-2xl mx-auto"
                         >
-                            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-amber-500/20 shadow-[0_0_60px_-15px_rgba(245,158,11,0.25)]">
+                            <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-amber-500/30 glow-border">
+                                {/* Scanline effect */}
+                                <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden opacity-[0.03]">
+                                    <div className="w-full h-1/2 bg-gradient-to-b from-white/0 via-white to-white/0" style={{ animation: 'scanline 4s linear infinite' }} />
+                                </div>
                                 <iframe
                                     src="https://www.youtube.com/embed/3vJ7Z23rXSg?rel=0&modestbranding=1"
                                     title="O Algoritmo do Universo"
@@ -375,8 +398,10 @@ const AlgoritmoDoUniverso = () => {
             MECANISMO — Bloco 3: Anatomia da Máquina
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950/40 to-black">
-                    {/* Section glow */}
+                    {/* Multi-color section glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute top-[30%] left-[5%] w-[300px] h-[300px] bg-purple-600/[0.04] blur-[100px] rounded-full pointer-events-none" style={{ animation: 'float-orb 10s ease-in-out infinite' }} />
+                    <div className="absolute bottom-[20%] right-[5%] w-[250px] h-[250px] bg-cyan-500/[0.03] blur-[80px] rounded-full pointer-events-none" style={{ animation: 'float-orb-reverse 12s ease-in-out infinite' }} />
                     <div className="relative max-w-6xl mx-auto">
                         <motion.div {...fadeInUp} className="text-center mb-20">
                             <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-amber-500/20 rounded-full bg-amber-500/5">
@@ -495,7 +520,7 @@ const AlgoritmoDoUniverso = () => {
                             <p className="text-2xl md:text-4xl font-black text-white mb-6 leading-tight">
                                 O Algoritmo do Universo vai te ensinar a
                             </p>
-                            <p className="text-3xl md:text-5xl font-black text-amber-500 mb-12 uppercase tracking-wide">
+                            <p className="text-3xl md:text-5xl font-black mb-12 uppercase tracking-wide neon-amber" style={{ color: '#f59e0b' }}>
                                 Engenharia do Preenchimento.
                             </p>
 
@@ -545,7 +570,7 @@ const AlgoritmoDoUniverso = () => {
 
                         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                             {/* ANTES */}
-                            <motion.div {...fadeInUp} className="p-8 md:p-10 rounded-3xl bg-red-500/[0.04] border border-red-500/10">
+                            <motion.div {...fadeInUp} className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-red-500/[0.06] to-red-900/[0.02] border border-red-500/15 shadow-[0_0_40px_-20px_rgba(239,68,68,0.15)]">
                                 <div className="flex items-center gap-3 mb-8">
                                     <div className="p-2 rounded-lg bg-red-500/10"><X className="w-5 h-5 text-red-400" /></div>
                                     <h3 className="text-xl font-black text-red-400 uppercase tracking-wider">Antes do Algoritmo</h3>
@@ -568,7 +593,7 @@ const AlgoritmoDoUniverso = () => {
                             </motion.div>
 
                             {/* DEPOIS */}
-                            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="p-8 md:p-10 rounded-3xl bg-amber-500/[0.04] border border-amber-500/10 relative overflow-hidden">
+                            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-amber-500/[0.06] to-amber-900/[0.02] border border-amber-500/15 shadow-[0_0_40px_-20px_rgba(245,158,11,0.2)] relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
                                 <div className="flex items-center gap-3 mb-8 relative z-10">
                                     <div className="p-2 rounded-lg bg-amber-500/10"><Check className="w-5 h-5 text-amber-400" /></div>
@@ -646,10 +671,12 @@ const AlgoritmoDoUniverso = () => {
                         <motion.div
                             {...fadeInUp}
                             transition={{ delay: 0.1 }}
-                            className="relative p-8 md:p-12 rounded-[2rem] bg-gradient-to-b from-neutral-950 to-neutral-950/50 border-2 border-amber-500/20 shadow-[0_0_100px_-30px_rgba(245,158,11,0.25)] overflow-hidden"
+                            className="relative p-8 md:p-12 rounded-[2rem] bg-gradient-to-b from-neutral-950 to-neutral-950/50 border-2 border-amber-500/25 overflow-hidden"
+                            style={{ boxShadow: '0 0 80px -20px rgba(245,158,11,0.3), 0 0 120px -40px rgba(168,85,247,0.15), inset 0 0 60px rgba(0,0,0,0.4)' }}
                         >
-                            {/* Top glow */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[200px] bg-amber-500/8 blur-[80px] rounded-full -mt-[100px] pointer-events-none" />
+                            {/* Animated corner accents */}
+                            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-amber-500/30 rounded-tl-[2rem] pointer-events-none" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+                            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-purple-500/20 rounded-br-[2rem] pointer-events-none" style={{ animation: 'pulse-glow 3s ease-in-out infinite 1.5s' }} />
 
                             <div className="relative z-10">
                                 {/* Product name */}
@@ -771,8 +798,9 @@ const AlgoritmoDoUniverso = () => {
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative py-20 px-4">
                     <div className="max-w-2xl mx-auto">
-                        <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06]">
-                            <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-amber-500/10 rounded-full">
+                        <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06] relative overflow-hidden">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200px] h-[200px] bg-emerald-500/[0.06] blur-[80px] rounded-full -mt-[100px] pointer-events-none" />
+                            <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-gradient-to-br from-amber-500/15 to-emerald-500/10 rounded-full relative z-10" style={{ boxShadow: '0 0 30px rgba(245,158,11,0.15)' }}>
                                 <ShieldCheck className="w-10 h-10 text-amber-500" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
