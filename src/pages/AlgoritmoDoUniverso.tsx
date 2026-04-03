@@ -5,6 +5,7 @@ import SEO from "@/components/quantum-key/SEO";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
+import LandingFooter from "@/components/alma-livre/Footer";
 import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -753,7 +754,7 @@ const AlgoritmoDoUniverso = () => {
 
                                 {/* CTA Button */}
                                 <motion.a
-                                    href="https://pay.hotmart.com/P104196723Q"
+                                    href="https://pay.hotmart.com/W104672909E?checkoutMode=10"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     animate={{ scale: [1, 1.02, 1] }}
@@ -818,26 +819,48 @@ const AlgoritmoDoUniverso = () => {
             GARANTIA — Seção dedicada dark-mode
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative py-20 px-4">
-                    <div className="max-w-2xl mx-auto">
-                        <motion.div {...fadeInUp} className="text-center p-10 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06] relative overflow-hidden">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200px] h-[200px] bg-emerald-500/[0.06] blur-[80px] rounded-full -mt-[100px] pointer-events-none" />
-                            <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-gradient-to-br from-amber-500/15 to-emerald-500/10 rounded-full relative z-10" style={{ boxShadow: '0 0 30px rgba(245,158,11,0.15)' }}>
-                                <ShieldCheck className="w-10 h-10 text-amber-500" />
+                    <div className="relative z-10 max-w-3xl mx-auto text-center">
+                        <motion.div
+                            {...fadeInUp}
+                            className="bg-white/10 p-8 md:p-12 rounded-2xl border border-purple-300/20 backdrop-blur-sm"
+                        >
+                            <div className="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 flex items-center justify-center">
+                                <img
+                                    src="/garantia-7-dias_(1).png"
+                                    alt="Garantia de 7 dias"
+                                    className="w-full h-full object-contain"
+                                />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-                                Garantia Incondicional de <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">7 Dias</span>
-                            </h3>
-                            <p className="text-slate-400 leading-relaxed mb-8 max-w-lg mx-auto">
-                                Você tem 7 dias completos para ler, aplicar e testar o conteúdo. Se por qualquer razão sentir que não é para você, devolvemos <span className="text-white font-bold">100% do seu investimento</span>. Sem perguntas, sem burocracia.
-                            </p>
-                            <div className="flex flex-col sm:flex-row justify-center gap-6">
-                                <div className="flex items-center gap-2 justify-center text-slate-400">
-                                    <Clock className="w-5 h-5 text-emerald-400/60" />
-                                    <span className="text-sm font-medium">7 dias para experimentar</span>
+
+                            <h2 className="text-3xl md:text-4xl font-black mb-6 text-white">
+                                Garantia <span className="text-purple-400 font-black">7 Dias</span> Incondicional
+                            </h2>
+
+                            <div className="space-y-4 text-lg text-gray-200 leading-relaxed mb-8">
+                                <p>
+                                    Você tem <span className="text-purple-400 font-bold">7 dias completos</span> para acessar o material,
+                                    ler com calma e testar a lógica do conteúdo na prática. Se ao final desse período sentir
+                                    que o livro não fez sentido para você, devolvemos <span className="text-purple-400 font-bold">100% do seu investimento</span>.
+                                </p>
+                                <p>
+                                    Sem perguntas, sem burocracia e sem atrito. A proposta é simples: você entra,
+                                    analisa o conteúdo por conta própria e decide com clareza se este é o manual que faltava
+                                    para reorganizar a sua operação interna.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col md:flex-row justify-center gap-6">
+                                <div className="flex items-center gap-3 justify-center">
+                                    <Clock className="w-6 h-6 text-purple-400" />
+                                    <span className="text-sm text-gray-300">
+                                        7 dias para testar
+                                    </span>
                                 </div>
-                                <div className="flex items-center gap-2 justify-center text-slate-400">
-                                    <CheckCircle className="w-5 h-5 text-cyan-400/60" />
-                                    <span className="text-sm font-medium">Reembolso sem perguntas</span>
+                                <div className="flex items-center gap-3 justify-center">
+                                    <CheckCircle className="w-6 h-6 text-purple-400" />
+                                    <span className="text-sm text-gray-300">
+                                        Reembolso sem perguntas
+                                    </span>
                                 </div>
                             </div>
                         </motion.div>
@@ -867,11 +890,7 @@ const AlgoritmoDoUniverso = () => {
                 </section>
             </main>
 
-            {/* FOOTER */}
-            <footer className="py-10 bg-black border-t border-purple-500/10 text-center">
-                <p className="text-slate-600 text-sm">&copy; {new Date().getFullYear()} Syncronix. Todos os direitos reservados.</p>
-                <p className="text-slate-700 text-xs mt-2">Este produto não garante resultados. Resultados dependem da aplicação individual.</p>
-            </footer>
+            <LandingFooter />
         </div>
     );
 };
