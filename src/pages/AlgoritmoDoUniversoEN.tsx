@@ -197,7 +197,7 @@ const AlgoritmoDoUniversoEN = () => {
                                     <div className="w-full h-1/2 bg-gradient-to-b from-white/0 via-white to-white/0" style={{ animation: 'scanline 4s linear infinite' }} />
                                 </div>
                                 <iframe
-                                    src="https://www.youtube.com/embed/3vJ7Z23rXSg?rel=0&modestbranding=1"
+                                    src="https://www.youtube.com/embed/bGhA72daLwg?rel=0&modestbranding=1"
                                     title="The Algorithm of the Universe"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -744,14 +744,11 @@ const AlgoritmoDoUniversoEN = () => {
                                 {/* Pricing */}
                                 <div className="text-center mb-10 py-8 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
                                     <p className="text-red-500/60 line-through text-2xl font-bold mb-2">
-                                        R$ 97,00
+                                        US$ 19.99
                                     </p>
                                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">for only</p>
                                     <p className="text-6xl md:text-7xl font-black text-white tracking-tighter leading-none">
-                                        R$ 29<span className="text-4xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">,90</span>
-                                    </p>
-                                    <p className="font-black text-lg mt-3 tracking-wide bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                                        or 4 payments of R$ 8,14
+                                        US$ 7<span className="text-4xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">.99</span>
                                     </p>
                                     <p className="text-slate-500 font-medium text-sm mt-2">instant lifetime access</p>
                                 </div>
