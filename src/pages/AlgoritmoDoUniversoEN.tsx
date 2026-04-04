@@ -129,7 +129,13 @@ const AlgoritmoDoUniversoEN = () => {
             COUNTDOWN TIMER — Top of page
         ═══════════════════════════════════════════════════════════ */}
                 <section className="relative pt-6 pb-2 px-4 bg-black text-center z-30">
-                    <CountdownTimer />
+                    <CountdownTimer
+                        offerEndsText="This offer ends in:"
+                        minutesLabel="Min"
+                        secondsLabel="Sec"
+                        expiredTitle="TIME IS UP!"
+                        expiredDescription="This is your last chance. It's now or never."
+                    />
                 </section>
 
                 {/* ═══════════════════════════════════════════════════════════
@@ -714,7 +720,7 @@ const AlgoritmoDoUniversoEN = () => {
 
                                 <div className="mb-10 flex justify-center">
                                     <img
-                                        src="/algoritmo/mockup.png"
+                                        src="/algoritmo/capaingles.png"
                                         alt="The Algorithm of the Universe e-book mockup"
                                         className="max-w-full h-auto rounded-2xl drop-shadow-[0_20px_40px_rgba(245,158,11,0.18)]"
                                     />
@@ -826,7 +832,7 @@ const AlgoritmoDoUniversoEN = () => {
                         >
                             <div className="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 flex items-center justify-center">
                                 <img
-                                    src="/garantia-7-dias_(1).png"
+                                    src="/guarantee-seal-en.png"
                                     alt="7-day guarantee"
                                     className="w-full h-full object-contain"
                                 />
