@@ -765,8 +765,7 @@ const AlgoritmoDoUniverso = () => {
                                     className="group block w-full px-8 py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-emerald-500 hover:from-purple-500 hover:via-cyan-400 hover:to-emerald-400 text-white font-black text-xl text-center rounded-2xl shadow-[0_10px_50px_-15px_rgba(168,85,247,0.4),0_10px_80px_-20px_rgba(6,182,212,0.3)] transform hover:-translate-y-1 transition-all duration-300"
                                 >
                                     <span className="flex items-center justify-center gap-3">
-                                        👉 QUERO ACESSAR O ALGORITMO
-                                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                        Comprar Agora!
                                     </span>
                                 </motion.a>
 
