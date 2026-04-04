@@ -219,7 +219,7 @@ const AlgoritmoDoUniverso = () => {
                             className="flex flex-col items-center gap-5"
                         >
                             <motion.a
-                                href="#oferta"
+                                href="#card-oferta"
                                 animate={{ scale: [1, 1.03, 1] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                                 className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-5 md:py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-emerald-500 hover:from-purple-500 hover:via-cyan-400 hover:to-emerald-400 text-white font-black text-base md:text-xl rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.4),0_0_80px_-20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.5),0_0_120px_-20px_rgba(6,182,212,0.4)] transform hover:-translate-y-1 transition-all duration-300"
@@ -655,7 +655,7 @@ const AlgoritmoDoUniverso = () => {
                                 O universo não está contra você. Você apenas não tinha o manual de instruções. <span className="text-white font-bold">Até agora.</span>
                             </p>
                             <motion.a
-                                href="#oferta"
+                                href="#card-oferta"
                                 animate={{ scale: [1, 1.03, 1] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                                 className="group inline-flex items-center justify-center gap-3 px-12 py-5 bg-gradient-to-r from-purple-600 via-cyan-500 to-emerald-500 hover:from-purple-500 hover:via-cyan-400 hover:to-emerald-400 text-white font-black text-lg rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.4),0_0_60px_-15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.5)] transform hover:-translate-y-1 transition-all duration-300"
@@ -689,6 +689,7 @@ const AlgoritmoDoUniverso = () => {
                         </motion.div>
 
                         <motion.div
+                            id="card-oferta"
                             {...fadeInUp}
                             transition={{ delay: 0.1 }}
                             className="relative p-8 md:p-12 rounded-[2rem] bg-gradient-to-b from-neutral-950 to-neutral-950/50 border-2 overflow-hidden aurora-border"
