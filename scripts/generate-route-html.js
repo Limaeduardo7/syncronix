@@ -14,6 +14,24 @@ const routePages = [
     canonical: "https://syncronix.co/ebook-o-algoritmo-do-universo",
     ogImage: "https://syncronix.co/algoritmo-book-main.jpg",
   },
+  {
+    route: "ebook-the-algorithm-of-the-universe",
+    lang: "en",
+    title: "The Algorithm of the Universe | The definitive manual of reality",
+    description:
+      "Discover the mechanical system behind reality and access the e-book The Algorithm of the Universe to operate the machine in your favor.",
+    canonical: "https://syncronix.co/ebook-the-algorithm-of-the-universe",
+    ogImage: "https://syncronix.co/algoritmo-book-main.jpg",
+  },
+  {
+    route: "ebook-el-algoritmo-del-universo",
+    lang: "es",
+    title: "El Algoritmo del Universo | El manual definitivo de la realidad",
+    description:
+      "Descubre el sistema mecánico detrás de la realidad y accede al e-book El Algoritmo del Universo para operar la máquina a tu favor.",
+    canonical: "https://syncronix.co/ebook-el-algoritmo-del-universo",
+    ogImage: "https://syncronix.co/algoritmo-book-main.jpg",
+  },
 ];
 
 function replaceOrInsertMeta(html, selector, replacement) {
