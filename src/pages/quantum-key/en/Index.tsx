@@ -24,7 +24,7 @@ const Index = () => {
         description="Discover ancient and modern knowledge in 351 pages. Quantum Physics, Kabbalah, Metaphysics and much more. The truth they never told you."
         keywords="ebook, power, knowledge, kabbalah, metaphysics, quantum physics, transformation, consciousness, alchemy, taoism, personal magnetism"
         ogImage="https://syncronix.co/mockup-ebook-english.png"
-        canonical="https://syncronix.co/us"
+        canonical="https://syncronix.co/ebook-the-key-to-power"
         lang="en-US"
       />
       <WhatsAppButton />

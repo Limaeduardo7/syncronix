@@ -24,7 +24,7 @@ const Index = () => {
         description="Descubra os conhecimentos ancestrais e modernos em 351 páginas. Física Quântica, Kabbalah, Metafísica e muito mais. A verdade que jamais te contaram."
         keywords="ebook, poder, conhecimento, kabbalah, metafísica, física quântica, transformação, consciência, alquimia, taoísmo, magnetismo pessoal"
         ogImage="https://syncronix.co/mockup-3-ebook-black.webp"
-        canonical="https://syncronix.co"
+        canonical="https://syncronix.co/ebook-a-chave-do-poder"
         lang="pt-BR"
       />
       <WhatsAppButton />

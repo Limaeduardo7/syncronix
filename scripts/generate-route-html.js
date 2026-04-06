@@ -6,6 +6,60 @@ const baseHtmlPath = path.join(distDir, "index.html");
 
 const routePages = [
   {
+    route: "ebook-a-chave-do-poder",
+    lang: "pt-BR",
+    title: "A Chave do Poder | eBook Transforme sua Realidade",
+    description:
+      "Descubra os conhecimentos ancestrais e modernos em 351 paginas. Fisica Quantica, Kabbalah, Metafisica e muito mais. A verdade que jamais te contaram.",
+    canonical: "https://syncronix.co/ebook-a-chave-do-poder",
+    ogImage: "https://syncronix.co/mockup-3-ebook-black.webp",
+  },
+  {
+    route: "ebook-the-key-to-power",
+    lang: "en",
+    title: "The Key to Power | eBook Transform Your Reality",
+    description:
+      "Discover ancient and modern knowledge in 351 pages. Quantum Physics, Kabbalah, Metaphysics and much more. The truth they never told you.",
+    canonical: "https://syncronix.co/ebook-the-key-to-power",
+    ogImage: "https://syncronix.co/mockup-ebook-english.png",
+  },
+  {
+    route: "ebook-la-clave-del-poder",
+    lang: "es",
+    title: "La Clave del Poder | eBook Transforma tu Realidad",
+    description:
+      "Descubre los conocimientos ancestrales y modernos en 351 paginas. Fisica Cuantica, Kabbalah, Metafisica y mucho mas. La verdad que jamas te contaron.",
+    canonical: "https://syncronix.co/ebook-la-clave-del-poder",
+    ogImage: "https://syncronix.co/mockup-ebook-spanish.png",
+  },
+  {
+    route: "ebook-a-regra-da-vida",
+    lang: "pt-BR",
+    title: "A Regra da Vida | eBook - Clareza Mental Aplicada",
+    description:
+      "Manual visual de engenharia mental que revela o que realmente controla suas decisoes, habitos e resultados. Deixe de tentar mais e entenda o sistema.",
+    canonical: "https://syncronix.co/ebook-a-regra-da-vida",
+    ogImage: "https://syncronix.co/regra-da-vida/MOCKUP%20PRESENTS%20PORTUGUES.png",
+  },
+  {
+    route: "ebook-the-rule-of-life",
+    lang: "en",
+    title: "The Rule of Life | eBook - Applied Mental Clarity",
+    description:
+      "Visual manual of mental engineering that reveals what really controls your decisions, habits, and results. Stop trying harder and understand the system.",
+    canonical: "https://syncronix.co/ebook-the-rule-of-life",
+    ogImage: "https://syncronix.co/regra-da-vida/ingles/MOCKUP%20PRESENTS%20INGLES.png",
+  },
+  {
+    route: "ebook-la-regla-de-la-vida",
+    lang: "es",
+    title: "La Regla de la Vida | eBook - Claridad Mental Aplicada",
+    description:
+      "Manual visual de ingenieria mental que revela lo que realmente controla tus decisiones, habitos y resultados. Deja de esforzarte mas y entiende el sistema.",
+    canonical: "https://syncronix.co/ebook-la-regla-de-la-vida",
+    ogImage: "https://syncronix.co/regra-da-vida/espanhol/MOCKUP%20PRESENTS%20ESPANOL.png",
+  },
+  {
     route: "ebook-o-algoritmo-do-universo",
     lang: "pt-BR",
     title: "O Algoritmo do Universo | O manual definitivo da realidade",
