@@ -741,9 +741,6 @@ const AlgoritmoDoUniverso = () => {
                                     <p className="text-red-500/60 line-through text-2xl font-bold mb-1">
                                         R$ 97,00
                                     </p>
-                                    <p className="text-red-500/60 line-through text-2xl font-bold mb-2">
-                                        R$ 49,90
-                                    </p>
                                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">por apenas</p>
                                     <p className="text-6xl md:text-7xl font-black text-white tracking-tighter leading-none">
                                         R$ 29<span className="text-4xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">,90</span>
