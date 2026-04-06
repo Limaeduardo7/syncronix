@@ -691,7 +691,7 @@ const AlgoritmoDoUniversoES = () => {
 
                         <motion.div {...fadeInUp} className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
-                                Assuma o controle. <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Agora.</span>
+                                Toma el control. <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Ahora.</span>
                             </h2>
                         </motion.div>
 
