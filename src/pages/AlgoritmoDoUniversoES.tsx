@@ -14,11 +14,12 @@ import LightboxZoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 const SUMARIO_IMAGES = [
-  "/images/algoritmo-universo/sumario-01.jpg",
-  "/images/algoritmo-universo/sumario-02.jpg",
-  "/images/algoritmo-universo/sumario-03.jpg",
-  "/images/algoritmo-universo/sumario-04.jpg",
-  "/images/algoritmo-universo/sumario-05.jpg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.04.jpeg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.04 (1).jpeg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.04 (2).jpeg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.05.jpeg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.05 (1).jpeg",
+  "/algoritmo/Espanhol/WhatsApp Image 2026-04-05 at 21.35.05 (2).jpeg",
 ];
 const sumarioSlides = SUMARIO_IMAGES.map((src) => ({ src }));
 
