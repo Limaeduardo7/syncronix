@@ -699,10 +699,9 @@ const Index = () => {
                   </p>
                   <p className="text-lg font-semibold text-gray-600">por apenas</p>
                   <p className="text-5xl md:text-6xl font-black text-blue-500">
-                    R$ 47,00
+                    R$ 29,90
                   </p>
                   <p className="text-lg font-semibold text-gray-600">à vista</p>
-                  <p className="text-base font-medium text-gray-500 mt-2">ou 6x de R$ 8,82</p>
                 </div>
 
                 {/* CTA */}

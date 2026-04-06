@@ -695,7 +695,7 @@ const Index = () => {
                   </p>
                   <p className="text-lg font-semibold text-gray-600">for only</p>
                   <p className="text-5xl md:text-6xl font-black text-blue-500">
-                    $ 12.99
+                    US$ 7,99
                   </p>
                   <p className="text-lg font-semibold text-gray-600">cash payment</p>
                 </div>
