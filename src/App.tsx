@@ -36,6 +36,9 @@ const GestaoInteligente = lazy(() => import("./pages/GestaoInteligente"));
 // O Algoritmo do Universo pages
 const AlgoritmoDoUniverso = lazy(() => import("./pages/AlgoritmoDoUniverso"));
 const AlgoritmoDoUniversoEN = lazy(() => import("./pages/AlgoritmoDoUniversoEN"));
+
+// Energy Hack
+const EnergyHack = lazy(() => import("./pages/EnergyHack"));
 const AlgoritmoDoUniversoES = lazy(() => import("./pages/AlgoritmoDoUniversoES"));
 
 // Optimize QueryClient with better defaults
@@ -119,6 +122,9 @@ const App = () => (
                 <Route path="/ebook-o-algoritmo-do-universo" element={<AlgoritmoDoUniverso />} />
                 <Route path="/ebook-the-algorithm-of-the-universe" element={<AlgoritmoDoUniversoEN />} />
                 <Route path="/ebook-el-algoritmo-del-universo" element={<AlgoritmoDoUniversoES />} />
+
+                {/* Energy Hack Route */}
+                <Route path="/energy-hack" element={<EnergyHack />} />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
