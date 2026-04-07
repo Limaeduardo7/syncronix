@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PurchaseNotifications from "@/components/quantum-key/PurchaseNotifications";
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
+import SEO from "@/components/quantum-key/SEO";
 import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 import SpotlightCard from "@/components/react-bits/SpotlightCard";
 import GlitchText from "@/components/react-bits/GlitchText";
@@ -27,7 +28,6 @@ const EnergyHack = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "ENERGY HACK — Reprograme Sua Frequência Basal";
     window.scrollTo(0, 0);
   }, []);
 
@@ -63,6 +63,13 @@ const EnergyHack = () => {
 
   return (
     <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-purple-500/30 selection:text-purple-200">
+      <SEO
+        title="ENERGY HACK — Reprograme Sua Frequência Basal | Syncronix"
+        description="Protocolo de reconfiguração neural com áudio 8D. Reprograme sua frequência basal, silencie o ruído mental e assuma o comando do seu estado interno em menos de 10 minutos por dia."
+        keywords="energy hack, reconfiguração neural, áudio 8D, frequência basal, foco mental, protocolo matinal, estado interno, neuropercepção, modelagem neuroperceptiva"
+        ogImage="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
+        canonical="https://syncronix.netlify.app/energy-hack"
+      />
       {/* ═══ CSS Animations ═══ */}
       <style>{`
         @keyframes float-orb { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-40px) scale(1.1); } }
@@ -114,14 +121,13 @@ const EnergyHack = () => {
 
           <div className="relative z-20 max-w-5xl mx-auto text-center">
             {/* Energy nucleus */}
-            <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.2 }} className="mx-auto mb-12 relative w-32 h-32">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-xl" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-600/30 to-cyan-600/30 blur-lg" style={{ animation: 'pulse-glow 2s ease-in-out infinite 0.5s' }} />
-              <div className="absolute inset-4 rounded-full border border-purple-500/30 aurora-border" />
-              <div className="absolute inset-6 rounded-full border border-cyan-500/20 aurora-border" style={{ animationDelay: '2s' }} />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Zap className="w-12 h-12 text-purple-400" style={{ filter: 'drop-shadow(0 0 20px rgba(168,85,247,0.6))' }} />
-              </div>
+            <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.2 }} className="mx-auto mb-12 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[60px] rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+              <img
+                src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
+                alt="Energy Hack Logo"
+                className="relative z-10 w-48 md:w-64 mx-auto drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+              />
             </motion.div>
 
             {/* Badge */}
@@ -286,6 +292,18 @@ const EnergyHack = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-purple-500/20 rounded-full bg-purple-500/5 aurora-border">
                 <Sparkles className="w-4 h-4 text-purple-400" />
                 <span className="text-purple-300 font-bold text-[10px] tracking-[0.2em] uppercase">O que você recebe hoje</span>
+              </div>
+            </motion.div>
+
+            {/* Product mockup */}
+            <motion.div {...fadeInUp} className="flex justify-center mb-12">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[40px] rounded-3xl" />
+                <img
+                  src="/energy%20hack/Image_in_phone_202604021212.jpeg"
+                  alt="Energy Hack - Produto"
+                  className="relative z-10 w-56 md:w-72 rounded-2xl border-2 border-purple-500/20 shadow-[0_0_60px_-20px_rgba(168,85,247,0.3)]"
+                />
               </div>
             </motion.div>
 
