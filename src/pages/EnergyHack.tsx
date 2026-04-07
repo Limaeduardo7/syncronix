@@ -62,7 +62,7 @@ const EnergyHack = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-purple-500/30 selection:text-purple-200">
+    <div className="min-h-screen bg-black text-slate-200 flex flex-col font-sans selection:bg-purple-500/30 selection:text-purple-200 overflow-x-hidden">
       <SEO
         title="ENERGY HACK — Reprograme Sua Frequência Basal | Syncronix"
         description="Protocolo de reconfiguração neural com áudio 8D. Reprograme sua frequência basal, silencie o ruído mental e assuma o comando do seu estado interno em menos de 10 minutos por dia."
@@ -93,7 +93,7 @@ const EnergyHack = () => {
         notifications={brazilianPurchaseNotifications}
       />
 
-      <main className="flex-1 relative overflow-x-hidden">
+      <main className="flex-1 relative">
         {/* ═══ GLOBAL BACKGROUND ═══ */}
         <div className="fixed inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.08)_0%,transparent_60%)]" />
@@ -113,59 +113,58 @@ const EnergyHack = () => {
         {/* ═══════════════════════════════════════════════════
             1. HERO
         ═══════════════════════════════════════════════════ */}
-        <section className="relative min-h-[90vh] flex items-center justify-center px-4 pt-10 pb-16">
+        <section className="relative flex items-center justify-center px-4 pt-8 pb-20 md:pt-16 md:pb-28">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-600/[0.12] blur-[180px] rounded-full pointer-events-none" />
           <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-cyan-500/[0.08] blur-[150px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 6s ease-in-out infinite' }} />
           <div className="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-pink-500/[0.06] blur-[130px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 8s ease-in-out infinite 2s' }} />
           <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
-          <div className="relative z-20 max-w-5xl mx-auto text-center">
-            {/* Energy nucleus */}
-            <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.2 }} className="mx-auto mb-12 relative">
+          <div className="relative z-20 max-w-4xl mx-auto text-center">
+            {/* Logo */}
+            <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }} className="mx-auto mb-8 md:mb-10 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[60px] rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
               <img
                 src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
                 alt="Energy Hack Logo"
-                className="relative z-10 w-full max-w-[90vw] md:max-w-none md:w-96 mx-auto rounded-2xl md:rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+                className="relative z-10 w-full max-w-[85vw] md:max-w-md lg:max-w-lg mx-auto rounded-2xl md:rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
               />
             </motion.div>
 
             {/* Badge */}
-            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 border border-purple-500/30 rounded-full bg-purple-500/5 backdrop-blur-sm aurora-border">
+            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-6 border border-purple-500/30 rounded-full bg-purple-500/5 backdrop-blur-sm aurora-border">
               <Waves className="w-4 h-4 text-cyan-400" />
               <span className="text-cyan-300 font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase">Sistema de Reconfiguração Neural</span>
             </motion.div>
 
             {/* Headline */}
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[1.1] tracking-tight">
-              <GlitchText className="shimmer-multi text-3xl md:text-5xl lg:text-6xl font-black">ENERGY HACK</GlitchText>
-              <br />
-              <span className="text-xl md:text-3xl lg:text-4xl font-bold text-slate-300 mt-4 block">
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 text-white leading-[1.15] tracking-tight">
+              <span className="text-lg md:text-2xl lg:text-3xl font-bold text-slate-300 block mb-2">
                 <SplitText text="A realidade externa é um reflexo exato do seu estado interno." className="justify-center" />
               </span>
+              <span className="text-slate-500 text-base md:text-xl font-semibold block mt-2">E você está prestes a hackear o código-fonte.</span>
             </motion.h1>
 
             {/* Sub-headline */}
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }} className="text-lg md:text-2xl text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }} className="text-base md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Reprograme sua frequência basal, silencie o ruído interno e assuma o comando da realidade que responde ao seu <span className="text-cyan-400 font-bold">padrão.</span>
             </motion.p>
 
             {/* CTA */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.6 }} className="flex flex-col items-center gap-5">
-              <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-5 md:py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 text-white font-black text-base md:text-xl rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.5),0_0_80px_-20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.6)] transform hover:-translate-y-1 transition-all duration-300">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center gap-4">
+              <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 px-8 md:px-14 py-5 md:py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 text-white font-black text-sm md:text-xl rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.5),0_0_80px_-20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.6)] transform hover:-translate-y-1 transition-all duration-300">
                 <span>QUERO HACKEAR MEU ESTADO INTERNO</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
               </motion.a>
-              <span className="text-slate-500 text-sm font-medium flex items-center gap-2">
+              <span className="text-slate-500 text-xs md:text-sm font-medium flex items-center gap-2">
                 <Lock className="w-3.5 h-3.5" /> Acesso imediato · Garantia de 7 dias
               </span>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-8 flex justify-center">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex justify-center">
               <LiveViewers text="pessoas estão nesta página agora" color="purple" />
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-20">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-14">
               <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="flex flex-col items-center gap-2 text-slate-600">
                 <span className="text-xs font-medium uppercase tracking-widest">Continue lendo</span>
                 <ChevronDown className="w-5 h-5" />
