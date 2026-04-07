@@ -105,66 +105,74 @@ const EnergyHack = () => {
           <div className="absolute top-[75%] left-[40%] w-[350px] h-[350px] bg-blue-500/[0.05] rounded-full blur-[110px]" style={{ animation: 'float-orb 15s ease-in-out infinite 6s' }} />
         </div>
 
-        {/* ═══ COUNTDOWN ═══ */}
-        <section className="relative pt-6 pb-2 px-4 bg-black text-center z-30">
-          <CountdownTimer />
-        </section>
-
         {/* ═══════════════════════════════════════════════════
             1. HERO
         ═══════════════════════════════════════════════════ */}
-        <section className="relative flex items-center justify-center px-4 pt-8 pb-20 md:pt-16 md:pb-28">
+        <section className="relative px-4 pt-6 pb-20 md:pt-10 md:pb-28">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-600/[0.12] blur-[180px] rounded-full pointer-events-none" />
           <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-cyan-500/[0.08] blur-[150px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 6s ease-in-out infinite' }} />
           <div className="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-pink-500/[0.06] blur-[130px] rounded-full pointer-events-none" style={{ animation: 'pulse-glow 8s ease-in-out infinite 2s' }} />
           <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
-          <div className="relative z-20 max-w-4xl mx-auto text-center">
-            {/* Logo */}
-            <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }} className="mx-auto mb-8 md:mb-10 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[60px] rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
-              <img
-                src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
-                alt="Energy Hack Logo"
-                className="relative z-10 w-full max-w-[85vw] md:max-w-md lg:max-w-lg mx-auto rounded-2xl md:rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
-              />
-            </motion.div>
+          {/* Countdown — inside hero, transparent bg */}
+          <div className="relative z-30 mb-8 md:mb-12">
+            <CountdownTimer />
+          </div>
 
-            {/* Badge */}
-            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-6 border border-purple-500/30 rounded-full bg-purple-500/5 backdrop-blur-sm aurora-border">
-              <Waves className="w-4 h-4 text-cyan-400" />
-              <span className="text-cyan-300 font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase">Sistema de Reconfiguração Neural</span>
-            </motion.div>
+          <div className="relative z-20 max-w-6xl mx-auto">
+            {/* Desktop: side-by-side | Mobile: stacked */}
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
-            {/* Headline */}
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="text-2xl md:text-4xl lg:text-5xl font-black mb-6 text-white leading-[1.15] tracking-tight">
-              <span className="text-lg md:text-2xl lg:text-3xl font-bold text-slate-300 block mb-2">
-                <SplitText text="A realidade externa é um reflexo exato do seu estado interno." className="justify-center" />
-              </span>
-              <span className="text-slate-500 text-base md:text-xl font-semibold block mt-2">E você está prestes a hackear o código-fonte.</span>
-            </motion.h1>
+              {/* LEFT — Logo/Image */}
+              <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }} className="relative w-full md:w-1/2 flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[60px] rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+                <img
+                  src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
+                  alt="Energy Hack Logo"
+                  className="relative z-10 w-full max-w-[85vw] md:max-w-full mx-auto rounded-2xl md:rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+                />
+              </motion.div>
 
-            {/* Sub-headline */}
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }} className="text-base md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-              Reprograme sua frequência basal, silencie o ruído interno e assuma o comando da realidade que responde ao seu <span className="text-cyan-400 font-bold">padrão.</span>
-            </motion.p>
+              {/* RIGHT — Text content */}
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                {/* Badge */}
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-6 border border-purple-500/30 rounded-full bg-purple-500/5 backdrop-blur-sm aurora-border">
+                  <Waves className="w-4 h-4 text-cyan-400" />
+                  <span className="text-cyan-300 font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase">Sistema de Reconfiguração Neural</span>
+                </motion.div>
 
-            {/* CTA */}
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center gap-4">
-              <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 px-8 md:px-14 py-5 md:py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 text-white font-black text-sm md:text-xl rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.5),0_0_80px_-20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.6)] transform hover:-translate-y-1 transition-all duration-300">
-                <span>QUERO HACKEAR MEU ESTADO INTERNO</span>
-                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
-              </motion.a>
-              <span className="text-slate-500 text-xs md:text-sm font-medium flex items-center gap-2">
-                <Lock className="w-3.5 h-3.5" /> Acesso imediato · Garantia de 7 dias
-              </span>
-            </motion.div>
+                {/* Headline */}
+                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="text-2xl md:text-3xl lg:text-4xl font-black mb-5 text-white leading-[1.15] tracking-tight">
+                  <span className="text-lg md:text-xl lg:text-2xl font-bold text-slate-300 block mb-2">
+                    <SplitText text="A realidade externa é um reflexo exato do seu estado interno." className="md:justify-start justify-center" />
+                  </span>
+                  <span className="text-slate-500 text-sm md:text-lg font-semibold block mt-2">E você está prestes a hackear o código-fonte.</span>
+                </motion.h1>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex justify-center">
-              <LiveViewers text="pessoas estão nesta página agora" color="purple" />
-            </motion.div>
+                {/* Sub-headline */}
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }} className="text-sm md:text-lg text-slate-400 mb-8 leading-relaxed font-medium">
+                  Reprograme sua frequência basal, silencie o ruído interno e assuma o comando da realidade que responde ao seu <span className="text-cyan-400 font-bold">padrão.</span>
+                </motion.p>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-14">
+                {/* CTA */}
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center md:items-start gap-4">
+                  <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 px-8 md:px-12 py-5 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 text-white font-black text-sm md:text-lg rounded-2xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.5),0_0_80px_-20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.6)] transform hover:-translate-y-1 transition-all duration-300">
+                    <span>QUERO HACKEAR MEU ESTADO INTERNO</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
+                  <span className="text-slate-500 text-xs md:text-sm font-medium flex items-center gap-2">
+                    <Lock className="w-3.5 h-3.5" /> Acesso imediato · Garantia de 7 dias
+                  </span>
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex justify-center md:justify-start">
+                  <LiveViewers text="pessoas estão nesta página agora" color="purple" />
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Scroll indicator */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-14 md:mt-20">
               <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="flex flex-col items-center gap-2 text-slate-600">
                 <span className="text-xs font-medium uppercase tracking-widest">Continue lendo</span>
                 <ChevronDown className="w-5 h-5" />
