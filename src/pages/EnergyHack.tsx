@@ -115,7 +115,7 @@ const EnergyHack = () => {
           <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
           {/* Countdown — inside hero, transparent bg */}
-          <div className="relative z-30 mb-8 md:mb-12">
+          <div className="relative z-30 mb-8 md:mb-12 text-center">
             <CountdownTimer />
           </div>
 
