@@ -126,7 +126,7 @@ const EnergyHack = () => {
               <img
                 src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
                 alt="Energy Hack Logo"
-                className="relative z-10 w-full max-w-[90vw] md:max-w-none md:w-64 mx-auto drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+                className="relative z-10 w-full max-w-[90vw] md:max-w-none md:w-96 mx-auto rounded-2xl md:rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)]"
               />
             </motion.div>
 
