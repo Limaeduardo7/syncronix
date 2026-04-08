@@ -257,29 +257,6 @@ const AlgoritmoDoUniverso = () => {
                     </div>
                 </section>
 
-                {/* ═══════════════════════════════════════════════════════════
-            SOCIAL PROOF — Credibility Strip
-        ═══════════════════════════════════════════════════════════ */}
-                <section className="relative py-8 border-y border-white/5 bg-neutral-950/30">
-                    <div className="max-w-6xl mx-auto px-4">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center">
-                            {[
-                                { num: 2847, label: "Cópias vendidas" },
-                                { num: 4.9, label: "Avaliação média", suffix: "/5" },
-                                { num: 98, label: "Taxa de satisfação", suffix: "%" },
-                                { num: 7, label: "Dias de Garantia" },
-                            ].map((stat, idx) => (
-                                <motion.div key={idx} {...stagger} transition={{ delay: idx * 0.1 }}>
-                                    <p className="text-2xl md:text-3xl font-black" style={{ color: ['#a855f7','#06b6d4','#10b981','#f59e0b'][idx] }}>
-                                        {typeof stat.num === "number" && stat.num > 100 ? <AnimatedNumber value={stat.num} /> : stat.num}
-                                        {stat.suffix && <span className="text-lg" style={{ color: ['#c084fc','#22d3ee','#34d399','#fbbf24'][idx] }}>{stat.suffix}</span>}
-                                    </p>
-                                    <p className="text-xs md:text-sm text-slate-500 font-semibold mt-1 uppercase tracking-wider">{stat.label}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
 
                 {/* ═══════════════════════════════════════════════════════════
             NARRATIVA DE VALIDAÇÃO — Bloco 2
@@ -722,18 +699,32 @@ const AlgoritmoDoUniverso = () => {
                                 </div>
 
                                 {/* What's included */}
-                                <div className="space-y-3 mb-10 text-left">
+                                <div className="space-y-3 mb-6 text-left">
                                     {[
                                         "E-book completo: O Algoritmo do Universo",
-                                        "Framework Operacional da Realidade",
-                                        "Diagnóstico de desalinhamento pessoal",
                                         "Acesso vitalício e atualizações futuras"
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-center gap-3 text-slate-300">
-                                            <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: ['#a855f7','#06b6d4','#10b981','#f59e0b'][idx] }} />
+                                            <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: ['#a855f7','#06b6d4'][idx] }} />
                                             <span className="font-medium">{item}</span>
                                         </div>
                                     ))}
+                                </div>
+
+                                {/* BÔNUS */}
+                                <div className="mb-10 p-5 rounded-2xl bg-gradient-to-b from-purple-500/[0.06] to-transparent border border-purple-500/20 text-left">
+                                    <p className="text-xs font-black text-purple-400 uppercase tracking-[0.2em] mb-4">🎁 Bônus Exclusivos</p>
+                                    <div className="space-y-3">
+                                        {[
+                                            "Framework Operacional da Realidade",
+                                            "Diagnóstico de desalinhamento pessoal"
+                                        ].map((item, idx) => (
+                                            <div key={idx} className="flex items-center gap-3 text-slate-300">
+                                                <CheckCircle className="w-5 h-5 flex-shrink-0 text-emerald-400" />
+                                                <span className="font-medium">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
 
                                 {/* Pricing */}
