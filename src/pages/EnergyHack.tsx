@@ -178,7 +178,7 @@ const EnergyHack = () => {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex justify-center md:justify-start">
-                  <LiveViewers text="pessoas estao nesta pagina agora" color="purple" />
+                  <LiveViewers text="pessoas estão nesta página agora" color="purple" variant="hero" />
                 </motion.div>
               </div>
             </div>
@@ -364,11 +364,41 @@ const EnergyHack = () => {
         </section>
 
         <section className="relative px-4 py-20">
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-3xl">
             <motion.div {...fadeInUp} className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-transparent p-10 text-center md:p-14">
-              <div className="relative z-10 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500/15 to-emerald-500/10" style={{ boxShadow: "0 0 30px rgba(168,85,247,0.15)" }}><ShieldCheck className="h-10 w-10 text-purple-400" /></div>
-              <h3 className="mb-4 text-2xl font-black text-white md:text-3xl">Garantia Incondicional de <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">7 Dias</span></h3>
-              <p className="mx-auto mb-8 max-w-lg leading-relaxed text-slate-400">Voce tem 7 dias completos para testar o protocolo. Se nao sentir diferenca, devolvemos <span className="font-bold text-white">100% do seu investimento</span>. Sem perguntas.</p>
+              <div className="relative z-10 mx-auto mb-8 h-32 w-32 md:h-36 md:w-36">
+                <img
+                  src="/garantia-7-dias_(1).png"
+                  alt="Garantia de 7 dias"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <h3 className="mb-6 text-2xl font-black text-white md:text-3xl">
+                Garantia <span className="font-black text-purple-400">7 Dias</span> Incondicional
+              </h3>
+              <div className="mx-auto mb-8 max-w-2xl space-y-4 text-base leading-relaxed text-slate-300 md:text-lg">
+                <p>
+                  Você tem <span className="font-bold text-purple-400">7 dias completos</span> para acessar o material,
+                  testar o protocolo com calma e sentir na prática como a mudança do seu estado interno impacta sua execução diária.
+                  Se ao final desse período perceber que o Energy Hack não fez sentido para você, devolvemos
+                  <span className="font-bold text-purple-400"> 100% do seu investimento</span>.
+                </p>
+                <p>
+                  Sem burocracia, sem atrito e sem perguntas desnecessárias. A proposta é simples:
+                  você entra, testa por conta própria e decide com clareza se este é o sistema certo
+                  para recalibrar sua frequência basal.
+                </p>
+              </div>
+              <div className="flex flex-col justify-center gap-6 md:flex-row">
+                <div className="flex items-center justify-center gap-3">
+                  <Clock className="h-6 w-6 text-purple-400" />
+                  <span className="text-sm text-gray-300">7 dias para testar</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <ShieldCheck className="h-6 w-6 text-purple-400" />
+                  <span className="text-sm text-gray-300">Reembolso sem perguntas</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>

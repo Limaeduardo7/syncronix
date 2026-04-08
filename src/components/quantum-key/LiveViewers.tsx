@@ -4,9 +4,10 @@ import { Eye } from "lucide-react";
 interface LiveViewersProps {
   text: string;
   color?: "yellow" | "blue" | "purple" | "pink" | "slate";
+  variant?: "default" | "hero";
 }
 
-const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
+const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewersProps) => {
   const [viewers, setViewers] = useState(Math.floor(Math.random() * 20) + 80); // Random between 80-100
 
   useEffect(() => {
@@ -60,14 +61,42 @@ const LiveViewers = ({ text, color = "yellow" }: LiveViewersProps) => {
     }
   };
 
+  const getContainerClasses = () => {
+    if (variant === "hero") {
+      return `group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 px-5 py-3 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 ${getColorClasses()}`;
+    }
+
+    return `flex items-center justify-center gap-2 rounded-lg py-4 px-6 ${getColorClasses()} backdrop-blur-sm animate-fade-in`;
+  };
+
+  const getTextClasses = () => {
+    if (variant === "hero") {
+      return `text-sm md:text-[15px] font-medium tracking-[0.01em] ${getIconColor()}`;
+    }
+
+    return `text-sm font-semibold ${getIconColor()}`;
+  };
+
+  const getCountClasses = () => {
+    if (variant === "hero") {
+      return `mr-1 inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-base font-black text-white shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]`;
+    }
+
+    return `font-bold text-lg ${getIconColor()}`;
+  };
+
   return (
-    <div className={`flex items-center justify-center gap-2 py-4 px-6 ${getColorClasses()} backdrop-blur-sm rounded-lg animate-fade-in`}>
-      <div className="relative">
+    <div className={getContainerClasses()}>
+      {variant === "hero" && (
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent opacity-60" />
+      )}
+      <div className={`relative ${variant === "hero" ? "mr-1" : ""}`}>
         <Eye className={`w-5 h-5 animate-pulse ${getIconColor()}`} />
         <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse ${getDotColor()}`}></span>
       </div>
-      <p className={`text-sm font-semibold ${getIconColor()}`}>
-        <span className={`font-bold text-lg ${getIconColor()}`}>{viewers}</span> {text}
+      <p className={getTextClasses()}>
+        <span className={getCountClasses()}>{viewers}</span>
+        {text}
       </p>
     </div>
   );
