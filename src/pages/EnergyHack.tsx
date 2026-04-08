@@ -43,29 +43,29 @@ const stagger = {
 
 const benefits = [
   { title: "Clareza executiva ao acordar", icon: <Brain className="w-6 h-6" />, color: "#a855f7" },
-  { title: "Reducao de ruido mental", icon: <Radio className="w-6 h-6" />, color: "#06b6d4" },
-  { title: "Foco inabalavel ao longo do dia", icon: <Cpu className="w-6 h-6" />, color: "#ec4899" },
-  { title: "Estabilidade emocional sob pressao", icon: <Shield className="w-6 h-6" />, color: "#22c55e" },
-  { title: "Sensacao de controle interno", icon: <Activity className="w-6 h-6" />, color: "#3b82f6" },
-  { title: "Presenca e autoridade natural", icon: <Sparkles className="w-6 h-6" />, color: "#f59e0b" },
+  { title: "Redução de ruído mental", icon: <Radio className="w-6 h-6" />, color: "#06b6d4" },
+  { title: "Foco inabalável ao longo do dia", icon: <Cpu className="w-6 h-6" />, color: "#ec4899" },
+  { title: "Estabilidade emocional sob pressão", icon: <Shield className="w-6 h-6" />, color: "#22c55e" },
+  { title: "Sensação de controle interno", icon: <Activity className="w-6 h-6" />, color: "#3b82f6" },
+  { title: "Presença e autoridade natural", icon: <Sparkles className="w-6 h-6" />, color: "#f59e0b" },
 ];
 
 const offerItems = [
   {
     title: "O Manual Energy Hack (PDF)",
-    desc: "A ciencia limpa e direta para assumir o controle da sua neuropercepcao e energia corporal.",
+    desc: "A ciência limpa e direta para assumir o controle da sua neuropercepção e energia corporal.",
     icon: <Brain className="w-8 h-8" />,
     color: "#a855f7",
   },
   {
-    title: "Audio 8D de Inducao (Exclusivo)",
-    desc: "A ferramenta sonora imersiva para alinhar seu estado interno a realidade que voce quer manifestar.",
+    title: "Áudio 8D de Indução (Exclusivo)",
+    desc: "A ferramenta sonora imersiva para alinhar seu estado interno à realidade que você quer manifestar.",
     icon: <Headphones className="w-8 h-8" />,
     color: "#06b6d4",
   },
   {
     title: "O Protocolo Matinal",
-    desc: "Como usar o sistema em menos de 10 minutos diarios para garantir o maximo de elevacao da sua energia.",
+    desc: "Como usar o sistema em menos de 10 minutos diários para garantir o máximo de elevação da sua energia.",
     icon: <Clock className="w-8 h-8" />,
     color: "#22c55e",
   },
@@ -74,27 +74,27 @@ const offerItems = [
 const steps = [
   { num: "01", label: "Acorde", color: "#a855f7" },
   { num: "02", label: "Coloque os fones", color: "#06b6d4" },
-  { num: "03", label: "De play", color: "#ec4899" },
+  { num: "03", label: "Dê play", color: "#ec4899" },
   { num: "04", label: "Reconfigure seu estado", color: "#22c55e" },
-  { num: "05", label: "Entre no dia em outro padrao", color: "#f59e0b" },
+  { num: "05", label: "Entre no dia em outro padrão", color: "#f59e0b" },
 ];
 
 const faqs = [
   {
-    q: "Isso e meditacao guiada?",
-    a: "Nao. O Energy Hack utiliza engenharia sonora 8D com estimulo bilateral, uma abordagem tecnica e neuroperceptiva, sem misticismo ou visualizacoes.",
+    q: "Isso é meditação guiada?",
+    a: "Não. O Energy Hack utiliza engenharia sonora 8D com estímulo bilateral, uma abordagem técnica e neuroperceptiva, sem misticismo ou visualizações.",
   },
   {
     q: "Quanto tempo leva para sentir resultado?",
-    a: "A maioria dos usuarios relata mudanca perceptivel no estado interno ja na primeira sessao. Resultados acumulativos aparecem nos primeiros 7 dias de uso consistente.",
+    a: "A maioria dos usuários relata mudança perceptível no estado interno já na primeira sessão. Resultados acumulativos aparecem nos primeiros 7 dias de uso consistente.",
   },
   {
     q: "Preciso de fones de ouvido?",
-    a: "Sim. A tecnologia 8D exige fones para o estimulo bilateral funcionar corretamente. Qualquer fone serve.",
+    a: "Sim. A tecnologia 8D exige fones para o estímulo bilateral funcionar corretamente. Qualquer fone serve.",
   },
   {
-    q: "E se nao funcionar para mim?",
-    a: "Voce tem 7 dias de garantia incondicional. Se nao sentir diferenca, devolvemos 100% do seu investimento sem perguntas.",
+    q: "E se não funcionar para mim?",
+    a: "Você tem 7 dias de garantia incondicional. Se não sentir diferença, devolvemos 100% do seu investimento sem perguntas.",
   },
 ];
 
@@ -108,9 +108,9 @@ const EnergyHack = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-black font-sans text-slate-200 selection:bg-purple-500/30 selection:text-purple-200">
       <SEO
-        title="ENERGY HACK - Reprograme Sua Frequencia Basal | Syncronix"
-        description="Protocolo de reconfiguracao neural com audio 8D. Reprograme sua frequencia basal, silencie o ruido mental e assuma o comando do seu estado interno em menos de 10 minutos por dia."
-        keywords="energy hack, reconfiguracao neural, audio 8D, frequencia basal, foco mental, protocolo matinal, estado interno, neuropercepcao, modelagem neuroperceptiva"
+        title="ENERGY HACK - Reprograme Sua Frequência Basal | Syncronix"
+        description="Protocolo de reconfiguração neural com áudio 8D. Reprograme sua frequência basal, silencie o ruído mental e assuma o comando do seu estado interno em menos de 10 minutos por dia."
+        keywords="energy hack, reconfiguração neural, áudio 8D, frequência basal, foco mental, protocolo matinal, estado interno, neuropercepção, modelagem neuroperceptiva"
         ogImage="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png"
         canonical="https://syncronix.co/energy-hack"
       />
@@ -154,17 +154,17 @@ const EnergyHack = () => {
               <div className="w-full text-center md:w-1/2 md:text-left">
                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="aurora-border mb-6 inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/5 px-5 py-2.5 backdrop-blur-sm">
                   <Waves className="h-4 w-4 text-cyan-400" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-cyan-300 md:text-xs">Sistema de Reconfiguracao Neural</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-cyan-300 md:text-xs">Sistema de Reconfiguração Neural</span>
                 </motion.div>
 
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mb-5 text-2xl font-black leading-[1.15] tracking-tight text-white md:text-3xl lg:text-4xl">
                   <span className="mb-2 block text-lg font-bold text-slate-300 md:text-xl lg:text-2xl">
-                    <SplitText text="A realidade externa e um reflexo exato do seu estado interno. E voce esta prestes a hackear o codigo-fonte." className="justify-center md:justify-start" />
+                    <SplitText text="A realidade externa é um reflexo exato do seu estado interno. E você está prestes a hackear o código-fonte." className="justify-center md:justify-start" />
                   </span>
                 </motion.h1>
 
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }} className="mb-8 text-sm font-medium leading-relaxed text-slate-400 md:text-lg">
-                  Esqueca a tentativa frustrada de mudar o mundo ao seu redor na forca bruta. Reconfigure o nucleo, ajuste seu input visceral e assuma o comando da realidade que responde ao seu <span className="font-bold text-cyan-400">padrao.</span>
+                  Esqueça a tentativa frustrada de mudar o mundo ao seu redor na força bruta. Reconfigure o núcleo, ajuste seu input visceral e assuma o comando da realidade que responde ao seu <span className="font-bold text-cyan-400">padrão.</span>
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center gap-4 md:items-start">
@@ -189,18 +189,18 @@ const EnergyHack = () => {
           <div className="mx-auto max-w-4xl">
             <motion.div {...fadeInUp} className="mb-16 text-center">
               <h2 className="mb-8 text-3xl font-black leading-tight text-white md:text-5xl">
-                <DecryptedText text="O Erro de Forcar o Ambiente" className="not-italic text-3xl font-black md:text-5xl" />
+                <DecryptedText text="O Erro de Forçar o Ambiente" className="not-italic text-3xl font-black md:text-5xl" />
               </h2>
             </motion.div>
             <div className="grid gap-8 md:grid-cols-2">
               <SpotlightCard spotlightColor="rgba(168,85,247,0.15)" className="p-8 md:p-10">
                 <p className="text-lg leading-relaxed text-slate-300">
-                  Esqueca a tentativa frustrada de mudar o mundo ao seu redor na forca bruta. Se voce vive apagando incendios, estagnado ou atraindo o mesmo padrao de problemas, o erro nao esta no ambiente. <span className="font-bold text-purple-400">Esta na sua frequencia basal.</span>
+                  Esqueça a tentativa frustrada de mudar o mundo ao seu redor na força bruta. Se você vive apagando incêndios, estagnado ou atraindo o mesmo padrão de problemas, o erro não está no ambiente. <span className="font-bold text-purple-400">Está na sua frequência basal.</span>
                 </p>
               </SpotlightCard>
               <SpotlightCard spotlightColor="rgba(6,182,212,0.15)" className="p-8 md:p-10">
                 <p className="text-lg leading-relaxed text-slate-300">
-                  A sociedade te ensinou a lutar contra o reflexo no espelho. Nos vamos te ensinar a <span className="font-bold text-cyan-400">reconfigurar o nucleo.</span>
+                  A sociedade te ensinou a lutar contra o reflexo no espelho. Nós vamos te ensinar a <span className="font-bold text-cyan-400">reconfigurar o núcleo.</span>
                 </p>
               </SpotlightCard>
             </div>
@@ -215,15 +215,15 @@ const EnergyHack = () => {
                 <Cpu className="h-4 w-4 text-cyan-400" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300">Engenharia de Estado Interno</span>
               </div>
-              <h2 className="mb-6 text-3xl font-black text-white md:text-5xl">Apresentamos o <span className="shimmer-multi">ENERGY HACK: Metodo de Modelagem Neuroperceptiva.</span></h2>
-              <p className="mx-auto max-w-3xl text-xl leading-relaxed text-slate-400">Junto ao manual de bio-otimizacao em PDF, voce recebe o motor central desta transformacao: a <span className="font-bold text-white">Faixa de Audio 8D de Reconfiguracao Matinal.</span></p>
+              <h2 className="mb-6 text-3xl font-black text-white md:text-5xl">Apresentamos o <span className="shimmer-multi">ENERGY HACK: Método de Modelagem Neuroperceptiva.</span></h2>
+              <p className="mx-auto max-w-3xl text-xl leading-relaxed text-slate-400">Junto ao manual de bio-otimização em PDF, você recebe o motor central desta transformação: a <span className="font-bold text-white">Faixa de Áudio 8D de Reconfiguração Matinal.</span></p>
             </motion.div>
 
             <SpotlightCard spotlightColor="rgba(6,182,212,0.2)" className="energy-card p-8 md:p-12">
               <div className="text-center">
                 <Headphones className="mx-auto mb-6 h-12 w-12 text-cyan-400" style={{ filter: "drop-shadow(0 0 20px rgba(6,182,212,0.5))" }} />
-                <h3 className="mb-4 text-2xl font-black text-white md:text-3xl">Quando voce acorda e coloca os fones, comeca a configuracao cirurgica do seu estado interior</h3>
-                <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-400">Quando voce acorda e coloca os fones de ouvido, nao esta apenas ouvindo som. A engenharia sonora espacial viaja pelos seus dois hemisferios cerebrais, criando um isolamento absoluto e induzindo a configuracao cirurgica do seu estado interior profundo.</p>
+                <h3 className="mb-4 text-2xl font-black text-white md:text-3xl">Quando você acorda e coloca os fones, começa a configuração cirúrgica do seu estado interior</h3>
+                <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-400">Quando você acorda e coloca os fones de ouvido, não está apenas ouvindo som. A engenharia sonora espacial viaja pelos seus dois hemisférios cerebrais, criando um isolamento absoluto e induzindo a configuração cirúrgica do seu estado interior profundo.</p>
               </div>
             </SpotlightCard>
           </div>
@@ -232,23 +232,23 @@ const EnergyHack = () => {
         <section className="relative px-4 py-24 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div {...fadeInUp}>
-              <h2 className="mb-10 text-3xl font-black leading-tight text-white md:text-5xl">Magnetizando o <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Alto Nivel</span></h2>
-              <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">O segredo da modelagem de energia e este: a vida que voce vive e o eco da sua fisiologia. O que nos induzimos neste audio e a arquitetura mental e sensorial exata para que a sua realidade externa seja obrigada a refletir o que voce deseja.</p>
+              <h2 className="mb-10 text-3xl font-black leading-tight text-white md:text-5xl">Magnetizando o <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Alto Nível</span></h2>
+              <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">O segredo da modelagem de energia é este: a vida que você vive é o eco da sua fisiologia. O que nós induzimos neste áudio é a arquitetura mental e sensorial exata para que a sua realidade externa seja obrigada a refletir o que você deseja.</p>
             </motion.div>
             <motion.div {...fadeInUp} className="my-12 flex items-center justify-center gap-3">
               <div className="h-px max-w-[100px] flex-1 bg-gradient-to-r from-transparent via-purple-500/50 to-cyan-500/50" />
               <Zap className="h-6 w-6 text-pink-400" />
               <div className="h-px max-w-[100px] flex-1 bg-gradient-to-l from-transparent via-cyan-500/50 to-pink-500/50" />
             </motion.div>
-            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequencia logo nos primeiros minutos do dia, voce deixa de reagir ao caos e passa a magnetizar uma vida de alto nivel, com <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">clareza executiva, foco inabalavel e autoridade natural.</span></motion.p>
-            <motion.p {...fadeInUp} className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-slate-300 md:text-xl">Pare de levar os obstaculos para o pessoal. Seja estrategico. Pare de inserir moldes errados no sistema. Ajuste seu input visceral agora e a maquina trabalhara obrigatoriamente a seu favor.</motion.p>
+            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequência logo nos primeiros minutos do dia, você deixa de reagir ao caos e passa a magnetizar uma vida de alto nível, com <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">clareza executiva, foco inabalável e autoridade natural.</span></motion.p>
+            <motion.p {...fadeInUp} className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-slate-300 md:text-xl">Pare de levar os obstáculos para o pessoal. Seja estratégico. Pare de inserir moldes errados no sistema. Ajuste seu input visceral agora e a máquina trabalhará obrigatoriamente a seu favor.</motion.p>
           </div>
         </section>
 
         <section className="relative bg-gradient-to-b from-neutral-950/30 to-black px-4 py-24 md:py-32">
           <div className="mx-auto max-w-5xl">
             <motion.div {...fadeInUp} className="mb-16 text-center">
-              <h2 className="mb-4 text-3xl font-black text-white md:text-5xl">O que muda quando o <span className="shimmer-multi">padrao interno</span> sobe</h2>
+              <h2 className="mb-4 text-3xl font-black text-white md:text-5xl">O que muda quando o <span className="shimmer-multi">padrão interno</span> sobe</h2>
             </motion.div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {benefits.map((benefit, idx) => (
@@ -269,7 +269,7 @@ const EnergyHack = () => {
             <motion.div {...fadeInUp} className="mb-12 text-center">
               <div className="aurora-border mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/5 px-4 py-2">
                 <Sparkles className="h-4 w-4 text-purple-400" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">O que voce recebe hoje</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">O que você recebe hoje</span>
               </div>
             </motion.div>
 
@@ -301,7 +301,7 @@ const EnergyHack = () => {
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">por apenas</p>
                   <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">R$ 47<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-4xl text-transparent">,00</span></p>
                   <p className="mt-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-lg font-black tracking-wide text-transparent">ou 6x de R$ 8,69</p>
-                  <p className="mt-2 text-sm font-medium text-slate-500">acesso imediato e vitalicio</p>
+                  <p className="mt-2 text-sm font-medium text-slate-500">acesso imediato e vitalício</p>
                 </div>
 
                 <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group block w-full rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-8 py-6 text-center text-xl font-black text-white shadow-[0_10px_50px_-15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400">
@@ -406,8 +406,8 @@ const EnergyHack = () => {
         <section className="relative bg-gradient-to-b from-black via-purple-950/10 to-black px-4 py-24 md:py-32">
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <motion.div {...fadeInUp}>
-              <h2 className="mb-6 text-3xl font-black leading-tight text-white md:text-5xl">Nao lute contra o sistema. <br /><span className="shimmer-multi">Modele a raiz dele.</span></h2>
-              <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-400">Coloque os fones, de o play e force a realidade a se curvar ao seu novo padrao energetico.</p>
+              <h2 className="mb-6 text-3xl font-black leading-tight text-white md:text-5xl">Não lute contra o sistema. <br /><span className="shimmer-multi">Modele a raiz dele.</span></h2>
+              <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-400">Coloque os fones, dê o play e force a realidade a se curvar ao seu novo padrão energético.</p>
               <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-12 py-6 text-xl font-black text-white shadow-[0_0_60px_-12px_rgba(168,85,247,0.5),0_0_100px_-20px_rgba(6,182,212,0.3)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 hover:shadow-[0_0_100px_-15px_rgba(168,85,247,0.6)]">
                 <span>QUERO HACKEAR MEU ESTADO INTERNO AGORA</span>
                 <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />

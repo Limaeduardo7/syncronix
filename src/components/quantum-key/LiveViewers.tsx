@@ -63,7 +63,7 @@ const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewer
 
   const getContainerClasses = () => {
     if (variant === "hero") {
-      return `group relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 px-5 py-3 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 ${getColorClasses()}`;
+      return "group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-md transition-all duration-300 hover:border-white/15 hover:bg-white/[0.06]";
     }
 
     return `flex items-center justify-center gap-2 rounded-lg py-4 px-6 ${getColorClasses()} backdrop-blur-sm animate-fade-in`;
@@ -71,7 +71,7 @@ const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewer
 
   const getTextClasses = () => {
     if (variant === "hero") {
-      return `text-sm md:text-[15px] font-medium tracking-[0.01em] ${getIconColor()}`;
+      return "text-left leading-tight";
     }
 
     return `text-sm font-semibold ${getIconColor()}`;
@@ -79,7 +79,7 @@ const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewer
 
   const getCountClasses = () => {
     if (variant === "hero") {
-      return `mr-1 inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-base font-black text-white shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]`;
+      return "text-lg font-black tracking-tight text-white md:text-xl";
     }
 
     return `font-bold text-lg ${getIconColor()}`;
@@ -88,16 +88,28 @@ const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewer
   return (
     <div className={getContainerClasses()}>
       {variant === "hero" && (
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent opacity-60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/[0.03] via-transparent to-transparent opacity-70" />
       )}
-      <div className={`relative ${variant === "hero" ? "mr-1" : ""}`}>
+      <div className={variant === "hero" ? "relative mr-3 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-black/25" : "relative"}>
         <Eye className={`w-5 h-5 animate-pulse ${getIconColor()}`} />
-        <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse ${getDotColor()}`}></span>
+        <span className={`absolute ${variant === "hero" ? "right-2 top-2" : "-top-1 -right-1"} h-2 w-2 rounded-full animate-pulse ${getDotColor()}`}></span>
       </div>
-      <p className={getTextClasses()}>
-        <span className={getCountClasses()}>{viewers}</span>
-        {text}
-      </p>
+      {variant === "hero" ? (
+        <div className={getTextClasses()}>
+          <div className="flex items-baseline gap-2">
+            <span className={getCountClasses()}>{viewers}</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-purple-300/80">
+              ao vivo
+            </span>
+          </div>
+          <p className="mt-0.5 text-sm font-medium text-slate-300 md:text-[15px]">{text}</p>
+        </div>
+      ) : (
+        <p className={getTextClasses()}>
+          <span className={getCountClasses()}>{viewers}</span>
+          {text}
+        </p>
+      )}
     </div>
   );
 };
