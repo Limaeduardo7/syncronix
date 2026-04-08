@@ -122,7 +122,7 @@ const EnergyHack = () => {
         @keyframes border-cycle { 0%,100% { border-color: rgba(168,85,247,0.4); } 33% { border-color: rgba(6,182,212,0.4); } 66% { border-color: rgba(236,72,153,0.4); } }
         @keyframes energy-pulse { 0%,100% { box-shadow: 0 0 20px rgba(168,85,247,0.3), 0 0 60px rgba(6,182,212,0.15); } 50% { box-shadow: 0 0 40px rgba(168,85,247,0.5), 0 0 100px rgba(6,182,212,0.3); } }
         @keyframes grid-scroll { 0% { background-position: 0 0; } 100% { background-position: 0 60px; } }
-        .shimmer-multi { background: linear-gradient(110deg, #a855f7, #06b6d4, #ec4899, #06b6d4, #a855f7); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s ease-in-out infinite; }
+        .shimmer-multi { background: linear-gradient(110deg, #a855f7, #22c55e, #c084fc, #16a34a, #a855f7); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s ease-in-out infinite; }
         .aurora-border { animation: border-cycle 6s ease-in-out infinite; }
         .energy-card { animation: energy-pulse 4s ease-in-out infinite; }
         .grid-bg { background-image: linear-gradient(rgba(168,85,247,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: grid-scroll 8s linear infinite; }
