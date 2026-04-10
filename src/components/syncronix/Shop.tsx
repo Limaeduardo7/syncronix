@@ -39,12 +39,12 @@ export function Shop() {
   return (
     <section id="shop" className="py-24 bg-muted/30 relative overflow-hidden">
       {/* Matrix Rain Background */}
-      <div className="absolute inset-0 opacity-50">
-        <MatrixRain 
+      <div className="absolute inset-0 opacity-40">
+        <MatrixRain
           fontSize={20}
-          color="#ffffff"
+          color="#22d3ee"
           characters="01"
-          fadeOpacity={0.1}
+          fadeOpacity={0.08}
           speed={1}
         />
       </div>

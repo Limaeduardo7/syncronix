@@ -149,7 +149,7 @@ export const Header = memo(function Header() {
                   e.preventDefault();
                   handleNavClick(item.href, item.route);
                 }}
-                className="text-white hover:text-cyan-400 transition-colors duration-200 text-sm font-medium whitespace-nowrap cursor-pointer bg-transparent border-none"
+                className="text-white/80 hover:text-cyan-300 transition-colors duration-200 text-sm font-medium whitespace-nowrap cursor-pointer bg-transparent border-none hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
               >
                 {item.name}
               </button>
@@ -184,7 +184,7 @@ export const Header = memo(function Header() {
                   e.preventDefault();
                   handleNavClick(item.href, item.route);
                 }}
-                className="text-white hover:text-cyan-400 transition-colors duration-200 text-sm font-medium whitespace-nowrap cursor-pointer bg-transparent border-none"
+                className="text-white/80 hover:text-cyan-300 transition-colors duration-200 text-sm font-medium whitespace-nowrap cursor-pointer bg-transparent border-none hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
               >
                 {item.name}
               </button>
@@ -196,7 +196,7 @@ export const Header = memo(function Header() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="relative group text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300 gap-2 px-3 py-2 rounded-lg border border-transparent hover:border-cyan-400/30"
+                  className="relative group text-white hover:text-cyan-300 hover:bg-white/10 transition-all duration-300 gap-2 px-3 py-2 rounded-lg border border-transparent hover:border-cyan-300/40 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]"
                 >
                   <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-400/0 via-cyan-400/5 to-cyan-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex items-center gap-2 relative z-10">
@@ -211,8 +211,8 @@ export const Header = memo(function Header() {
               >
                 <DropdownMenuItem
                   onClick={() => setLanguage('pt')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'pt' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'pt' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="pt" />
@@ -220,8 +220,8 @@ export const Header = memo(function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setLanguage('en')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'en' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'en' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="en" />
@@ -229,8 +229,8 @@ export const Header = memo(function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setLanguage('es')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'es' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'es' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="es" />
@@ -259,8 +259,8 @@ export const Header = memo(function Header() {
               >
                 <DropdownMenuItem
                   onClick={() => setLanguage('pt')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'pt' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'pt' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="pt" />
@@ -268,8 +268,8 @@ export const Header = memo(function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setLanguage('en')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'en' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 mb-1 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'en' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="en" />
@@ -277,8 +277,8 @@ export const Header = memo(function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setLanguage('es')}
-                  className={`text-white hover:text-cyan-400 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 transition-all duration-200 flex items-center gap-3 ${
-                    language === 'es' ? 'bg-cyan-400/20 text-cyan-400' : ''
+                  className={`text-white hover:text-cyan-300 hover:bg-cyan-400/10 cursor-pointer rounded-lg px-4 py-3 transition-all duration-200 flex items-center gap-3 ${
+                    language === 'es' ? 'bg-cyan-400/20 text-cyan-300' : ''
                   }`}
                 >
                   <LanguageFlag language="es" />
