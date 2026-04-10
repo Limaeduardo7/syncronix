@@ -71,6 +71,11 @@ const offerItems = [
   },
 ];
 
+const bonusItems = [
+  "Framework Operacional da Realidade",
+  "Diagnóstico de desalinhamento pessoal",
+];
+
 const steps = [
   { num: "01", label: "Acorde", color: "#a855f7" },
   { num: "02", label: "Coloque os fones", color: "#06b6d4" },
@@ -307,6 +312,22 @@ const EnergyHack = () => {
                 <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group block w-full rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-8 py-6 text-center text-xl font-black text-white shadow-[0_10px_50px_-15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400">
                   <span className="flex items-center justify-center gap-3">QUERO HACKEAR MEU ESTADO INTERNO AGORA<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
+
+                <div className="mt-8 rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-5 text-left">
+                  <p className="mb-4 text-[11px] font-black uppercase tracking-[0.2em] text-emerald-300">
+                    Bônus incluídos hoje
+                  </p>
+                  <div className="space-y-3">
+                    {bonusItems.map((bonus) => (
+                      <div key={bonus} className="flex items-center gap-3">
+                        <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10">
+                          <ShieldCheck className="h-4 w-4 text-emerald-300" />
+                        </div>
+                        <span className="text-sm font-semibold text-slate-100 md:text-base">{bonus}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 <div className="mt-10 grid grid-cols-3 gap-4 text-[11px] text-slate-500 md:text-xs">
                   <div className="flex flex-col items-center gap-1.5 text-center"><Lock className="h-4 w-4 text-purple-400/60" /><span className="font-semibold">Compra Segura</span></div>
