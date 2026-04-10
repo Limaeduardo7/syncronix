@@ -55,21 +55,25 @@ export function Hero() {
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
       {/* Background with gradient */}
       <div
-        className="absolute inset-0 opacity-20 z-0"
+        className="absolute inset-0 opacity-30 z-0"
         style={{ background: 'var(--gradient-hero)' }}
       ></div>
+
+      {/* Neon ambient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-violet-600/10 blur-[100px] pointer-events-none z-0" />
 
       {/* Sparkles background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <SparklesCore
           id="tsparticleshero"
           background="transparent"
-          minSize={0.4}
-          maxSize={1.2}
-          particleDensity={80}
+          minSize={0.5}
+          maxSize={1.4}
+          particleDensity={100}
           className="w-full h-full"
-          particleColor="#ffffff"
-          speed={0.8}
+          particleColor="#22d3ee"
+          speed={0.9}
         />
       </div>
 
