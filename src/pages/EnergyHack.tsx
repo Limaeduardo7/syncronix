@@ -124,10 +124,10 @@ const EnergyHack = () => {
         @keyframes float-orb { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-40px) scale(1.1); } }
         @keyframes float-orb-r { 0%,100% { transform: translateY(0) scale(1.05); } 50% { transform: translateY(30px) scale(0.95); } }
         @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-        @keyframes border-cycle { 0%,100% { border-color: rgba(168,85,247,0.4); } 33% { border-color: rgba(6,182,212,0.4); } 66% { border-color: rgba(236,72,153,0.4); } }
-        @keyframes energy-pulse { 0%,100% { box-shadow: 0 0 20px rgba(168,85,247,0.3), 0 0 60px rgba(6,182,212,0.15); } 50% { box-shadow: 0 0 40px rgba(168,85,247,0.5), 0 0 100px rgba(6,182,212,0.3); } }
+        @keyframes border-cycle { 0%,100% { border-color: rgba(192,132,252,0.55); } 33% { border-color: rgba(52,211,153,0.55); } 66% { border-color: rgba(34,211,238,0.55); } }
+        @keyframes energy-pulse { 0%,100% { box-shadow: 0 0 28px rgba(192,132,252,0.32), 0 0 80px rgba(52,211,153,0.18); } 50% { box-shadow: 0 0 54px rgba(192,132,252,0.52), 0 0 120px rgba(34,211,238,0.28); } }
         @keyframes grid-scroll { 0% { background-position: 0 0; } 100% { background-position: 0 60px; } }
-        .shimmer-multi { background: linear-gradient(110deg, #a855f7, #22c55e, #c084fc, #16a34a, #a855f7); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s ease-in-out infinite; }
+        .shimmer-multi { background: linear-gradient(110deg, #d946ef, #22d3ee, #a3e635, #67e8f9, #d946ef); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s ease-in-out infinite; }
         .aurora-border { animation: border-cycle 6s ease-in-out infinite; }
         .energy-card { animation: energy-pulse 4s ease-in-out infinite; }
         .grid-bg { background-image: linear-gradient(rgba(168,85,247,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: grid-scroll 8s linear infinite; }
@@ -137,14 +137,14 @@ const EnergyHack = () => {
 
       <main className="relative flex-1">
         <div className="pointer-events-none fixed inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.08)_0%,transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(217,70,239,0.12)_0%,transparent_60%)]" />
           <div className="absolute inset-0 grid-bg" />
-          <div className="absolute left-[3%] top-[5%] h-[600px] w-[600px] rounded-full bg-purple-600/[0.08] blur-[150px]" style={{ animation: "float-orb 14s ease-in-out infinite" }} />
-          <div className="absolute right-[3%] top-[25%] h-[500px] w-[500px] rounded-full bg-cyan-500/[0.07] blur-[130px]" style={{ animation: "float-orb-r 16s ease-in-out infinite" }} />
+          <div className="absolute left-[3%] top-[5%] h-[600px] w-[600px] rounded-full bg-fuchsia-500/[0.12] blur-[150px]" style={{ animation: "float-orb 14s ease-in-out infinite" }} />
+          <div className="absolute right-[3%] top-[25%] h-[500px] w-[500px] rounded-full bg-cyan-400/[0.1] blur-[130px]" style={{ animation: "float-orb-r 16s ease-in-out infinite" }} />
         </div>
 
         <section className="relative px-4 pb-20 pt-6 md:pb-28 md:pt-10">
-          <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-purple-600/[0.12] blur-[180px]" />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-fuchsia-500/[0.16] blur-[180px]" />
           <div className="relative z-30 mb-8 text-center md:mb-12">
             <CountdownTimer />
           </div>
@@ -152,8 +152,8 @@ const EnergyHack = () => {
           <div className="relative z-20 mx-auto max-w-6xl">
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
               <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }} className="relative w-full flex-shrink-0 md:w-1/2">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[60px]" />
-                <img src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png" alt="Energy Hack Logo" className="relative z-10 mx-auto w-full max-w-[85vw] rounded-2xl drop-shadow-[0_0_40px_rgba(168,85,247,0.4)] md:max-w-full md:rounded-3xl" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-500/25 via-cyan-400/20 to-lime-400/20 blur-[60px]" />
+                <img src="/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png" alt="Energy Hack Logo" className="relative z-10 mx-auto w-full max-w-[85vw] rounded-2xl drop-shadow-[0_0_50px_rgba(217,70,239,0.45)] md:max-w-full md:rounded-3xl" />
               </motion.div>
 
               <div className="w-full text-center md:w-1/2 md:text-left">
@@ -173,7 +173,7 @@ const EnergyHack = () => {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center gap-4 md:items-start">
-                  <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-8 py-5 text-sm font-black text-white shadow-[0_0_50px_-12px_rgba(168,85,247,0.5),0_0_80px_-20px_rgba(6,182,212,0.3)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 hover:shadow-[0_0_80px_-15px_rgba(168,85,247,0.6)] md:px-12 md:text-lg">
+                  <motion.a href="#oferta" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-lime-400 px-8 py-5 text-sm font-black text-slate-950 shadow-[0_0_55px_-10px_rgba(217,70,239,0.65),0_0_95px_-18px_rgba(34,211,238,0.4)] transition-all duration-300 hover:-translate-y-1 hover:from-fuchsia-400 hover:via-cyan-300 hover:to-lime-300 hover:shadow-[0_0_95px_-12px_rgba(163,230,53,0.45)] md:px-12 md:text-lg">
                     <span>QUERO HACKEAR MEU ESTADO INTERNO AGORA</span>
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </motion.a>
@@ -216,9 +216,9 @@ const EnergyHack = () => {
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/[0.06] blur-[120px]" />
           <div className="relative mx-auto max-w-4xl">
             <motion.div {...fadeInUp} className="mb-16 text-center">
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-2">
-                <Cpu className="h-4 w-4 text-cyan-400" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300">Engenharia de Estado Interno</span>
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
+                <Cpu className="h-4 w-4 text-cyan-300" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-200">Engenharia de Estado Interno</span>
               </div>
               <h2 className="mb-6 text-3xl font-black text-white md:text-5xl">Apresentamos o <span className="shimmer-multi">ENERGY HACK: Método de Modelagem Neuroperceptiva.</span></h2>
               <p className="mx-auto max-w-3xl text-xl leading-relaxed text-slate-400">Junto ao manual de bio-otimização em PDF, você recebe o motor central desta transformação: a <span className="font-bold text-white">Faixa de Áudio 8D de Reconfiguração Matinal.</span></p>
@@ -237,7 +237,7 @@ const EnergyHack = () => {
         <section className="relative px-4 py-24 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div {...fadeInUp}>
-              <h2 className="mb-10 text-3xl font-black leading-tight text-white md:text-5xl">Magnetizando o <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Alto Nível</span></h2>
+              <h2 className="mb-10 text-3xl font-black leading-tight text-white md:text-5xl">Magnetizando o <span className="bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-lime-300 bg-clip-text text-transparent">Alto Nível</span></h2>
               <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">O segredo da modelagem de energia é este: a vida que você vive é o eco da sua fisiologia. O que nós induzimos neste áudio é a arquitetura mental e sensorial exata para que a sua realidade externa seja obrigada a refletir o que você deseja.</p>
             </motion.div>
             <motion.div {...fadeInUp} className="my-12 flex items-center justify-center gap-3">
@@ -245,7 +245,7 @@ const EnergyHack = () => {
               <Zap className="h-6 w-6 text-pink-400" />
               <div className="h-px max-w-[100px] flex-1 bg-gradient-to-l from-transparent via-cyan-500/50 to-pink-500/50" />
             </motion.div>
-            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequência logo nos primeiros minutos do dia, você deixa de reagir ao caos e passa a magnetizar uma vida de alto nível, com <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">clareza executiva, foco inabalável e autoridade natural.</span></motion.p>
+            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequência logo nos primeiros minutos do dia, você deixa de reagir ao caos e passa a magnetizar uma vida de alto nível, com <span className="bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-lime-300 bg-clip-text text-transparent">clareza executiva, foco inabalável e autoridade natural.</span></motion.p>
             <motion.p {...fadeInUp} className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-slate-300 md:text-xl">Pare de levar os obstáculos para o pessoal. Seja estratégico. Pare de inserir moldes errados no sistema. Ajuste seu input visceral agora e a máquina trabalhará obrigatoriamente a seu favor.</motion.p>
           </div>
         </section>
@@ -280,8 +280,8 @@ const EnergyHack = () => {
 
             <motion.div {...fadeInUp} className="mb-12 flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 blur-[40px]" />
-                <img src="/energy%20hack/Image_in_phone_202604021212.jpeg" alt="Energy Hack - Produto" className="relative z-10 w-56 rounded-2xl border-2 border-purple-500/20 shadow-[0_0_60px_-20px_rgba(168,85,247,0.3)] md:w-72" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-fuchsia-500/22 via-cyan-400/18 to-lime-400/18 blur-[40px]" />
+                <img src="/energy%20hack/Image_in_phone_202604021212.jpeg" alt="Energy Hack - Produto" className="relative z-10 w-56 rounded-2xl border-2 border-fuchsia-400/25 shadow-[0_0_70px_-18px_rgba(217,70,239,0.35)] md:w-72" />
               </div>
             </motion.div>
 
@@ -299,17 +299,17 @@ const EnergyHack = () => {
               ))}
             </div>
 
-            <motion.div {...fadeInUp} className="aurora-border relative overflow-hidden rounded-[2rem] border-2 bg-gradient-to-b from-neutral-950 to-neutral-950/50 p-8 md:p-12" style={{ boxShadow: "0 0 80px -20px rgba(168,85,247,0.3), 0 0 100px -30px rgba(6,182,212,0.2), inset 0 0 60px rgba(0,0,0,0.4)" }}>
+            <motion.div {...fadeInUp} className="aurora-border relative overflow-hidden rounded-[2rem] border-2 bg-gradient-to-b from-neutral-950 to-neutral-950/50 p-8 md:p-12" style={{ boxShadow: "0 0 90px -18px rgba(217,70,239,0.35), 0 0 120px -28px rgba(34,211,238,0.22), inset 0 0 60px rgba(0,0,0,0.4)" }}>
               <div className="relative z-10 text-center">
                 <div className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-8">
                   <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">R$ 97,00</p>
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">por apenas</p>
                   <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">R$ 47<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-4xl text-transparent">,00</span></p>
-                  <p className="mt-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-lg font-black tracking-wide text-transparent">ou 6x de R$ 8,69</p>
+                  <p className="mt-3 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-lime-300 bg-clip-text text-lg font-black tracking-wide text-transparent">ou 6x de R$ 8,69</p>
                   <p className="mt-2 text-sm font-medium text-slate-500">acesso imediato e vitalício</p>
                 </div>
 
-                <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group block w-full rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-8 py-6 text-center text-xl font-black text-white shadow-[0_10px_50px_-15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400">
+                <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group block w-full rounded-2xl bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-lime-400 px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:from-fuchsia-400 hover:via-cyan-300 hover:to-lime-300">
                   <span className="flex items-center justify-center gap-3">QUERO HACKEAR MEU ESTADO INTERNO AGORA<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
 
@@ -429,7 +429,7 @@ const EnergyHack = () => {
             <motion.div {...fadeInUp}>
               <h2 className="mb-6 text-3xl font-black leading-tight text-white md:text-5xl">Não lute contra o sistema. <br /><span className="shimmer-multi">Modele a raiz dele.</span></h2>
               <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-400">Coloque os fones, dê o play e force a realidade a se curvar ao seu novo padrão energético.</p>
-              <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 px-12 py-6 text-xl font-black text-white shadow-[0_0_60px_-12px_rgba(168,85,247,0.5),0_0_100px_-20px_rgba(6,182,212,0.3)] transition-all duration-300 hover:-translate-y-1 hover:from-purple-500 hover:via-cyan-400 hover:to-pink-400 hover:shadow-[0_0_100px_-15px_rgba(168,85,247,0.6)]">
+              <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-lime-400 px-12 py-6 text-xl font-black text-slate-950 shadow-[0_0_70px_-10px_rgba(217,70,239,0.55),0_0_110px_-16px_rgba(34,211,238,0.35)] transition-all duration-300 hover:-translate-y-1 hover:from-fuchsia-400 hover:via-cyan-300 hover:to-lime-300 hover:shadow-[0_0_110px_-12px_rgba(163,230,53,0.4)]">
                 <span>QUERO HACKEAR MEU ESTADO INTERNO AGORA</span>
                 <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
               </motion.a>
