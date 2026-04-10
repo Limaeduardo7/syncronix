@@ -299,7 +299,7 @@ const EnergyHack = () => {
             <motion.div {...fadeInUp} className="mb-12 flex justify-center">
               <div className="relative">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-500/22 via-violet-400/16 to-lime-400/18 blur-[40px]" />
-                <img src="/energy%20hack/Image_in_phone_202604021212.jpeg" alt="Energy Hack - Produto" className="relative z-10 w-56 rounded-2xl border-2 border-violet-400/25 shadow-[0_0_70px_-18px_rgba(128,0,255,0.35)] md:w-72" />
+                <img src="/energy%20hack/Image_in_phone_202604021212.jpeg" alt="Energy Hack - Produto" className="relative z-10 w-72 rounded-2xl border-2 border-violet-400/25 shadow-[0_0_80px_-16px_rgba(128,0,255,0.38)] md:w-[28rem]" />
               </div>
             </motion.div>
 
@@ -328,7 +328,7 @@ const EnergyHack = () => {
                 </div>
 
                 <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group block w-full rounded-2xl px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110">
-                  <span className="flex items-center justify-center gap-3">QUERO HACKEAR MEU ESTADO INTERNO AGORA<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
+                  <span className="flex items-center justify-center gap-3">Comprar Agora<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
 
                 <div className="mt-10 grid grid-cols-3 gap-4 text-[11px] text-slate-500 md:text-xs">
