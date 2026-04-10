@@ -71,11 +71,6 @@ const offerItems = [
   },
 ];
 
-const bonusItems = [
-  "Framework Operacional da Realidade",
-  "Diagnóstico de desalinhamento pessoal",
-];
-
 const steps = [
   { num: "01", label: "Acorde", color: "#8000FF" },
   { num: "02", label: "Coloque os fones", color: "#48FF00" },
@@ -246,7 +241,7 @@ const EnergyHack = () => {
               <Zap className="h-6 w-6 text-lime-300" />
               <div className="h-px max-w-[100px] flex-1 bg-gradient-to-l from-transparent via-lime-400/50 to-violet-500/50" />
             </motion.div>
-            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequência logo nos primeiros minutos do dia, você deixa de reagir ao caos e passa a magnetizar uma vida de alto nível, com <span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-transparent">clareza executiva, foco inabalável e autoridade natural.</span></motion.p>
+            <motion.p {...fadeInUp} className="text-2xl font-black text-white md:text-3xl">Ao elevar a sua frequência logo nos primeiros minutos do dia, você deixa de reagir ao caos e passa a magnetizar uma vida de alto nível, com <span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-transparent">clareza mental, foco inabalável e autoridade natural.</span></motion.p>
             <motion.p {...fadeInUp} className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-slate-300 md:text-xl">Pare de levar os obstáculos para o pessoal. Seja estratégico. Pare de inserir moldes errados no sistema. Ajuste seu input visceral agora e a máquina trabalhará obrigatoriamente a seu favor.</motion.p>
           </div>
         </section>
@@ -335,22 +330,6 @@ const EnergyHack = () => {
                 <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group block w-full rounded-2xl px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110">
                   <span className="flex items-center justify-center gap-3">QUERO HACKEAR MEU ESTADO INTERNO AGORA<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
-
-                <div className="mt-8 rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-5 text-left">
-                  <p className="mb-4 text-[11px] font-black uppercase tracking-[0.2em] text-lime-200">
-                    Bônus incluídos hoje
-                  </p>
-                  <div className="space-y-3">
-                    {bonusItems.map((bonus) => (
-                      <div key={bonus} className="flex items-center gap-3">
-                        <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-lime-400/25 bg-lime-400/10">
-                          <ShieldCheck className="h-4 w-4 text-lime-300" />
-                        </div>
-                        <span className="text-sm font-semibold text-slate-100 md:text-base">{bonus}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 <div className="mt-10 grid grid-cols-3 gap-4 text-[11px] text-slate-500 md:text-xs">
                   <div className="flex flex-col items-center gap-1.5 text-center"><Lock className="h-4 w-4 text-purple-400/60" /><span className="font-semibold">Compra Segura</span></div>
