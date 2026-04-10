@@ -35,6 +35,8 @@ const GestaoInteligente = lazy(() => import("./pages/GestaoInteligente"));
 
 // O Algoritmo do Universo pages
 const AlgoritmoDoUniverso = lazy(() => import("./pages/AlgoritmoDoUniverso"));
+const TheUniverseAlgorithm = lazy(() => import("./pages/TheUniverseAlgorithm"));
+const EnergyHack = lazy(() => import("./pages/EnergyHack"));
 
 // Optimize QueryClient with better defaults
 const queryClient = new QueryClient({
@@ -115,6 +117,8 @@ const App = () => (
 
                 {/* O Algoritmo do Universo Route */}
                 <Route path="/o-algoritmo-do-universo" element={<AlgoritmoDoUniverso />} />
+                <Route path="/the-universe-algorithm" element={<TheUniverseAlgorithm />} />
+                <Route path="/energy-hack" element={<EnergyHack />} />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
