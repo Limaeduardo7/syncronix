@@ -42,7 +42,7 @@ const stagger = {
 };
 
 const benefits = [
-  { title: "Clareza executiva ao acordar", icon: <Brain className="w-6 h-6" />, color: "#8000FF" },
+  { title: "Clareza mental ao acordar", icon: <Brain className="w-6 h-6" />, color: "#8000FF" },
   { title: "Redução de ruído mental", icon: <Radio className="w-6 h-6" />, color: "#48FF00" },
   { title: "Foco inabalável ao longo do dia", icon: <Cpu className="w-6 h-6" />, color: "#8000FF" },
   { title: "Estabilidade emocional sob pressão", icon: <Shield className="w-6 h-6" />, color: "#48FF00" },
