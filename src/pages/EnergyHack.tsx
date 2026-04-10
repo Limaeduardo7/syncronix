@@ -74,9 +74,9 @@ const offerItems = [
 const steps = [
   { num: "01", label: "Acorde", color: "#8000FF" },
   { num: "02", label: "Coloque os fones", color: "#48FF00" },
-  { num: "03", label: "Dê play", color: "#8000FF" },
-  { num: "04", label: "Reconfigure seu estado", color: "#48FF00" },
-  { num: "05", label: "Entre no dia em outro padrão", color: "#8000FF" },
+  { num: "03", label: "Dê o play", color: "#8000FF" },
+  { num: "04", label: "Reconfigure seu estado interior", color: "#48FF00" },
+  { num: "05", label: "Entre em uma nova frequência", color: "#8000FF" },
 ];
 
 const faqs = [
@@ -328,7 +328,7 @@ const EnergyHack = () => {
                 </div>
 
                 <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group block w-full rounded-2xl px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110">
-                  <span className="flex items-center justify-center gap-3">Comprar Agora<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
+                  <span className="flex items-center justify-center gap-3">COMPRAR AGORA<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
 
                 <div className="mt-10 grid grid-cols-3 gap-4 text-[11px] text-slate-500 md:text-xs">
