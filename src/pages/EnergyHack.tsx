@@ -169,7 +169,7 @@ const EnergyHack = () => {
                 </motion.h1>
 
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }} className="mb-8 text-sm font-medium leading-relaxed text-slate-400 md:text-lg">
-                  Esqueça a tentativa frustrada de mudar o mundo ao seu redor na força bruta. Reconfigure o núcleo, ajuste seu input visceral e assuma o comando da realidade que responde ao seu <span className="font-bold text-cyan-400">padrão.</span>
+                  <em>Reconfigure o núcleo da sua mente, alterando a energia que você emite e veja a realidade responder ao seu novo padrão energético, perceptivo, cinestésico e comportamental.</em>
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col items-center gap-4 md:items-start">
@@ -268,6 +268,28 @@ const EnergyHack = () => {
           </div>
         </section>
 
+        <section className="relative bg-gradient-to-b from-neutral-950/30 to-black px-4 py-24 md:py-32">
+          <div className="mx-auto max-w-3xl">
+            <motion.div {...fadeInUp} className="mb-16 text-center">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-2"><Play className="h-4 w-4 text-emerald-400" /><span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">Como operar o sistema</span></div>
+              <h2 className="text-3xl font-black text-white md:text-5xl"><span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">5 passos.</span> Todo dia.</h2>
+            </motion.div>
+            <div className="relative">
+              <div className="absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-purple-500/50 via-cyan-500/50 to-emerald-500/50 md:left-8" />
+              <div className="space-y-8">
+                {steps.map((step, idx) => (
+                  <motion.div key={idx} {...stagger} transition={{ delay: idx * 0.12 }} className="flex items-center gap-6 pl-2">
+                    <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 bg-black md:h-14 md:w-14" style={{ borderColor: step.color, boxShadow: `0 0 20px ${step.color}30` }}>
+                      <span className="text-xs font-black md:text-sm" style={{ color: step.color }}>{step.num}</span>
+                    </div>
+                    <p className="text-lg font-bold text-white md:text-xl">{step.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="oferta" className="relative scroll-mt-10 px-4 py-24 md:py-32">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/[0.08] blur-[150px]" />
           <div className="relative z-10 mx-auto max-w-lg">
@@ -304,8 +326,8 @@ const EnergyHack = () => {
                 <div className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-8">
                   <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">R$ 97,00</p>
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">por apenas</p>
-                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">R$ 47<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-4xl text-transparent">,00</span></p>
-                  <p className="mt-3 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-lime-300 bg-clip-text text-lg font-black tracking-wide text-transparent">ou 6x de R$ 8,69</p>
+                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">R$ 19<span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-4xl text-transparent">,90</span></p>
+                  <p className="mt-3 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-lime-300 bg-clip-text text-lg font-black tracking-wide text-transparent">ou 2x de R$ 10,47</p>
                   <p className="mt-2 text-sm font-medium text-slate-500">acesso imediato e vitalício</p>
                 </div>
 
@@ -336,28 +358,6 @@ const EnergyHack = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </section>
-
-        <section className="relative bg-gradient-to-b from-neutral-950/30 to-black px-4 py-24 md:py-32">
-          <div className="mx-auto max-w-3xl">
-            <motion.div {...fadeInUp} className="mb-16 text-center">
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-2"><Play className="h-4 w-4 text-emerald-400" /><span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">Como operar o sistema</span></div>
-              <h2 className="text-3xl font-black text-white md:text-5xl"><span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">5 passos.</span> Todo dia.</h2>
-            </motion.div>
-            <div className="relative">
-              <div className="absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-purple-500/50 via-cyan-500/50 to-emerald-500/50 md:left-8" />
-              <div className="space-y-8">
-                {steps.map((step, idx) => (
-                  <motion.div key={idx} {...stagger} transition={{ delay: idx * 0.12 }} className="flex items-center gap-6 pl-2">
-                    <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 bg-black md:h-14 md:w-14" style={{ borderColor: step.color, boxShadow: `0 0 20px ${step.color}30` }}>
-                      <span className="text-xs font-black md:text-sm" style={{ color: step.color }}>{step.num}</span>
-                    </div>
-                    <p className="text-lg font-bold text-white md:text-xl">{step.label}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
