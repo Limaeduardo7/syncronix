@@ -727,18 +727,31 @@ const AlgoritmoDoUniversoEN = () => {
                                 </div>
 
                                 {/* What's included */}
-                                <div className="space-y-3 mb-10 text-left">
+                                <div className="space-y-3 mb-6 text-left">
                                     {[
                                         "Full e-book: The Algorithm of the Universe",
-                                        "Operational Reality Framework",
-                                        "Personal misalignment diagnosis",
                                         "Lifetime access and future updates"
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex items-center gap-3 text-slate-300">
-                                            <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: ['#a855f7','#06b6d4','#10b981','#f59e0b'][idx] }} />
+                                            <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: ['#a855f7','#06b6d4'][idx] }} />
                                             <span className="font-medium">{item}</span>
                                         </div>
                                     ))}
+                                </div>
+
+                                <div className="mb-10 p-5 rounded-2xl bg-gradient-to-b from-purple-500/[0.06] to-transparent border border-purple-500/20 text-left">
+                                    <p className="text-xs font-black text-purple-400 uppercase tracking-[0.2em] mb-4">🎁 Exclusive Bonuses</p>
+                                    <div className="space-y-3">
+                                        {[
+                                            "Operational Reality Framework",
+                                            "Personal misalignment diagnosis"
+                                        ].map((item, idx) => (
+                                            <div key={idx} className="flex items-center gap-3 text-slate-300">
+                                                <CheckCircle className="w-5 h-5 flex-shrink-0 text-emerald-400" />
+                                                <span className="font-medium">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
 
                                 {/* Pricing */}
@@ -765,8 +778,7 @@ const AlgoritmoDoUniversoEN = () => {
                                     className="group block w-full px-8 py-6 bg-gradient-to-r from-purple-600 via-cyan-500 to-emerald-500 hover:from-purple-500 hover:via-cyan-400 hover:to-emerald-400 text-white font-black text-xl text-center rounded-2xl shadow-[0_10px_50px_-15px_rgba(168,85,247,0.4),0_10px_80px_-20px_rgba(6,182,212,0.3)] transform hover:-translate-y-1 transition-all duration-300"
                                 >
                                     <span className="flex items-center justify-center gap-3">
-                                        👉 I WANT ACCESS TO THE ALGORITHM
-                                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                        Buy Now!
                                     </span>
                                 </motion.a>
 
