@@ -322,12 +322,11 @@ const EnergyHackEN = () => {
                 <div className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-8">
                   <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">R$ 47,90</p>
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">for only</p>
-                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">R$ 19<span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-4xl text-transparent">,90</span></p>
-                  <p className="mt-3 bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-lg font-black tracking-wide text-transparent">or 2x of R$ 10,47</p>
+                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">$ 7<span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-4xl text-transparent">.90</span></p>
                   <p className="mt-2 text-sm font-medium text-slate-500">instant lifetime access</p>
                 </div>
 
-                <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group block w-full rounded-2xl px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110">
+                <motion.a href="https://pay.hotmart.com/J97815167Q?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group block w-full rounded-2xl px-8 py-6 text-center text-xl font-black text-slate-950 shadow-[0_12px_60px_-12px_rgba(217,70,239,0.45)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110">
                   <span className="flex items-center justify-center gap-3">BUY NOW<ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" /></span>
                 </motion.a>
 
@@ -409,7 +408,7 @@ const EnergyHackEN = () => {
             <motion.div {...fadeInUp}>
               <h2 className="mb-6 text-3xl font-black leading-tight text-white md:text-5xl">Do not fight the system. <br /><span className="shimmer-multi">Model its root.</span></h2>
               <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-400">Put on your headphones, press play, and force reality to bend to your new energetic pattern.</p>
-              <motion.a href="https://pay.hotmart.com/J95022753E?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group inline-flex items-center justify-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-slate-950 shadow-[0_0_70px_-10px_rgba(217,70,239,0.55),0_0_110px_-16px_rgba(34,211,238,0.35)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110 hover:shadow-[0_0_110px_-12px_rgba(163,230,53,0.4)]">
+              <motion.a href="https://pay.hotmart.com/J97815167Q?checkoutMode=10" target="_blank" rel="noopener noreferrer" animate={{ scale: [1, 1.03, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="shimmer-bg group inline-flex items-center justify-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-slate-950 shadow-[0_0_70px_-10px_rgba(217,70,239,0.55),0_0_110px_-16px_rgba(34,211,238,0.35)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110 hover:shadow-[0_0_110px_-12px_rgba(163,230,53,0.4)]">
                 <span>I WANT TO HACK MY INTERNAL STATE NOW</span>
                 <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
               </motion.a>
