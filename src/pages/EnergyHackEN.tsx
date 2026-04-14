@@ -23,7 +23,7 @@ import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import SEO from "@/components/quantum-key/SEO";
 import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
-import LandingFooter from "@/components/alma-livre/Footer";
+import LandingFooter from "@/components/quantum-key/en/Footer";
 import SpotlightCard from "@/components/react-bits/SpotlightCard";
 import DecryptedText from "@/components/react-bits/DecryptedText";
 import SplitText from "@/components/react-bits/SplitText";
@@ -369,7 +369,7 @@ const EnergyHackEN = () => {
             <motion.div {...fadeInUp} className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-transparent p-10 text-center md:p-14">
               <div className="relative z-10 mx-auto mb-8 h-32 w-32 md:h-36 md:w-36">
                 <img
-                  src="/garantia-7-dias_(1).png"
+                  src="/guarantee-seal-en.png"
                   alt="7-day guarantee"
                   className="h-full w-full object-contain"
                 />
