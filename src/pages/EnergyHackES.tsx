@@ -320,7 +320,7 @@ const EnergyHackES = () => {
             <motion.div {...fadeInUp} className="aurora-border relative overflow-hidden rounded-[2rem] border-2 bg-gradient-to-b from-neutral-950 to-neutral-950/50 p-8 md:p-12" style={{ boxShadow: "0 0 90px -18px rgba(128,0,255,0.35), 0 0 120px -28px rgba(72,255,0,0.2), inset 0 0 60px rgba(0,0,0,0.4)" }}>
               <div className="relative z-10 text-center">
                 <div className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-8">
-                  <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">R$ 47,90</p>
+                  <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">$ 24,90</p>
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">por solo</p>
                   <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">$ 4<span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-4xl text-transparent">.99</span></p>
                   <p className="mt-2 text-sm font-medium text-slate-500">acceso inmediato y vitalicio</p>
