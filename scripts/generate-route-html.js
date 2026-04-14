@@ -86,6 +86,33 @@ const routePages = [
     canonical: "https://syncronix.co/ebook-el-algoritmo-del-universo",
     ogImage: "https://syncronix.co/algoritmo-book-main.jpg",
   },
+  {
+    route: "energy-hack",
+    lang: "pt-BR",
+    title: "ENERGY HACK | Reprograme Sua Frequencia Basal",
+    description:
+      "Protocolo de reconfiguracao neural com audio 8D. Reprograme sua frequencia basal, silencie o ruido mental e assuma o comando do seu estado interno.",
+    canonical: "https://syncronix.co/energy-hack",
+    ogImage: "https://syncronix.co/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png",
+  },
+  {
+    route: "energy-hack-en",
+    lang: "en",
+    title: "ENERGY HACK | Reprogram Your Baseline Frequency",
+    description:
+      "Neural reconfiguration protocol with 8D audio. Reprogram your baseline frequency, silence mental noise and take command of your inner state.",
+    canonical: "https://syncronix.co/energy-hack-en",
+    ogImage: "https://syncronix.co/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png",
+  },
+  {
+    route: "energy-hack-es",
+    lang: "es",
+    title: "ENERGY HACK | Reprograma tu Frecuencia Basal",
+    description:
+      "Protocolo de reconfiguracion neural con audio 8D. Reprograma tu frecuencia basal, silencia el ruido mental y toma el control de tu estado interno.",
+    canonical: "https://syncronix.co/energy-hack-es",
+    ogImage: "https://syncronix.co/energy%20hack/ENERGY%20HACK%20LOGO%20BLACK.png",
+  },
 ];
 
 function replaceOrInsertMeta(html, selector, replacement) {

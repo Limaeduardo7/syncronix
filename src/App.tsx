@@ -39,6 +39,8 @@ const AlgoritmoDoUniversoEN = lazy(() => import("./pages/AlgoritmoDoUniversoEN")
 
 // Energy Hack
 const EnergyHack = lazy(() => import("./pages/EnergyHack"));
+const EnergyHackEN = lazy(() => import("./pages/EnergyHackEN"));
+const EnergyHackES = lazy(() => import("./pages/EnergyHackES"));
 const AlgoritmoDoUniversoES = lazy(() => import("./pages/AlgoritmoDoUniversoES"));
 
 // Optimize QueryClient with better defaults
@@ -125,6 +127,8 @@ const App = () => (
 
                 {/* Energy Hack Route */}
                 <Route path="/energy-hack" element={<EnergyHack />} />
+                <Route path="/energy-hack-en" element={<EnergyHackEN />} />
+                <Route path="/energy-hack-es" element={<EnergyHackES />} />
 
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
