@@ -5,9 +5,10 @@ interface LiveViewersProps {
   text: string;
   color?: "yellow" | "blue" | "purple" | "pink" | "slate";
   variant?: "default" | "hero";
+  liveLabel?: string;
 }
 
-const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewersProps) => {
+const LiveViewers = ({ text, color = "yellow", variant = "default", liveLabel = "ao vivo" }: LiveViewersProps) => {
   const [viewers, setViewers] = useState(Math.floor(Math.random() * 20) + 80); // Random between 80-100
 
   useEffect(() => {
@@ -99,7 +100,7 @@ const LiveViewers = ({ text, color = "yellow", variant = "default" }: LiveViewer
           <div className="flex items-baseline gap-2">
             <span className={getCountClasses()}>{viewers}</span>
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-purple-300/80">
-              ao vivo
+              {liveLabel}
             </span>
           </div>
           <p className="mt-0.5 text-sm font-medium text-slate-300 md:text-[15px]">{text}</p>

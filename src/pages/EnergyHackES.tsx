@@ -179,7 +179,7 @@ const EnergyHackES = () => {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex justify-center md:justify-start">
-                  <LiveViewers text="personas están en esta página ahora" color="purple" variant="hero" />
+                  <LiveViewers text="personas están en esta página ahora" color="purple" variant="hero" liveLabel="en vivo" />
                 </motion.div>
               </div>
             </div>
