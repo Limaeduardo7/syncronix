@@ -22,7 +22,7 @@ import PurchaseNotifications from "@/components/quantum-key/PurchaseNotification
 import LiveViewers from "@/components/quantum-key/LiveViewers";
 import CountdownTimer from "@/components/gestao-inteligente/CountdownTimer";
 import SEO from "@/components/quantum-key/SEO";
-import { brazilianPurchaseNotifications } from "@/components/quantum-key/notificationsData";
+import { spanishPurchaseNotifications } from "@/components/quantum-key/notificationsData";
 import LandingFooter from "@/components/quantum-key/es/Footer";
 import SpotlightCard from "@/components/react-bits/SpotlightCard";
 import DecryptedText from "@/components/react-bits/DecryptedText";
@@ -129,7 +129,7 @@ const EnergyHackES = () => {
         .grid-bg { background-image: linear-gradient(rgba(168,85,247,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: grid-scroll 8s linear infinite; }
       `}</style>
 
-      <PurchaseNotifications purchaseText="acaba de comprar Energy Hack!" justNowText="compró ahora" notifications={brazilianPurchaseNotifications} />
+      <PurchaseNotifications purchaseText="acaba de comprar Energy Hack!" justNowText="compró ahora" notifications={spanishPurchaseNotifications} />
 
       <main className="relative flex-1">
         <div className="pointer-events-none fixed inset-0">
