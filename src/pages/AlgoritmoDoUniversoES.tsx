@@ -843,7 +843,7 @@ const AlgoritmoDoUniversoES = () => {
                         >
                             <div className="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 flex items-center justify-center">
                                 <img
-                                    src="/garantia-7-dias_(1).png"
+                                    src="/guarantee-seal-es.png"
                                     alt="Garantía de 7 días"
                                     className="w-full h-full object-contain"
                                 />

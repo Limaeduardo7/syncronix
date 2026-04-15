@@ -1,5 +1,4 @@
 import { Clock, CheckCircle } from "lucide-react";
-import guaranteeImage from "@/assets/quantum-key/es/imagens-de-7-dias-de-garantia-png-22-1.png";
 
 const GuaranteeSection = () => {
   return (
@@ -9,7 +8,7 @@ const GuaranteeSection = () => {
           {/* Guarantee Icon */}
           <div className="w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 flex items-center justify-center">
             <img
-              src={guaranteeImage}
+              src="/guarantee-seal-es.png"
               alt="Garantía de 7 días"
               className="w-full h-full object-contain"
             />
