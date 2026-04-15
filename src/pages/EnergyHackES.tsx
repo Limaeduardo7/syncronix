@@ -129,7 +129,7 @@ const EnergyHackES = () => {
         .grid-bg { background-image: linear-gradient(rgba(168,85,247,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: grid-scroll 8s linear infinite; }
       `}</style>
 
-      <PurchaseNotifications purchaseText="acaba de comprar Energy Hack!" justNowText="compró ahora" notifications={spanishPurchaseNotifications} />
+      <PurchaseNotifications purchaseText="acaba de adquirir Energy Hack!" justNowText="hace un momento" notifications={spanishPurchaseNotifications} />
 
       <main className="relative flex-1">
         <div className="pointer-events-none fixed inset-0">
