@@ -322,7 +322,7 @@ const EnergyHackEN = () => {
                 <div className="mb-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-8">
                   <p className="mb-2 text-2xl font-bold text-red-500/60 line-through">$ 24,90</p>
                   <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">for only</p>
-                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">$ 7<span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-4xl text-transparent">.90</span></p>
+                  <p className="text-6xl font-black leading-none tracking-tighter text-white md:text-7xl">US$ 7<span className="bg-gradient-to-r from-violet-400 to-lime-300 bg-clip-text text-4xl text-transparent">.99</span></p>
                   <p className="mt-2 text-sm font-medium text-slate-500">instant lifetime access</p>
                 </div>
 
